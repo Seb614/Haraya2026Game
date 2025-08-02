@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Haraya"
-run/main_scene="uid://trobkfvhf58n"
+config/name="HarayaTest"
+run/main_scene="uid://b67qamlshx314"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://trobkfvhf58n"]
+[gd_scene load_steps=5 format=3 uid="uid://de24dshlb11le"]
 
 [ext_resource type="Script" uid="uid://bt6an5jg410xu" path="res://scripts/timer.gd" id="1_6qf8x"]
 [ext_resource type="Texture2D" uid="uid://gxkp11ouc8w4" path="res://assets/kpop-demon-hunters-derpy-tiger-draft-not-finished-7170618-hd_kandipad.png" id="2_2ruhp"]

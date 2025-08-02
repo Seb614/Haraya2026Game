@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://trobkfvhf58n"]
+[gd_scene load_steps=3 format=3 uid="uid://b67qamlshx314"]
 
-[ext_resource type="Script" uid="uid://bt6an5jg410xu" path="res://scripts/timer.gd" id="1_e172o"]
+[ext_resource type="Script" uid="uid://bnbujgrrlcmj8" path="res://scripts/loadscreen.gd" id="1_e172o"]
+[ext_resource type="Texture2D" uid="uid://d07cfwrnjtlai" path="res://assets/backgrounds/kpop-demon-hunters-derpy-tiger-draft-not-finished-7170618-hd_kandipad.png" id="2_4pwaa"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_e172o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+offset_left = -587.0
+offset_top = -327.0
+offset_right = 575.0
+offset_bottom = 328.0
+texture = ExtResource("2_4pwaa")
+expand_mode = 1
