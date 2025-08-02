@@ -9,9 +9,10 @@ script = ExtResource("1_e172o")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
-offset_left = -587.0
-offset_top = -327.0
-offset_right = 575.0
-offset_bottom = 328.0
+offset_left = -392.0
+offset_top = -328.0
+offset_right = 396.0
+offset_bottom = 344.0
 texture = ExtResource("2_4pwaa")
 expand_mode = 1
+stretch_mode = 4
