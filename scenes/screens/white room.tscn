@@ -115,6 +115,7 @@ mesh = SubResource("PlaneMesh_m2i04")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0.000865965, 0.000500103, -0.000999999, 0.866025, 0.5, -1.19209e-07, -0.5, 0.866025, 0, 15, 15)
+light_energy = 2.0
 light_indirect_energy = 3.747
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -132,12 +133,16 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -2.84217e-
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_rk1ub")
 autoplay = "default"
-frame_progress = 0.364827
+frame_progress = 0.828676
 script = SubResource("GDScript_bpdcf")
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D/AnimatedSprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 fov = 60.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D/AnimatedSprite3D"]
+light_energy = 0.2
+light_size = 0.5
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.1, 0)

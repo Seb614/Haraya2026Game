@@ -15,6 +15,11 @@ run/main_scene="uid://b67qamlshx314"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor]
+
+movie_writer/mix_rate=40000
+movie_writer/movie_file="D:/game/hi.avi"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
