@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=16 format=3 uid="uid://cydtg3sc5v3rq"]
 
 [ext_resource type="Texture2D" uid="uid://7mty84d2n0vq" path="res://assets/sprites/untitled.png" id="1_5fy00"]
-[ext_resource type="Texture2D" uid="uid://crykn83a37bn5" path="res://assets/sprites/spritesheet.png" id="1_iscqe"]
+[ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
+[ext_resource type="ArrayMesh" uid="uid://c66r0i2mdc4ju" path="res://assets/untitled.obj" id="1_bpdcf"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
+[ext_resource type="Texture2D" uid="uid://cvjyusy0jmgjc" path="res://assets/sprites/rect3.png" id="5_8prti"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_d3bh5"]
 size = Vector2(15, 5)
@@ -26,122 +28,77 @@ orientation = 0
 
 [sub_resource type="Curve3D" id="Curve3D_bpdcf"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6, 0.006, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.055, 0, -1, -0.0554142, -1.35233, 0.900211, 4, 0, 1),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0.055, 0, 0, -0.0554142, -1.35233, 0.900211, 0, 1, -25),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2i04"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(0, 64, 64, 64)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpdcf"]
+albedo_color = Color(0.0312, 0.17472, 0.39, 1)
+proximity_fade_distance = 608.29
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 2.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpdcf"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(64, 64, 64, 64)
+[sub_resource type="PlaneMesh" id="PlaneMesh_8prti"]
+size = Vector2(100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8prti"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(128, 64, 64, 64)
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_3bnq6"]
+albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bnq6"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(192, 64, 64, 64)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8prti"]
+albedo_color = Color(0, 0.1, 1, 1)
+distance_fade_mode = 2
+distance_fade_min_distance = 0.05
+distance_fade_max_distance = 1.5
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6y1iw"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(256, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_breun"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(320, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vrtk"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(384, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phxct"]
-atlas = ExtResource("1_iscqe")
-region = Rect2(448, 64, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rk1ub"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2i04")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bpdcf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8prti")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3bnq6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6y1iw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_breun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4vrtk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phxct")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="GDScript" id="GDScript_bpdcf"]
-script/source = "extends AnimatedSprite3D
-"
+[sub_resource type="CylinderMesh" id="CylinderMesh_3bnq6"]
+material = SubResource("StandardMaterial3D_8prti")
+top_radius = 0.4
+height = 0.001
+cap_top = false
+cap_bottom = false
 
 [node name="WhiteRoom" type="Node3D"]
+script = ExtResource("1_8prti")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("QuadMesh_d3bh5")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("PlaneMesh_5fy00")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00880432, 0.0162687, -0.0855732)
+visible = false
 mesh = SubResource("PlaneMesh_iscqe")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("PlaneMesh_m2i04")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0.000865965, 0.000500103, -0.000999999, 0.866025, 0.5, -1.19209e-07, -0.5, 0.866025, 0, 15, 15)
-light_energy = 2.0
-light_indirect_energy = 3.747
-
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00553226, 0.0133604, 0.0357027)
 curve = SubResource("Curve3D_bpdcf")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.006, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
 rotation_mode = 0
 loop = false
 tilt_enabled = false
 script = ExtResource("1_m2i04")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Path3D/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -2.84217e-14, 0.2, 0)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_rk1ub")
-autoplay = "default"
-frame_progress = 0.828676
-script = SubResource("GDScript_bpdcf")
-
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D/AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0, 0)
+current = true
 fov = 60.0
+near = 0.001
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D/AnimatedSprite3D"]
-light_energy = 0.2
+[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+light_energy = 5.202
 light_size = 0.5
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -149,3 +106,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.1, 0)
 axis = 1
 texture_filter = 0
 texture = ExtResource("1_5fy00")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, -0.00659561, 1.03802, -0.00363255)
+gi_mode = 0
+gi_lightmap_texel_scale = 0.01
+mesh = ExtResource("1_bpdcf")
+skeleton = NodePath("../MeshInstance3D3")
+surface_material_override/0 = SubResource("StandardMaterial3D_bpdcf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, -30, -0.001)
+mesh = SubResource("PlaneMesh_8prti")
+surface_material_override/0 = SubResource("ORMMaterial3D_3bnq6")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, -0.164043, -1.0738, 0.0290728)
+axis = 1
+texture_filter = 0
+texture = ExtResource("5_8prti")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, -5, 0)
+mesh = SubResource("CylinderMesh_3bnq6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D5/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -5, 2.38419e-07)
+mesh = SubResource("CylinderMesh_3bnq6")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D5/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -10, 2.38419e-07)
+mesh = SubResource("CylinderMesh_3bnq6")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D5/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -15, 4.76837e-07)
+mesh = SubResource("CylinderMesh_3bnq6")
+skeleton = NodePath("../..")
