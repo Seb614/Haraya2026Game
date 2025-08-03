@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=7 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
+[ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
+[ext_resource type="PackedScene" uid="uid://b0gjgjca82wqo" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -9,20 +11,71 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
-size = Vector2(140, 5)
+size = Vector2(316, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1ow5"]
+size = Vector2(30, 10)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_a4hby")
 
 [node name="Player" parent="." instance=ExtResource("1_a4hby")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -70)
 zoom = Vector2(4, 4)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Platforms" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 2.5)
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(36, -3)
+shape = SubResource("RectangleShape2D_y1ow5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(72, -16)
+shape = SubResource("RectangleShape2D_y1ow5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(112, -29)
+shape = SubResource("RectangleShape2D_y1ow5")
+
+[node name="Stone4" type="Sprite2D" parent="Platforms/StaticBody2D"]
+position = Vector2(112, -29)
+scale = Vector2(0.0549451, 0.0277778)
+texture = ExtResource("2_0bisd")
+
+[node name="Stone3" type="Sprite2D" parent="Platforms/StaticBody2D"]
+position = Vector2(72, -16)
+scale = Vector2(0.054945, 0.0277778)
+texture = ExtResource("2_0bisd")
+
+[node name="Stone2" type="Sprite2D" parent="Platforms/StaticBody2D"]
+position = Vector2(36, -4)
+scale = Vector2(0.0549451, 0.0222222)
+texture = ExtResource("2_0bisd")
+
+[node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
+position = Vector2(-1, 36)
+scale = Vector2(0.589744, 0.202778)
+texture = ExtResource("2_0bisd")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_y1ow5")]
+position = Vector2(120, -34)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -78.0
+offset_top = -97.0
+offset_right = 84.0
+offset_bottom = -74.0
+text = "thanks for pressing E"
