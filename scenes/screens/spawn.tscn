@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=8 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
+[ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -27,6 +28,10 @@ curve = SubResource("Curve2D_a4hby")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -70)
 zoom = Vector2(4, 4)
+
+[node name="Controls" parent="Camera2D" instance=ExtResource("2_sbm0d")]
+position = Vector2(0, -70)
+scale = Vector2(0.25, 0.25)
 
 [node name="Platforms" type="Node" parent="."]
 

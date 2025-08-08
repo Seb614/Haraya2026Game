@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=23 format=3 uid="uid://cydtg3sc5v3rq"]
 
-[ext_resource type="Texture2D" uid="uid://7mty84d2n0vq" path="res://assets/sprites/untitled.png" id="1_5fy00"]
 [ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
 [ext_resource type="ArrayMesh" uid="uid://c66r0i2mdc4ju" path="res://assets/untitled.obj" id="1_bpdcf"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
@@ -134,12 +133,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 light_energy = 3.0
 light_size = 0.01
 light_specular = 0.0
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.1, 0)
-axis = 1
-texture_filter = 0
-texture = ExtResource("1_5fy00")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, -0.00659561, 1.03802, -0.00363255)
