@@ -1,9 +1,8 @@
 extends Area2D
 
-@onready var text_label = %Label
+@export var target_scene: String
 
 var interactable = false
-var visibility = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,5 +15,4 @@ func _on_body_exited(body):
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if interactable:
-			visibility = !visibility
-			text_label.visible = visibility
+			get_tree().change_scene_to_file("res://scenes/screens/" + target_scene)

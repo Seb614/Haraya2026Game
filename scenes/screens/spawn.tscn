@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=9 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
+[ext_resource type="PackedScene" uid="uid://0ycl7x82ncef" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -24,6 +25,9 @@ visible = false
 curve = SubResource("Curve2D_a4hby")
 
 [node name="Player" parent="." instance=ExtResource("1_a4hby")]
+position = Vector2(1, -6)
+collision_layer = 7
+collision_mask = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -70)
@@ -73,7 +77,7 @@ position = Vector2(-1, 36)
 scale = Vector2(0.589744, 0.202778)
 texture = ExtResource("2_0bisd")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_y1ow5")]
+[node name="NPC1" parent="." instance=ExtResource("3_y1ow5")]
 position = Vector2(120, -34)
 
 [node name="Label" type="Label" parent="."]
@@ -84,3 +88,10 @@ offset_top = -97.0
 offset_right = 84.0
 offset_bottom = -74.0
 text = "thanks for pressing E"
+
+[node name="Door" parent="." instance=ExtResource("5_olnbh")]
+position = Vector2(-149, 0)
+scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 4
+target_scene = "spawn2.tscn"
