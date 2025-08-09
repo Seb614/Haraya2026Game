@@ -1,12 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://bphoyane6rivp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqi4l"]
-size = Vector2(640, 1080)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aiw8"]
 size = Vector2(640, 1080)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqi4l"]
+size = Vector2(640, 1080)
+
 [node name="Controls" type="Node2D"]
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(0, 375)
+scale = Vector2(1, 0.3)
+shape = SubResource("RectangleShape2D_3aiw8")
+action = "ui_accept"
+visibility_mode = 1
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(640, 0)

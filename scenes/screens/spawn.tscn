@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=10 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
+[ext_resource type="PackedScene" uid="uid://ctv555ynrchce" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
+[ext_resource type="PackedScene" uid="uid://ck38vd6lcv3xg" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
 [ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -14,9 +16,6 @@ point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
 size = Vector2(316, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1ow5"]
-size = Vector2(30, 10)
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,7 +33,7 @@ offset = Vector2(0, -70)
 zoom = Vector2(4, 4)
 
 [node name="Controls" parent="Camera2D" instance=ExtResource("2_sbm0d")]
-position = Vector2(0, -70)
+position = Vector2(0, -53.04)
 scale = Vector2(0.25, 0.25)
 
 [node name="Platforms" type="Node" parent="."]
@@ -45,40 +44,23 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(36, -3)
-shape = SubResource("RectangleShape2D_y1ow5")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(72, -16)
-shape = SubResource("RectangleShape2D_y1ow5")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(112, -29)
-shape = SubResource("RectangleShape2D_y1ow5")
-
-[node name="Stone4" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(112, -29)
-scale = Vector2(0.0549451, 0.0277778)
-texture = ExtResource("2_0bisd")
-
-[node name="Stone3" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(72, -16)
-scale = Vector2(0.054945, 0.0277778)
-texture = ExtResource("2_0bisd")
-
-[node name="Stone2" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(36, -4)
-scale = Vector2(0.0549451, 0.0222222)
-texture = ExtResource("2_0bisd")
-
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(-1, 36)
+position = Vector2(0, 36)
 scale = Vector2(0.589744, 0.202778)
 texture = ExtResource("2_0bisd")
 
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("4_1gspe")]
+position = Vector2(39, -5)
+scale = Vector2(0.5, 0.5)
+texture = "stone.jpg"
+
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("4_1gspe")]
+position = Vector2(108, -29)
+scale = Vector2(0.5, 0.5)
+texture = "stone.jpg"
+
 [node name="NPC1" parent="." instance=ExtResource("3_y1ow5")]
-position = Vector2(120, -34)
+position = Vector2(116, -33)
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
@@ -87,7 +69,7 @@ offset_left = -78.0
 offset_top = -97.0
 offset_right = 84.0
 offset_bottom = -74.0
-text = "thanks for pressing E"
+text = "thanks for interacting"
 
 [node name="Door" parent="." instance=ExtResource("5_olnbh")]
 position = Vector2(-149, 0)
@@ -95,3 +77,10 @@ scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 4
 target_scene = "spawn2.tscn"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(73.5, -14)
+
+[node name="Moving Platform" parent="Node2D" instance=ExtResource("5_70bgw")]
+scale = Vector2(0.5, 0.5)
+texture = "stone.jpg"

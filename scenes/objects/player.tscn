@@ -48,7 +48,8 @@ collision_mask = 3
 script = ExtResource("1_2147m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -22)
+position = Vector2(0, -20)
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_ksjmp")
 autoplay = "default"
 frame_progress = 0.235101

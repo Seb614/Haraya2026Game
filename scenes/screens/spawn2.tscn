@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_ukt6q"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_s8rbu"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="3_2gmu1"]
-[ext_resource type="PackedScene" uid="uid://0ycl7x82ncef" path="res://scenes/objects/doorway.tscn" id="5_7rmbf"]
+[ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_7rmbf"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -27,7 +27,7 @@ offset = Vector2(0, -70)
 zoom = Vector2(4, 4)
 
 [node name="Controls" parent="Camera2D" instance=ExtResource("2_s8rbu")]
-position = Vector2(0, -70)
+position = Vector2(0, -54)
 scale = Vector2(0.25, 0.25)
 
 [node name="Platforms" type="Node" parent="."]
@@ -39,7 +39,7 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(-1, 36)
+position = Vector2(0, 36)
 scale = Vector2(0.589744, 0.202778)
 texture = ExtResource("3_2gmu1")
 

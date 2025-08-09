@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctv555ynrchce"]
+
+[ext_resource type="Script" uid="uid://vurjmcbnhjhk" path="res://scripts/platform.gd" id="1_dotdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcgad"]
+size = Vector2(63, 17)
+
+[node name="Platform" type="StaticBody2D"]
+script = ExtResource("1_dotdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gcgad")
