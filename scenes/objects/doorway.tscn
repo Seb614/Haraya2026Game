@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ycl7x82ncef"]
+[gd_scene load_steps=5 format=3 uid="uid://bvuoa76c1mw0w"]
 
 [ext_resource type="Texture2D" uid="uid://c7qjclww2302w" path="res://assets/sprites/doorway.png" id="1_7b044"]
-[ext_resource type="Script" uid="uid://cc172x6n50psw" path="res://scripts/doorway.gd" id="1_gt6sw"]
+[ext_resource type="Script" path="res://scripts/doorway.gd" id="1_gt6sw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gt6sw"]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bek3c3wv2ebos"]
+[gd_scene load_steps=11 format=3 uid="uid://bek3c3wv2ebos"]
 
 [ext_resource type="Script" uid="uid://dwlpjdygb0vnv" path="res://scripts/npc.gd" id="1_i4yyw"]
 [ext_resource type="Texture2D" uid="uid://crykn83a37bn5" path="res://assets/sprites/spritesheet.png" id="1_qn87c"]
+[ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="3_qgsx0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4yyw"]
 atlas = ExtResource("1_qn87c")
@@ -39,11 +40,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qn87c"]
-radius = 22.0907
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4yyw"]
 size = Vector2(18, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgsx0"]
+radius = 20.0
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 2
@@ -58,15 +59,19 @@ sprite_frames = SubResource("SpriteFrames_gdgn1")
 autoplay = "default"
 frame_progress = 0.736851
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -23)
-shape = SubResource("CircleShape2D_qn87c")
+[node name="Interactable" parent="AnimatedSprite2D" instance=ExtResource("3_qgsx0")]
+rotation = 3.14159
+scale = Vector2(1, -1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(2, -14.5)
 shape = SubResource("RectangleShape2D_i4yyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_qgsx0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

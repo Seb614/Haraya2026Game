@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://30u4ibyh6txp"]
+
+[ext_resource type="Texture2D" uid="uid://khcfn3ty8asr" path="res://assets/sprites/ic_touch.png" id="1_khwtm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w31u"]
+radius = 15.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwtm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5w31u"]
+flip_faces = true
+size = Vector2(25, 25)
+orientation = 2
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5w31u")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CollisionShape2D"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_khwtm")
+action = "interact"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionShape2D/TouchScreenButton"]
+rotation = 3.14159
+mesh = SubResource("PlaneMesh_5w31u")
+texture = ExtResource("1_khwtm")
