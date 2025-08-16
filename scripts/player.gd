@@ -6,6 +6,12 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 
+var sprite_frames = preload("res://assets/sprites/player.tres")
+
+func _ready():
+	$AnimatedSprite2D.frames = sprite_frames
+	$AnimatedSprite2D.play("walk")  # Replace with your animation name
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
