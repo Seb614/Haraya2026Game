@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
-[ext_resource type="PackedScene" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
+[ext_resource type="PackedScene" uid="uid://ctv555ynrchce" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
+[ext_resource type="PackedScene" uid="uid://ck38vd6lcv3xg" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
 [ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -15,9 +15,9 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
-size = Vector2(316, 11)
+size = Vector2(606, 11)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
 visible = false
@@ -42,16 +42,21 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(0, 5.5)
+position = Vector2(9, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(0, 36)
-scale = Vector2(0.589744, 0.202778)
+position = Vector2(9.49998, 62.25)
+scale = Vector2(1.11172, 0.348611)
 texture = ExtResource("2_0bisd")
 
 [node name="StaticBody2D2" parent="Platforms" instance=ExtResource("4_1gspe")]
 position = Vector2(39, -5)
+scale = Vector2(0.5, 0.5)
+texture = "stone.jpg"
+
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("4_1gspe")]
+position = Vector2(26, -79)
 scale = Vector2(0.5, 0.5)
 texture = "stone.jpg"
 
@@ -73,7 +78,7 @@ offset_bottom = -74.0
 text = "thanks for interacting"
 
 [node name="Door" parent="." instance=ExtResource("5_olnbh")]
-position = Vector2(-149, 0)
+position = Vector2(20, -83)
 scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 4

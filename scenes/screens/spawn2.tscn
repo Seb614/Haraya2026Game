@@ -22,13 +22,14 @@ curve = SubResource("Curve2D_a4hby")
 
 [node name="Player" parent="." instance=ExtResource("1_ukt6q")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -70)
-zoom = Vector2(4, 4)
-
-[node name="Controls" parent="Camera2D" instance=ExtResource("2_s8rbu")]
+[node name="Controls" parent="." instance=ExtResource("2_s8rbu")]
 position = Vector2(0, -54)
 scale = Vector2(0.25, 0.25)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+offset = Vector2(0, -70)
+zoom = Vector2(4, 4)
 
 [node name="Platforms" type="Node" parent="."]
 
