@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
-[ext_resource type="PackedScene" uid="uid://ctv555ynrchce" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
-[ext_resource type="PackedScene" uid="uid://ck38vd6lcv3xg" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
+[ext_resource type="PackedScene" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
 [ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -28,13 +28,19 @@ position = Vector2(1, -6)
 collision_layer = 7
 collision_mask = 7
 
+[node name="Controls" parent="Player" instance=ExtResource("2_sbm0d")]
+position = Vector2(-1, -47.04)
+scale = Vector2(0.25, 0.25)
+
 [node name="Camera2D" type="Camera2D" parent="."]
+<<<<<<< HEAD
 offset = Vector2(0, -74)
 zoom = Vector2(4, 5)
-
-[node name="Controls" parent="Camera2D" instance=ExtResource("2_sbm0d")]
-position = Vector2(0, -53.04)
-scale = Vector2(0.25, 0.25)
+=======
+visible = false
+offset = Vector2(0, -70)
+zoom = Vector2(4, 4)
+>>>>>>> 72d684b3e5eff12c0c928cf2531d3801d20a7712
 
 [node name="Platforms" type="Node" parent="."]
 
