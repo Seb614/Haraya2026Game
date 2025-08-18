@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://rl7qlnaq1yyq"
 path.s3tc="res://.godot/imported/ragatan.png-bf2676b808f263e3f1ccf864be319e8a.s3tc.ctex"
-path.etc2="res://.godot/imported/ragatan.png-bf2676b808f263e3f1ccf864be319e8a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/ragatan.png"
-dest_files=["res://.godot/imported/ragatan.png-bf2676b808f263e3f1ccf864be319e8a.s3tc.ctex", "res://.godot/imported/ragatan.png-bf2676b808f263e3f1ccf864be319e8a.etc2.ctex"]
+dest_files=["res://.godot/imported/ragatan.png-bf2676b808f263e3f1ccf864be319e8a.s3tc.ctex"]
 
 [params]
 

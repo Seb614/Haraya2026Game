@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://crykn83a37bn5"
 path.s3tc="res://.godot/imported/spritesheet.png-a800b538654c83c24a714b50cffb799a.s3tc.ctex"
-path.etc2="res://.godot/imported/spritesheet.png-a800b538654c83c24a714b50cffb799a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-a800b538654c83c24a714b50cffb799a.s3tc.ctex", "res://.godot/imported/spritesheet.png-a800b538654c83c24a714b50cffb799a.etc2.ctex"]
+dest_files=["res://.godot/imported/spritesheet.png-a800b538654c83c24a714b50cffb799a.s3tc.ctex"]
 
 [params]
 
