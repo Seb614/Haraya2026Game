@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cejhjrelvajla"]
 
 [ext_resource type="Script" uid="uid://d2wo56vnmrjjf" path="res://scripts/player.gd" id="1_2147m"]
-[ext_resource type="SpriteFrames" uid="uid://5kgitrv65skb" path="res://assets/sprites/player.tres" id="2_2147m"]
+[ext_resource type="SpriteFrames" uid="uid://cet6pmye5kjma" path="res://assets/sprites/player_idle.tres" id="2_2147m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8lix"]
-size = Vector2(18, 29)
+size = Vector2(16, 32)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -12,11 +12,12 @@ collision_mask = 3
 script = ExtResource("1_2147m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
-scale = Vector2(0.9, 0.9)
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_2147m")
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -14.5)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_a8lix")

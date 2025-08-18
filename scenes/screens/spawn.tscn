@@ -15,7 +15,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
-size = Vector2(316, 11)
+size = Vector2(516, 11)
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,8 +29,8 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -70)
-zoom = Vector2(4, 4)
+offset = Vector2(0, -74)
+zoom = Vector2(4, 5)
 
 [node name="Controls" parent="Camera2D" instance=ExtResource("2_sbm0d")]
 position = Vector2(0, -53.04)
@@ -45,8 +45,8 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(0, 36)
-scale = Vector2(0.589744, 0.202778)
+position = Vector2(0.500011, 36)
+scale = Vector2(0.943223, 0.202778)
 texture = ExtResource("2_0bisd")
 
 [node name="StaticBody2D2" parent="Platforms" instance=ExtResource("4_1gspe")]
