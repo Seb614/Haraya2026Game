@@ -17,9 +17,7 @@ position = Vector2(0, -16)
 rotation = 0.00108928
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_2147m")
-animation = &"walk_right"
-frame = 7
-frame_progress = 1.0
+animation = &"jump_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
