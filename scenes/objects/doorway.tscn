@@ -27,10 +27,8 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_gt6sw")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_eso3o")
 

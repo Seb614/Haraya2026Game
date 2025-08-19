@@ -58,19 +58,21 @@ text = "thanks for pressing E"
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Area2D" parent="Doors" instance=ExtResource("5_7rmbf")]
+[node name="DoorE" parent="Doors" instance=ExtResource("5_7rmbf")]
 position = Vector2(-13, 0)
 scale = Vector2(3, 3)
 target_scene = "spawn.tscn"
-travel_dir = 1
+msg = "O"
 
-[node name="Door" parent="Doors" instance=ExtResource("5_7rmbf")]
+[node name="DoorW" parent="Doors" instance=ExtResource("5_7rmbf")]
 position = Vector2(-149, 0)
 scale = Vector2(3, 3)
 target_scene = "spawn.tscn"
+travel_dir = 1
+msg = "I"
 
 [node name="Spawn1" type="Node2D" parent="."]
-position = Vector2(-129, -2)
+position = Vector2(-27, -1)
 
 [node name="Spawn0" type="Node2D" parent="."]
-position = Vector2(-38, -3)
+position = Vector2(-132, -1)
