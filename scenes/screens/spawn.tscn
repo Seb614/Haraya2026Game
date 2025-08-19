@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nbktkxg34bjc"]
+[gd_scene load_steps=13 format=3 uid="uid://nbktkxg34bjc"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
 [ext_resource type="Script" uid="uid://ux4f6o6xt1p" path="res://scripts/level.gd" id="1_j7l46"]
@@ -17,7 +17,10 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
-size = Vector2(606, 11)
+size = Vector2(600, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7l46"]
+size = Vector2(20, 84)
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_j7l46")
@@ -44,12 +47,12 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(9, 5.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(9.49998, 62.25)
-scale = Vector2(1.11172, 0.348611)
+position = Vector2(-0.500051, 62.25)
+scale = Vector2(1.1044, 0.348611)
 texture = ExtResource("2_0bisd")
 
 [node name="StaticBody2D2" parent="Platforms" instance=ExtResource("4_1gspe")]
@@ -66,6 +69,18 @@ texture = "stone.jpg"
 position = Vector2(108, -29)
 scale = Vector2(0.5, 0.5)
 texture = "stone.jpg"
+
+[node name="Left_Wall" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Left_Wall"]
+position = Vector2(-310, -42)
+shape = SubResource("RectangleShape2D_j7l46")
+
+[node name="Right Wall" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Right Wall"]
+position = Vector2(310, -42)
+shape = SubResource("RectangleShape2D_j7l46")
 
 [node name="NPC1" parent="." instance=ExtResource("3_y1ow5")]
 position = Vector2(116, -33)

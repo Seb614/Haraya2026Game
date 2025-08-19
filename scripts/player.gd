@@ -18,7 +18,7 @@ func _ready():
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
 	animated_sprite.frames = sprite_frames
-	animated_sprite.play("idle")
+	animated_sprite.play("idle_right")
 	
 	if direction == "left":
 			animated_sprite.flip_h = true  # Face left
