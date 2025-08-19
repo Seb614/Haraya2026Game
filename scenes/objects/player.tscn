@@ -15,10 +15,12 @@ script = ExtResource("1_2147m")
 position = Vector2(0, -16)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_2147m")
-animation = &"idle"
-autoplay = "idle"
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.881462
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_a8lix")
 

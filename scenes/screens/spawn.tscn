@@ -113,7 +113,7 @@ position = Vector2(6.33333, 0)
 target_scene = "spawn1"
 spawn_direction = "right"
 msg = "hi"
-target_door = "S"
+target_door = "SE"
 
 [node name="Spawn0" type="Node2D" parent="."]
 position = Vector2(29, -85)

@@ -60,7 +60,6 @@ text = "thanks for pressing E"
 
 [node name="Door_E" parent="Doors" instance=ExtResource("5_7rmbf")]
 position = Vector2(-13, 0)
-scale = Vector2(3, 3)
 target_scene = "spawn1"
 spawn_direction = "left"
 msg = "hi"
@@ -68,7 +67,6 @@ target_door = "N"
 
 [node name="Door_W" parent="Doors" instance=ExtResource("5_7rmbf")]
 position = Vector2(-149, 0)
-scale = Vector2(3, 3)
 target_scene = "spawn1"
 spawn_direction = "right"
 msg = "I"
