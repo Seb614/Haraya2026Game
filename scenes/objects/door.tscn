@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvuoa76c1mw0w"]
+
+[ext_resource type="Script" uid="uid://cc172x6n50psw" path="res://scripts/doorway.gd" id="1_xm0wp"]
+[ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="2_aji8h"]
+[ext_resource type="Texture2D" uid="uid://c7qjclww2302w" path="res://assets/sprites/doorway.png" id="3_w0irj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gt6sw"]
+radius = 6.0
+
+[node name="door" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_xm0wp")
+
+[node name="Interactable" parent="." instance=ExtResource("2_aji8h")]
+position = Vector2(0, -6)
+scale = Vector2(0.301668, 0.304167)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_w0irj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_gt6sw")
+
+[node name="Spawn" type="Marker2D" parent="."]
+gizmo_extents = 62.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

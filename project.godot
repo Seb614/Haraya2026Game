@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="HarayaTest"
-run/main_scene="uid://c6u4ua201xxp6"
+run/main_scene="uid://nbktkxg34bjc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+NavManager="*res://scripts/nav_manager.gd"
 GlobalData="*res://scripts/GlobalData.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
@@ -72,7 +73,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/test.dialogue", "res://assets/dialogue/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test.dialogue")
 
 [rendering]
 

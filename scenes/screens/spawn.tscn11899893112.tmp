@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
 [ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
 [ext_resource type="PackedScene" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
-[ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/door.tscn" id="5_olnbh"]
+[ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
 [ext_resource type="Resource" uid="uid://b36cysvwfkvyg" path="res://assets/dialogue/test.dialogue" id="7_j7l46"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -89,38 +89,22 @@ texture = "stone.jpg"
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Door_S" parent="Doors" instance=ExtResource("5_olnbh")]
-position = Vector2(-102, 0)
-target_scene = "spawn2"
-spawn_direction = "right"
-msg = "Bazinga"
-target_door = "W"
-
-[node name="Spawn" parent="Doors/Door_S" index="3"]
-position = Vector2(5.33333, -0.333333)
-
 [node name="Door_N" parent="Doors" instance=ExtResource("5_olnbh")]
 position = Vector2(13, -83)
-target_scene = "spawn2"
-spawn_direction = "right"
+scale = Vector2(3, 3)
+target_scene = "spawn2.tscn"
 msg = "Boing"
-target_door = "E"
+target_door = ""
 
-[node name="Spawn" parent="Doors/Door_N" index="3"]
-position = Vector2(6.33333, 0)
-
-[node name="Door_SE" parent="Doors" instance=ExtResource("5_olnbh")]
-target_scene = "spawn1"
-spawn_direction = "right"
-msg = "hi"
-target_door = "S"
+[node name="Door_S" parent="Doors" instance=ExtResource("5_olnbh")]
+position = Vector2(-102, 0)
+scale = Vector2(3, 3)
+target_scene = "spawn2.tscn"
+msg = "Bazinga"
+target_door = ""
 
 [node name="Spawn0" type="Node2D" parent="."]
 position = Vector2(29, -85)
 
 [node name="Spawn1" type="Node2D" parent="."]
 position = Vector2(-86, -1)
-
-[editable path="Doors/Door_S"]
-[editable path="Doors/Door_N"]
-[editable path="Doors/Door_SE"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -11,8 +12,19 @@ var sprite_frames = preload("res://assets/sprites/player_idle.tres")
 func _ready():
 	$AnimatedSprite2D.frames = sprite_frames
 	$AnimatedSprite2D.play("idle")  # Replace with your animation name
+	NavManager.on_trigger_player_spawn.connect(_on_spawn)
 
-
+@warning_ignore("shadowed_variable_base_class")
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	animated_sprite.frames = sprite_frames
+	animated_sprite.play("idle")
+	
+	if direction == "left":
+			animated_sprite.flip_h = true  # Face left
+	elif direction == "right":
+			animated_sprite.flip_h = false # Face right
+			
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
