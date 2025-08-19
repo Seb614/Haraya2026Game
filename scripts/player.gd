@@ -5,13 +5,13 @@ class_name Player
 @onready var animated_sprite = $AnimatedSprite2D
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -250.0
 
-var sprite_frames = preload("res://assets/sprites/player_idle.tres")
+var sprite_frames = preload("res://assets/sprites/player_anims.tres")
 
 func _ready():
 	$AnimatedSprite2D.frames = sprite_frames
-	$AnimatedSprite2D.play("idle")  # Replace with your animation name
+	$AnimatedSprite2D.play("idle_right")  # Replace with your animation name
 	NavManager.on_trigger_player_spawn.connect(_on_spawn)
 
 @warning_ignore("shadowed_variable_base_class")
@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$AnimatedSprite2D.play("jump_right")
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -40,6 +41,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		
+		if not is_on_floor():
+			$AnimatedSprite2D.play("jump_right")
+		else:
+			$AnimatedSprite2D.play("walk_right")
+		
+		
 		
 		if velocity.x < 0:
 			animated_sprite.flip_h = true  # Face left
@@ -49,5 +57,11 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if (velocity.y == 0):
+			$AnimatedSprite2D.play("idle_right")
 
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	$AnimatedSprite2D.play("idle_right")

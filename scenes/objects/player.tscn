@@ -1,23 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://cejhjrelvajla"]
 
 [ext_resource type="Script" uid="uid://d2wo56vnmrjjf" path="res://scripts/player.gd" id="1_2147m"]
-[ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_idle.tres" id="2_2147m"]
+[ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_anims.tres" id="2_2147m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8lix"]
 size = Vector2(16, 32)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
-collision_mask = 3
+collision_mask = 131
 script = ExtResource("1_2147m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 100
 position = Vector2(0, -16)
+rotation = 0.00108928
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_2147m")
-animation = &"walk"
-autoplay = "walk"
-frame_progress = 0.881462
+animation = &"walk_right"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -31,3 +33,5 @@ limit_top = -1
 limit_bottom = 1
 drag_horizontal_enabled = true
 drag_vertical_offset = -0.5
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
