@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=11 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
+[ext_resource type="Script" uid="uid://ux4f6o6xt1p" path="res://scripts/spawning.gd" id="1_i7py3"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
@@ -18,13 +19,13 @@ point_count = 2
 size = Vector2(606, 11)
 
 [node name="Node2D2" type="Node2D"]
+script = ExtResource("1_i7py3")
 
 [node name="Path2D" type="Path2D" parent="."]
 visible = false
 curve = SubResource("Curve2D_a4hby")
 
 [node name="Player" parent="." instance=ExtResource("1_a4hby")]
-position = Vector2(1, -6)
 collision_layer = 7
 collision_mask = 7
 
@@ -57,7 +58,7 @@ texture = "stone.jpg"
 
 [node name="StaticBody2D3" parent="Platforms" instance=ExtResource("4_1gspe")]
 position = Vector2(26, -79)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.8, 0.5)
 texture = "stone.jpg"
 
 [node name="StaticBody2D4" parent="Platforms" instance=ExtResource("4_1gspe")]
@@ -77,16 +78,32 @@ offset_right = 84.0
 offset_bottom = -74.0
 text = "thanks for interacting"
 
-[node name="Door" parent="." instance=ExtResource("5_olnbh")]
-position = Vector2(20, -83)
-scale = Vector2(3, 3)
-collision_layer = 4
-collision_mask = 4
-target_scene = "spawn2.tscn"
-
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(73.5, -14)
 
 [node name="Moving Platform" parent="Node2D" instance=ExtResource("5_70bgw")]
 scale = Vector2(0.5, 0.5)
 texture = "stone.jpg"
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("5_olnbh")]
+position = Vector2(13, -83)
+scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 4
+target_scene = "spawn2.tscn"
+
+[node name="Door2" parent="Doors" instance=ExtResource("5_olnbh")]
+position = Vector2(-105, -1.90735e-06)
+scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 4
+target_scene = "spawn2.tscn"
+travel_dir = 1
+
+[node name="Spawn0" type="Node2D" parent="."]
+position = Vector2(-78, -1)
+
+[node name="Spawn1" type="Node2D" parent="."]
+position = Vector2(38, -85)

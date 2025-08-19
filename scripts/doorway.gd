@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var target_scene: String
+@export var travel_dir: int
 
 var interactable = false
 
@@ -15,4 +16,5 @@ func _on_body_exited(body):
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if interactable:
+			GlobalData.travel_dir = travel_dir
 			get_tree().change_scene_to_file("res://scenes/screens/" + target_scene)

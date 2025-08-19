@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://t3sutqt31ipj"]
+[gd_scene load_steps=8 format=3 uid="uid://t3sutqt31ipj"]
 
+[ext_resource type="Script" uid="uid://ux4f6o6xt1p" path="res://scripts/spawning.gd" id="1_s8rbu"]
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_ukt6q"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_s8rbu"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="3_2gmu1"]
@@ -15,6 +16,7 @@ point_count = 2
 size = Vector2(316, 11)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_s8rbu")
 
 [node name="Path2D" type="Path2D" parent="."]
 visible = false
@@ -40,8 +42,8 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0bisd")
 
 [node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
-position = Vector2(0, 36)
-scale = Vector2(0.589744, 0.202778)
+position = Vector2(9.5, 61.25)
+scale = Vector2(1.11, 0.34)
 texture = ExtResource("3_2gmu1")
 
 [node name="Label" type="Label" parent="."]
@@ -53,7 +55,19 @@ offset_right = 84.0
 offset_bottom = -74.0
 text = "thanks for pressing E"
 
-[node name="Area2D" parent="." instance=ExtResource("5_7rmbf")]
+[node name="Door" parent="." instance=ExtResource("5_7rmbf")]
 position = Vector2(-149, 0)
 scale = Vector2(3, 3)
 target_scene = "spawn.tscn"
+
+[node name="Door2" parent="." instance=ExtResource("5_7rmbf")]
+position = Vector2(-14, -1)
+scale = Vector2(3, 3)
+target_scene = "spawn.tscn"
+travel_dir = 1
+
+[node name="Spawn1" type="Node2D" parent="."]
+position = Vector2(-129, -2)
+
+[node name="Spawn0" type="Node2D" parent="."]
+position = Vector2(-38, -3)
