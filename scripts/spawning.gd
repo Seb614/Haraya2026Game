@@ -8,6 +8,7 @@ var spawn_y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(GlobalData.travel_dir)
 	if GlobalData.travel_dir == 0:
 		get_node("Player").position.x = spawn_1.position.x
 		get_node("Player").position.y = spawn_1.position.y

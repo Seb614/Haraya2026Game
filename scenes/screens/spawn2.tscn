@@ -23,6 +23,7 @@ visible = false
 curve = SubResource("Curve2D_a4hby")
 
 [node name="Player" parent="." instance=ExtResource("1_ukt6q")]
+position = Vector2(-81, -1)
 
 [node name="Controls" parent="." instance=ExtResource("2_s8rbu")]
 position = Vector2(0, -54)
@@ -55,16 +56,18 @@ offset_right = 84.0
 offset_bottom = -74.0
 text = "thanks for pressing E"
 
-[node name="Door" parent="." instance=ExtResource("5_7rmbf")]
-position = Vector2(-149, 0)
-scale = Vector2(3, 3)
-target_scene = "spawn.tscn"
+[node name="Doors" type="Node" parent="."]
 
-[node name="Door2" parent="." instance=ExtResource("5_7rmbf")]
-position = Vector2(-14, -1)
+[node name="Area2D" parent="Doors" instance=ExtResource("5_7rmbf")]
+position = Vector2(-13, 0)
 scale = Vector2(3, 3)
 target_scene = "spawn.tscn"
 travel_dir = 1
+
+[node name="Door" parent="Doors" instance=ExtResource("5_7rmbf")]
+position = Vector2(-149, 0)
+scale = Vector2(3, 3)
+target_scene = "spawn.tscn"
 
 [node name="Spawn1" type="Node2D" parent="."]
 position = Vector2(-129, -2)
