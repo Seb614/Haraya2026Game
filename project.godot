@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://scripts/GlobalData.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -30,6 +31,10 @@ window/stretch/mode="viewport"
 
 movie_writer/mix_rate=40000
 movie_writer/movie_file="D:/game/hi.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [gui]
 
@@ -64,6 +69,10 @@ right={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://assets/test.dialogue", "res://assets/dialogue/test.dialogue")
 
 [rendering]
 

@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6u4ua201xxp6"]
+[gd_scene load_steps=12 format=3 uid="uid://c6u4ua201xxp6"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_a4hby"]
 [ext_resource type="Script" uid="uid://ux4f6o6xt1p" path="res://scripts/spawning.gd" id="1_i7py3"]
 [ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="2_0bisd"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="2_sbm0d"]
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="3_y1ow5"]
-[ext_resource type="PackedScene" uid="uid://ctv555ynrchce" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
-[ext_resource type="PackedScene" uid="uid://ck38vd6lcv3xg" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="4_1gspe"]
+[ext_resource type="PackedScene" path="res://scenes/objects/moving_platform.tscn" id="5_70bgw"]
 [ext_resource type="PackedScene" uid="uid://bvuoa76c1mw0w" path="res://scenes/objects/doorway.tscn" id="5_olnbh"]
+[ext_resource type="Resource" uid="uid://b36cysvwfkvyg" path="res://assets/dialogue/test.dialogue" id="7_j7l46"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -68,6 +69,7 @@ texture = "stone.jpg"
 
 [node name="NPC1" parent="." instance=ExtResource("3_y1ow5")]
 position = Vector2(116, -33)
+dialogue_resource = ExtResource("7_j7l46")
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true

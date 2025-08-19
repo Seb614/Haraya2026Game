@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var text_label = %Label
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String ="start"
 
 var interactable = false
 var visibility = false
@@ -18,3 +20,4 @@ func _process(delta):
 		if interactable:
 			visibility = !visibility
 			text_label.visible = visibility
+			DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
