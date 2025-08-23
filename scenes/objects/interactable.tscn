@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://30u4ibyh6txp"]
+[gd_scene load_steps=5 format=3 uid="uid://30u4ibyh6txp"]
 
 [ext_resource type="Script" uid="uid://dhwrnq33ovxo" path="res://scripts/interactable.gd" id="1_5w31u"]
 [ext_resource type="Texture2D" uid="uid://khcfn3ty8asr" path="res://assets/sprites/ic_touch.png" id="1_khwtm"]
@@ -8,11 +8,6 @@ radius = 20.0
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khwtm"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_5w31u"]
-flip_faces = true
-size = Vector2(25, 25)
-orientation = 2
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_5w31u")
@@ -28,8 +23,8 @@ action = "interact"
 [node name="Touch" type="MeshInstance2D" parent="CollisionShape2D/TouchScreenButton"]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 rotation = 3.14159
-mesh = SubResource("PlaneMesh_5w31u")
 texture = ExtResource("1_khwtm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

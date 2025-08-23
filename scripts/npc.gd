@@ -18,6 +18,4 @@ func _on_body_exited(body):
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if interactable:
-			visibility = !visibility
-			text_label.visible = visibility
 			DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
