@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtwp2rk2ef5s"]
+
+[ext_resource type="Script" uid="uid://dq84ymwq45kno" path="res://scripts/simon_says.gd" id="1_h1wa3"]
+[ext_resource type="Texture2D" uid="uid://khcfn3ty8asr" path="res://assets/sprites/ic_touch.png" id="1_knsui"]
+[ext_resource type="Texture2D" uid="uid://dxsctbvv2kc32" path="res://assets/sprites/Tile.png" id="2_h1wa3"]
+
+[node name="SimonSays" type="Node2D"]
+script = ExtResource("1_h1wa3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(4, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Btns" type="Node" parent="."]
+
+[node name="W" type="TextureButton" parent="Btns"]
+offset_left = -72.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("1_knsui")
+texture_pressed = ExtResource("2_h1wa3")
+metadata/_edit_use_anchors_ = true
+
+[node name="E" type="TextureButton" parent="Btns"]
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 120.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("1_knsui")
+texture_pressed = ExtResource("2_h1wa3")
+metadata/_edit_use_anchors_ = true
+
+[node name="N" type="TextureButton" parent="Btns"]
+offset_left = -24.0
+offset_top = -72.0
+offset_right = 72.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("1_knsui")
+texture_pressed = ExtResource("2_h1wa3")
+metadata/_edit_use_anchors_ = true
+
+[node name="S" type="TextureButton" parent="Btns"]
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("1_knsui")
+texture_pressed = ExtResource("2_h1wa3")
+metadata/_edit_use_anchors_ = true

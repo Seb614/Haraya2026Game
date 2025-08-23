@@ -6,7 +6,6 @@ class_name Door
 @export var spawn_direction: String
 @export var msg : String
 @export var target_door: String
-
 @onready var spawn = $Spawn
 
 var interactable = false
@@ -24,4 +23,8 @@ func _on_body_exited(body):
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		if interactable:
-			NavManager.go_to_level(target_scene, target_door)
+			if target_door != "": 
+				NavManager.go_to_level(target_scene, target_door)
+			else:
+		
+				get_tree().change_scene_to_file("res://scenes/screens/" + target_scene + ".tscn")
