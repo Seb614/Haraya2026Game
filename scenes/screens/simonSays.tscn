@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqtwp2rk2ef5s"]
+[gd_scene load_steps=6 format=3 uid="uid://dqtwp2rk2ef5s"]
 
 [ext_resource type="Script" uid="uid://dq84ymwq45kno" path="res://scripts/simon_says.gd" id="1_h1wa3"]
 [ext_resource type="Texture2D" uid="uid://khcfn3ty8asr" path="res://assets/sprites/ic_touch.png" id="1_knsui"]
+[ext_resource type="Resource" uid="uid://cvoco4cchj1uw" path="res://assets/dialogue/simonsays.dialogue" id="2_ggnld"]
 [ext_resource type="Texture2D" uid="uid://dxsctbvv2kc32" path="res://assets/sprites/Tile.png" id="2_h1wa3"]
+[ext_resource type="Texture2D" uid="uid://d07cfwrnjtlai" path="res://assets/backgrounds/kpop-demon-hunters-derpy-tiger-draft-not-finished-7170618-hd_kandipad.png" id="4_1m5n4"]
 
 [node name="SimonSays" type="Node2D"]
 script = ExtResource("1_h1wa3")
+dialogue_resource = ExtResource("2_ggnld")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -21,10 +24,10 @@ offset_top = -24.0
 offset_right = 24.0
 offset_bottom = 72.0
 scale = Vector2(0.5, 0.5)
-toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource("1_knsui")
 texture_pressed = ExtResource("2_h1wa3")
+texture_disabled = ExtResource("4_1m5n4")
 metadata/_edit_use_anchors_ = true
 
 [node name="E" type="TextureButton" parent="Btns"]

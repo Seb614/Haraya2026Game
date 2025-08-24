@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvoco4cchj1uw"
+path="res://.godot/imported/simonsays.dialogue-9ba768a591958f1f4d68a1a0a5563860.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/simonsays.dialogue"
+dest_files=["res://.godot/imported/simonsays.dialogue-9ba768a591958f1f4d68a1a0a5563860.tres"]
+
+[params]
+
+defaults=true

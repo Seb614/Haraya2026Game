@@ -26,5 +26,5 @@ func _ready() -> void:
 				sprite.scale = shape_size / texture_size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
