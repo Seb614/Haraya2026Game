@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bqnv6tmoboshg"]
+
+[node name="Fade" type="CanvasLayer"]

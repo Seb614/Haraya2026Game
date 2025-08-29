@@ -4,21 +4,28 @@ extends Node2D
 @onready var N = get_node("Btns/N")
 @onready var E = get_node("Btns/E")
 @onready var W = get_node("Btns/W")
-@onready var seq = [S, N, E, W]
+@onready var seq = [N, E, W]
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String ="start"
 @onready var speed = 0.6
+@onready var lose = $lose
+@onready var win = $win
 func _ready():
 	
 	seq.shuffle()
 	seq.append(seq.pick_random())
+	seq.append(seq.pick_random())
+	seq.append(seq.pick_random())
+	seq.append(seq.pick_random())
 	print(seq)
-	
-	for i in range(6):
-		print(await SimonSaysRound(i))
-		speed -= 0.1
-	DialogueManager.show_dialogue_balloon(dialogue_resource, "win")
 
+	
+	for i in range(5):
+		print(await SimonSaysRound(i+3))
+	DialogueManager.show_dialogue_balloon(dialogue_resource, "win")
+	win.play()
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/screens/" + "spawn" + ".tscn")
 func SimonSaysRound(level : int) -> String:
 	
 	var notDone := true
@@ -31,9 +38,10 @@ func SimonSaysRound(level : int) -> String:
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		 
 		for i in range(level):
-			await get_tree().create_timer(speed).timeout
+			await get_tree().create_timer(0.3).timeout
 			seq[i].button_pressed = true
-			await get_tree().create_timer(speed).timeout
+			seq[i].get_child(0).play()
+			await get_tree().create_timer(0.5).timeout
 			seq[i].button_pressed = false
 			
 		for i in seq:
@@ -42,7 +50,6 @@ func SimonSaysRound(level : int) -> String:
 		
 		for i in range(level):
 			notMoveOn = true
-			seq[i]
 			while notMoveOn:
 				await get_tree().create_timer(0).timeout
 				var pressed = await check_buttons()
@@ -54,8 +61,9 @@ func SimonSaysRound(level : int) -> String:
 						print("failed")
 						failed = true
 						DialogueManager.show_dialogue_balloon(dialogue_resource, "fail")
+						lose.play()
 						await get_tree().create_timer(0.5).timeout
-						DialogueManager
+						
 						
 				if failed:
 					break
@@ -81,6 +89,10 @@ func check_buttons() -> TextureButton:
 	for btn in $Btns.get_children():
 		if btn.button_pressed:
 			btn.button_pressed = false
-			await get_tree().create_timer(0.1).timeout
+			btn.get_child(0).play()
+			await get_tree().create_timer(0.3).timeout
 			return btn
 	return null
+	
+func _on_button_pressed(btn : TextureButton):
+	btn.get_child(0).play()
