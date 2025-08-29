@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 NavManager="*res://scripts/nav_manager.gd"
 GlobalData="*res://scripts/GlobalData.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Fade="*res://scenes/objects/fade.tscn"
 
 [display]
 

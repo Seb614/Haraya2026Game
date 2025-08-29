@@ -1,3 +1,75 @@
-[gd_scene format=3 uid="uid://bqnv6tmoboshg"]
+[gd_scene load_steps=6 format=3 uid="uid://bqnv6tmoboshg"]
 
-[node name="Fade" type="CanvasLayer"]
+[ext_resource type="Script" uid="uid://bm00m0frsc2cy" path="res://fade.gd" id="1_wo5bq"]
+
+[sub_resource type="Animation" id="Animation_sfjj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tnd5f"]
+resource_name = "ftb"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1hqcs"]
+resource_name = "ftn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b48pe"]
+_data = {
+&"RESET": SubResource("Animation_sfjj1"),
+&"ftb": SubResource("Animation_tnd5f"),
+&"ftn": SubResource("Animation_1hqcs")
+}
+
+[node name="fade" type="CanvasLayer"]
+script = ExtResource("1_wo5bq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_b48pe")
+}

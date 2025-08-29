@@ -17,7 +17,7 @@ func _ready():
 		#get_node("Player").position.y = spawn_0.position.y
 	if NavManager.spawn_door_tag != null:
 		_on_level_spawn(NavManager.spawn_door_tag)
-	
+	Fade.ftn()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
