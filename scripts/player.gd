@@ -4,7 +4,7 @@ class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-const SPEED = 100.0
+var SPEED = 100.0
 const JUMP_VELOCITY = -250.0
 
 var sprite_frames = preload("res://assets/sprites/player_anims.tres")
@@ -35,11 +35,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump_right")
 		
-
+	if Input.is_action_pressed("sprint") and is_on_floor():
+		SPEED = 150.0
+	else:
+		SPEED = 100.0
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
+		print(SPEED)
 		velocity.x = direction * SPEED
 		
 		if not is_on_floor():
