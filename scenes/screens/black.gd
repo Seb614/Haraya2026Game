@@ -1,0 +1,10 @@
+extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	await get_tree().create_timer(2.0).timeout	
+	
+	Fade.transition()
+	await Fade.on_transition_finished
+	Fade.get_tree().change_scene_to_file("res://scenes/screens/cutscene_scene2.tscn")

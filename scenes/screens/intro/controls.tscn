@@ -100,8 +100,8 @@ offset_right = 213.0
 offset_bottom = 14.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TL: Pindutin ang A upang tahakin ang silangan
-EN: Press A to get left behind in imagination"
+text = "Pindutin ang A upang tahakin ang silangan
+Pindutin ang D upang lakbayin ang kanluran"
 
 [node name="e_label" type="Label" parent="ControlText"]
 offset_left = 105.0
@@ -150,7 +150,7 @@ offset_right = 535.0
 offset_bottom = 37.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "                                TL: Pindutin ang E upang galugarin ang mundong 
+text = "                                       Pindutin ang E upang galugarin ang mundong 
                                                                                           walang  kabatiran
                                                       EN: Press E to explore a hidden world"
 
@@ -161,7 +161,7 @@ offset_right = 212.0
 offset_bottom = 118.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TL: Pindutin ang Shift at kumapit sa patalim 
+text = "Pindutin ang Shift at kumapit sa patalim 
 EN: Press Shift to sprint headfirst into danger"
 
 [node name="space_label2" type="Label" parent="ControlText"]
@@ -171,7 +171,7 @@ offset_right = 476.0
 offset_bottom = 118.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TL: Pindutin ang Space upang lumukso mula sa mga tinik
+text = "      Pindutin ang Space upang lumukso mula sa mga tinik
                 EN: Press Space to rise above stone and shadow"
 
 [node name="wasd_label3" type="Label" parent="ControlText"]
@@ -181,7 +181,7 @@ offset_right = 226.0
 offset_bottom = 30.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TL: Pindutin ang D upang lakbayin ang kanluran
+text = "EN: Press A to get left behind in imagination
 EN: Press D to find the right keys to destiny"
 
 [connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]

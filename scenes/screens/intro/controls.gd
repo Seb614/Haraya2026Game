@@ -67,4 +67,4 @@ func _input(event):
 		if time_elapsed >= event_interval_5:
 			Fade.transition()
 			await Fade.on_transition_finished
-			get_tree().change_scene_to_file("res://scenes/screens/spawn.tscn")
+			Fade.get_tree().change_scene_to_file("res://scenes/screens/black.tscn")
