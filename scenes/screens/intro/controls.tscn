@@ -52,6 +52,7 @@ scale = Vector2(0.167, 0.167593)
 texture = ExtResource("4_dm43g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5)
 scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("4_875hr")
 animation = &"idle_right"
@@ -62,68 +63,78 @@ frame_progress = 0.865781
 [node name="ControlIcons" type="Node" parent="."]
 
 [node name="Wasd" type="Sprite2D" parent="ControlIcons"]
-position = Vector2(-120, -60)
+position = Vector2(-120, -66)
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("5_3w8ji")
 
 [node name="Interact" type="Sprite2D" parent="ControlIcons"]
-position = Vector2(120, -61)
+position = Vector2(126, -67)
 scale = Vector2(0.0145, 0.0145)
 texture = ExtResource("6_xh8qq")
 
 [node name="Jump" type="Sprite2D" parent="ControlIcons"]
-position = Vector2(120, 54)
+position = Vector2(126, 36)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("7_6q3xq")
 
 [node name="Sprint" type="Sprite2D" parent="ControlIcons"]
-position = Vector2(-120, 53)
+position = Vector2(-120, 35)
 scale = Vector2(0.016, 0.016)
 texture = ExtResource("8_64qkq")
 
 [node name="ControlText" type="Node" parent="."]
 
 [node name="wasd_label" type="Label" parent="ControlText"]
-offset_left = -140.0
-offset_top = -41.0
-offset_right = -56.0
-offset_bottom = -18.6667
+offset_left = -143.0
+offset_top = -47.0
+offset_right = -59.0
+offset_bottom = -24.6667
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Movement"
 
+[node name="wasd_label2" type="Label" parent="ControlText"]
+offset_left = -143.0
+offset_top = -34.0
+offset_right = 213.0
+offset_bottom = 14.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TL: Pindutin ang A upang tahakin ang silangan
+EN: Press A to get left behind in imagination"
+
 [node name="e_label" type="Label" parent="ControlText"]
-offset_left = 99.0
-offset_top = -41.0
-offset_right = 183.0
-offset_bottom = -18.6667
+offset_left = 105.0
+offset_top = -47.0
+offset_right = 189.0
+offset_bottom = -24.6667
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "E - Interact"
 
 [node name="space_label" type="Label" parent="ControlText"]
-offset_left = 96.0
-offset_top = 74.0
-offset_right = 195.0
-offset_bottom = 96.3333
+offset_left = 97.0
+offset_top = 56.0
+offset_right = 196.0
+offset_bottom = 78.3333
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Space - Jump"
 
 [node name="shift_label" type="Label" parent="ControlText"]
 offset_left = -144.0
-offset_top = 74.0
+offset_top = 56.0
 offset_right = -45.0
-offset_bottom = 96.3333
+offset_bottom = 78.3333
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Shift - Sprint"
 
 [node name="continue" type="Label" parent="ControlText"]
 offset_left = -52.0
-offset_top = 49.0
+offset_top = 40.0
 offset_right = 158.0
-offset_bottom = 71.3333
+offset_bottom = 62.3333
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Click anywhere to continue"
@@ -131,5 +142,46 @@ script = ExtResource("9_xh8qq")
 
 [node name="Timer" type="Timer" parent="ControlText/continue"]
 autostart = true
+
+[node name="e_label2" type="Label" parent="ControlText"]
+offset_left = 19.0
+offset_top = -36.0
+offset_right = 535.0
+offset_bottom = 37.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "                                TL: Pindutin ang E upang galugarin ang mundong 
+                                                                                          walang  kabatiran
+                                                      EN: Press E to explore a hidden world"
+
+[node name="shift_label2" type="Label" parent="ControlText"]
+offset_left = -144.0
+offset_top = 70.0
+offset_right = 212.0
+offset_bottom = 118.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TL: Pindutin ang Shift at kumapit sa patalim 
+EN: Press Shift to sprint headfirst into danger"
+
+[node name="space_label2" type="Label" parent="ControlText"]
+offset_left = 37.0
+offset_top = 70.0
+offset_right = 476.0
+offset_bottom = 118.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TL: Pindutin ang Space upang lumukso mula sa mga tinik
+                EN: Press Space to rise above stone and shadow"
+
+[node name="wasd_label3" type="Label" parent="ControlText"]
+offset_left = -143.0
+offset_top = -18.0
+offset_right = 226.0
+offset_bottom = 30.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TL: Pindutin ang D upang lakbayin ang kanluran
+EN: Press D to find the right keys to destiny"
 
 [connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]
