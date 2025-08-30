@@ -17,18 +17,18 @@ dialogue_resource = ExtResource("2_ggnld")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.5, 0.5)
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="Btns" type="Node" parent="."]
 
 [node name="W" type="TextureButton" parent="Btns"]
-offset_left = -72.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 72.0
-scale = Vector2(0.5, 0.5)
+offset_left = -160.0
+offset_top = -48.0
+offset_right = -64.0
+offset_bottom = 48.0
+pivot_offset = Vector2(48, 48)
 texture_normal = ExtResource("1_knsui")
-texture_pressed = ExtResource("2_h1wa3")
+texture_pressed = ExtResource("1_knsui")
 texture_disabled = ExtResource("4_1m5n4")
 metadata/_edit_use_anchors_ = true
 
@@ -38,28 +38,30 @@ scale = Vector2(2, 2)
 stream = ExtResource("6_c81eo")
 
 [node name="E" type="TextureButton" parent="Btns"]
-offset_left = 24.0
-offset_top = -24.0
-offset_right = 120.0
-offset_bottom = 72.0
-scale = Vector2(0.5, 0.5)
+offset_left = 64.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 56.0
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(48, 48)
 toggle_mode = true
 texture_normal = ExtResource("1_knsui")
-texture_pressed = ExtResource("2_h1wa3")
+texture_pressed = ExtResource("1_knsui")
 metadata/_edit_use_anchors_ = true
 
 [node name="High" type="AudioStreamPlayer2D" parent="Btns/E"]
 stream = ExtResource("7_h68gb")
 
 [node name="N" type="TextureButton" parent="Btns"]
-offset_left = -24.0
-offset_top = -72.0
-offset_right = 72.0
-offset_bottom = 24.0
-scale = Vector2(0.5, 0.5)
+offset_left = -48.0
+offset_top = -144.0
+offset_right = 48.0
+offset_bottom = -48.0
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(48, 48)
 toggle_mode = true
 texture_normal = ExtResource("1_knsui")
-texture_pressed = ExtResource("2_h1wa3")
+texture_pressed = ExtResource("1_knsui")
 metadata/_edit_use_anchors_ = true
 
 [node name="Mid" type="AudioStreamPlayer2D" parent="Btns/N"]

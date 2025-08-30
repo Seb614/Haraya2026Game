@@ -10,7 +10,10 @@ extends Node2D
 @onready var speed = 0.6
 @onready var lose = $lose
 @onready var win = $win
+
+
 func _ready():
+
 	
 	seq.shuffle()
 	seq.append(seq.pick_random())
@@ -18,7 +21,7 @@ func _ready():
 	seq.append(seq.pick_random())
 	seq.append(seq.pick_random())
 	print(seq)
-
+	
 	
 	for i in range(5):
 		print(await SimonSaysRound(i+3))
@@ -39,9 +42,11 @@ func SimonSaysRound(level : int) -> String:
 		 
 		for i in range(level):
 			await get_tree().create_timer(0.3).timeout
+			seq[i].scale = Vector2(0.9,0.9)
 			seq[i].button_pressed = true
 			seq[i].get_child(0).play()
 			await get_tree().create_timer(0.5).timeout
+			seq[i].scale = Vector2(1.0, 1.0)
 			seq[i].button_pressed = false
 			
 		for i in seq:
@@ -87,12 +92,22 @@ func SimonSaysRound(level : int) -> String:
 func check_buttons() -> TextureButton:
 
 	for btn in $Btns.get_children():
+		if btn.is_hovered():
+			btn.scale = Vector2(1.05,1.05)
+		else:
+			btn.scale = Vector2(1,1)
 		if btn.button_pressed:
 			btn.button_pressed = false
+			btn.scale = Vector2(0.9,0.9)
 			btn.get_child(0).play()
 			await get_tree().create_timer(0.3).timeout
+			btn.scale = Vector2(1,1)	
 			return btn
 	return null
 	
-func _on_button_pressed(btn : TextureButton):
-	btn.get_child(0).play()
+
+		
+	
+	
+
+	
