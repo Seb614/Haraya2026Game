@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgahmov2qymqc"]
+
+[ext_resource type="Script" uid="uid://v768gfegapgo" path="res://scenes/screens/intro/controls.gd" id="1_dm43g"]
+[ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="3_w2504"]
+[ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_anims.tres" id="4_875hr"]
+[ext_resource type="Texture2D" uid="uid://11oyggjs5nsx" path="res://assets/backgrounds/parchment.png" id="4_dm43g"]
+[ext_resource type="Texture2D" uid="uid://d3vh0t3va5w8f" path="res://assets/sprites/wasd.png" id="5_3w8ji"]
+[ext_resource type="Texture2D" uid="uid://b6vq5quhtu8fi" path="res://assets/sprites/Interact.png" id="6_xh8qq"]
+[ext_resource type="Texture2D" uid="uid://b071qob48pp41" path="res://assets/sprites/jump.png" id="7_6q3xq"]
+[ext_resource type="Texture2D" uid="uid://bwur0hv0gquk3" path="res://assets/sprites/sprint.png" id="8_64qkq"]
+[ext_resource type="Script" uid="uid://bywymd2memeqs" path="res://scenes/screens/intro/timer_continue.gd" id="9_xh8qq"]
+
+[sub_resource type="Curve2D" id="Curve2D_a4hby"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -72, 0, 0, 0, 0, 0, 72, 0)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dm43g")
+
+[node name="Path2D" type="Path2D" parent="."]
+visible = false
+curve = SubResource("Curve2D_a4hby")
+
+[node name="Controls" parent="." instance=ExtResource("3_w2504")]
+visible = false
+position = Vector2(0, -54)
+scale = Vector2(0.25, 0.25)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -78.0
+offset_top = -97.0
+offset_right = 84.0
+offset_bottom = -74.0
+text = "thanks for pressing E"
+
+[node name="Spawn1" type="Node2D" parent="."]
+position = Vector2(-27, -1)
+
+[node name="Spawn0" type="Node2D" parent="."]
+position = Vector2(-132, -1)
+
+[node name="Parchment" type="Sprite2D" parent="."]
+position = Vector2(0, -0.499995)
+scale = Vector2(0.167, 0.167593)
+texture = ExtResource("4_dm43g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("4_875hr")
+animation = &"idle_right"
+autoplay = "idle_right"
+frame = 2
+frame_progress = 0.865781
+
+[node name="ControlIcons" type="Node" parent="."]
+
+[node name="Wasd" type="Sprite2D" parent="ControlIcons"]
+position = Vector2(-120, -60)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("5_3w8ji")
+
+[node name="Interact" type="Sprite2D" parent="ControlIcons"]
+position = Vector2(120, -61)
+scale = Vector2(0.0145, 0.0145)
+texture = ExtResource("6_xh8qq")
+
+[node name="Jump" type="Sprite2D" parent="ControlIcons"]
+position = Vector2(120, 54)
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("7_6q3xq")
+
+[node name="Sprint" type="Sprite2D" parent="ControlIcons"]
+position = Vector2(-120, 53)
+scale = Vector2(0.016, 0.016)
+texture = ExtResource("8_64qkq")
+
+[node name="ControlText" type="Node" parent="."]
+
+[node name="wasd_label" type="Label" parent="ControlText"]
+offset_left = -140.0
+offset_top = -41.0
+offset_right = -56.0
+offset_bottom = -18.6667
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Movement"
+
+[node name="e_label" type="Label" parent="ControlText"]
+offset_left = 99.0
+offset_top = -41.0
+offset_right = 183.0
+offset_bottom = -18.6667
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "E - Interact"
+
+[node name="space_label" type="Label" parent="ControlText"]
+offset_left = 96.0
+offset_top = 74.0
+offset_right = 195.0
+offset_bottom = 96.3333
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Space - Jump"
+
+[node name="shift_label" type="Label" parent="ControlText"]
+offset_left = -144.0
+offset_top = 74.0
+offset_right = -45.0
+offset_bottom = 96.3333
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Shift - Sprint"
+
+[node name="continue" type="Label" parent="ControlText"]
+offset_left = -52.0
+offset_top = 49.0
+offset_right = 158.0
+offset_bottom = 71.3333
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Click anywhere to continue"
+script = ExtResource("9_xh8qq")
+
+[node name="Timer" type="Timer" parent="ControlText/continue"]
+autostart = true
+
+[connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]

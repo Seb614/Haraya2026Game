@@ -6,7 +6,7 @@ extends Node3D
 @onready var s4 = $MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3/Sprite3D4
 
 var time_elapsed = 0.0
-var event_interval = 8 # Trigger event every 5 seconds
+var event_interval = 7.5 # Trigger event every 5 seconds
 
 var material = StandardMaterial3D.new()
 var agni = load("res://assets/sprites/agni.png")
@@ -26,4 +26,6 @@ func _process(delta):
 	time_elapsed += delta
 	
 	if time_elapsed >= event_interval:
-		get_tree().change_scene_to_file("res://scenes/screens/spawn.tscn")
+		Fade.transition()
+	if time_elapsed >= 8:
+		get_tree().change_scene_to_file("res://scenes/screens/intro/controls.tscn")
