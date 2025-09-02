@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfie81xr0u3qt"]
+
+[ext_resource type="Script" uid="uid://ux4f6o6xt1p" path="res://scripts/level.gd" id="1_evrf8"]
+[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="2_sjwt3"]
+[ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="3_obpte"]
+[ext_resource type="Texture2D" uid="uid://dyca3cdvgta8f" path="res://assets/backgrounds/stone.jpg" id="4_g4jef"]
+[ext_resource type="PackedScene" uid="uid://ck38vd6lcv3xg" path="res://scenes/objects/moving_platform.tscn" id="8_nuj3h"]
+[ext_resource type="Texture2D" uid="uid://mdh0dx78sc0h" path="res://assets/backgrounds/temp_cave.jpg" id="10_kibxe"]
+
+[sub_resource type="Curve2D" id="Curve2D_a4hby"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -72, 0, 0, 0, 0, 0, 72, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisd"]
+size = Vector2(344, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7l46"]
+size = Vector2(20, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbiu7"]
+size = Vector2(434, 17)
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_evrf8")
+
+[node name="Path2D" type="Path2D" parent="."]
+visible = false
+curve = SubResource("Curve2D_a4hby")
+
+[node name="Player" parent="." instance=ExtResource("2_sjwt3")]
+position = Vector2(-255, 0)
+collision_layer = 7
+collision_mask = 7
+limitR = 1420.0
+
+[node name="Controls" parent="Player" instance=ExtResource("3_obpte")]
+position = Vector2(-1, -47.04)
+scale = Vector2(0.25, 0.25)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(-128, 5.5)
+shape = SubResource("RectangleShape2D_0bisd")
+
+[node name="Stone" type="Sprite2D" parent="Platforms/StaticBody2D"]
+position = Vector2(-129.001, 62.25)
+scale = Vector2(0.633702, 0.348611)
+texture = ExtResource("4_g4jef")
+
+[node name="Left_Wall" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Left_Wall"]
+position = Vector2(-310, -42)
+shape = SubResource("RectangleShape2D_j7l46")
+
+[node name="Right Wall" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Right Wall"]
+position = Vector2(1429, -42)
+shape = SubResource("RectangleShape2D_j7l46")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(468, 8.5)
+shape = SubResource("RectangleShape2D_wbiu7")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -78.0
+offset_top = -97.0
+offset_right = 84.0
+offset_bottom = -74.0
+text = "thanks for interacting"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(73.5, -14)
+
+[node name="Moving Platform" parent="Node2D" instance=ExtResource("8_nuj3h")]
+scale = Vector2(0.5, 0.5)
+texture = "stone.jpg"
+
+[node name="Spawn0" type="Node2D" parent="."]
+position = Vector2(29, -85)
+
+[node name="Spawn1" type="Node2D" parent="."]
+position = Vector2(-86, -1)
+
+[node name="TempCave" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(127.499, -70)
+scale = Vector2(1.16983, 0.464674)
+texture = ExtResource("10_kibxe")
+
+[node name="TempCave2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(989, -70)
+scale = Vector2(1.17255, 0.464674)
+texture = ExtResource("10_kibxe")
+
+[node name="Stone" type="Sprite2D" parent="."]
+position = Vector2(468.5, 62.25)
+scale = Vector2(0.796703, 0.348611)
+texture = ExtResource("4_g4jef")
+
+[node name="Stone2" type="Sprite2D" parent="."]
+position = Vector2(1000, 62.25)
+scale = Vector2(1.1044, 0.348611)
+texture = ExtResource("4_g4jef")
+
+[node name="Stone3" type="Sprite2D" parent="."]
+position = Vector2(1162.25, 62.25)
+scale = Vector2(0.96612, 0.348611)
+texture = ExtResource("4_g4jef")
+
+[node name="TempCave3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(130, 88)
+scale = Vector2(1.16983, 0.464674)
+texture = ExtResource("10_kibxe")
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(-255, 0)

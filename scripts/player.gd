@@ -4,6 +4,9 @@ class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+@export var limitL : float = -300
+@export var limitR : float = 300
+
 var SPEED = 100.0
 const JUMP_VELOCITY = -250.0
 
@@ -13,6 +16,9 @@ func _ready():
 	$AnimatedSprite2D.frames = sprite_frames
 	$AnimatedSprite2D.play("idle_right")  # Replace with your animation name
 	NavManager.on_trigger_player_spawn.connect(_on_spawn)
+	
+	$Camera2D.limit_left = limitL
+	$Camera2D.limit_right = limitR
 
 @warning_ignore("shadowed_variable_base_class")
 func _on_spawn(position: Vector2, direction: String):
@@ -69,6 +75,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _process(float) -> void:
+	if self.position.y >= 100:
+		Fade.transition()
+		await Fade.on_transition_finished
+		Fade.get_tree().change_scene_to_file("res://scenes/screens/scene2.tscn")
 
 func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play("idle_right")
