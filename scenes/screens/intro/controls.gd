@@ -65,6 +65,4 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("click")
 		if time_elapsed >= event_interval_5:
-			Fade.transition()
-			await Fade.on_transition_finished
-			Fade.get_tree().change_scene_to_file("res://scenes/screens/black.tscn")
+			NavManager.fade_to_scene("res://scenes/screens/black.tscn")

@@ -1,56 +1,37 @@
-[gd_scene load_steps=23 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=33 format=3 uid="uid://cydtg3sc5v3rq"]
 
 [ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
-[ext_resource type="ArrayMesh" uid="uid://c66r0i2mdc4ju" path="res://assets/untitled.obj" id="1_bpdcf"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
 [ext_resource type="Texture2D" uid="uid://cvjyusy0jmgjc" path="res://assets/sprites/rect3.png" id="5_8prti"]
 [ext_resource type="Texture2D" uid="uid://c181iketeknfg" path="res://assets/sprites/agni.png" id="6_3bnq6"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="6_breun"]
 [ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="7_6y1iw"]
+[ext_resource type="Texture2D" uid="uid://frwibhlt73ks" path="res://assets/sprites/Title.png" id="7_hyni2"]
+[ext_resource type="Texture2D" uid="uid://pjfd4uta701d" path="res://assets/sprites/eye0.png" id="8_sl1i2"]
 [ext_resource type="Texture2D" uid="uid://rl7qlnaq1yyq" path="res://assets/sprites/ragatan.png" id="9_4vrtk"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_d3bh5"]
-size = Vector2(15, 5)
-orientation = 1
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_5fy00"]
-size = Vector2(15, 5)
-center_offset = Vector3(0, 2.5, -2.5)
-orientation = 2
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_iscqe"]
-flip_faces = true
-size = Vector2(5, 5)
-center_offset = Vector3(7.5, 2.5, 0)
-orientation = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_m2i04"]
-size = Vector2(5, 5)
-center_offset = Vector3(-7.5, 2.5, 0)
-orientation = 0
+[ext_resource type="Texture2D" uid="uid://bg4e2p20jpdg1" path="res://assets/sprites/eye1.png" id="9_hyni2"]
+[ext_resource type="Texture2D" uid="uid://3dg620e232s0" path="res://assets/sprites/eye2.png" id="10_hyyi8"]
+[ext_resource type="Texture2D" uid="uid://bclpemrv5ugt8" path="res://assets/sprites/eye3.png" id="11_nt2n1"]
+[ext_resource type="Texture2D" uid="uid://b7ixochrj0e3v" path="res://assets/sprites/eye4.png" id="12_8uwe3"]
+[ext_resource type="AudioStream" uid="uid://c7ghpv2hjot3j" path="res://assets/Sounds/bakunawa.mp3" id="14_hyyi8"]
 
 [sub_resource type="Curve3D" id="Curve3D_bpdcf"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0.055, 0, 0, -0.0554142, -1.35233, 0.900211, 0, 1, -25),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, -0.0554142, -1.35233, 0.900211, 0, 1, -7.10525),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpdcf"]
-albedo_color = Color(0.0312, 0.17472, 0.39, 1)
-proximity_fade_distance = 608.29
-distance_fade_mode = 2
-distance_fade_min_distance = 1.0
-distance_fade_max_distance = 2.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8prti"]
 size = Vector2(100, 100)
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_3bnq6"]
 albedo_color = Color(0, 0, 0, 1)
+albedo_texture_force_srgb = true
+emission_enabled = true
+point_size = 34.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bnq6"]
-transparency = 1
 albedo_texture = ExtResource("6_3bnq6")
 albedo_texture_force_srgb = true
 emission = Color(0.55, 0.55, 0.55, 1)
@@ -61,12 +42,48 @@ distance_fade_max_distance = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y1iw"]
 albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("7_hyni2")
 distance_fade_mode = 2
 distance_fade_min_distance = 0.8
 distance_fade_max_distance = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_breun"]
 size = Vector2(5, 5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4de12"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1pox"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_4de12")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4de12"]
+material = SubResource("StandardMaterial3D_r1pox")
+custom_aabb = AABB(0, -0.125, 0, 0, 0, 0)
+size = Vector2(5, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkw28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sl1i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hyni2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hyyi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nt2n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8uwe3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_breun"]
 transparency = 1
@@ -91,25 +108,32 @@ distance_fade_mode = 2
 distance_fade_min_distance = 0.5
 distance_fade_max_distance = 1.5
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt2n1"]
+albedo_color = Color(0, 0, 0, 1)
+distance_fade_mode = 1
+distance_fade_max_distance = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8uwe3"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyni2"]
+render_priority = 1
+transparency = 1
+albedo_texture = ExtResource("7_hyni2")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyyi8"]
+transparency = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("7_hyni2")
+metallic_specular = 0.0
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nt2n1"]
+size = Vector2(2.124, 1.2)
+
 [node name="WhiteRoom" type="Node3D"]
 script = ExtResource("1_8prti")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("QuadMesh_d3bh5")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("PlaneMesh_5fy00")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00880432, 0.0162687, -0.0855732)
-visible = false
-mesh = SubResource("PlaneMesh_iscqe")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("PlaneMesh_m2i04")
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00553226, 0.0133604, 0.0357027)
@@ -136,25 +160,22 @@ light_specular = 0.0
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, -0.00659561, 1.03802, -0.00363255)
-gi_mode = 0
-gi_lightmap_texel_scale = 0.01
-mesh = ExtResource("1_bpdcf")
-skeleton = NodePath("../MeshInstance3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_bpdcf")
+skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, -30, -0.001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, -26.001, -0.001)
 mesh = SubResource("PlaneMesh_8prti")
 surface_material_override/0 = SubResource("ORMMaterial3D_3bnq6")
 
 [node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, -0.164043, -1.0738, 0.0290728)
+visible = false
 axis = 1
 texture_filter = 0
 texture = ExtResource("5_8prti")
 
 [node name="Sprite3D1" type="Sprite3D" parent="MeshInstance3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, -0.08, -5, 0.169034)
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, -0.08, -5, -0.1)
 material_override = SubResource("StandardMaterial3D_3bnq6")
 pixel_size = 0.0007
 axis = 1
@@ -167,21 +188,37 @@ material_override = SubResource("StandardMaterial3D_6y1iw")
 mesh = SubResource("PlaneMesh_breun")
 skeleton = NodePath("../..")
 
-[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D5/Sprite3D1"]
-transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -5, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, -0.164043, -1.0738, 0.0290728)
+visible = false
+mesh = SubResource("PlaneMesh_4de12")
+skeleton = NodePath("../Sprite3D")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.10543e-14, 0, -7.10543e-14, 1, 0.216773, 1.86265e-08, 0.565285)
+axis = 1
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dkw28")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.10543e-15, 0, -7.10543e-15, 1, -0.08, -10, 0.169034)
 material_override = SubResource("StandardMaterial3D_breun")
-pixel_size = 0.001
+pixel_size = 0.004
 axis = 1
 texture_filter = 0
 texture = ExtResource("7_6y1iw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D1/Sprite3D2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, -0.01, -0.169)
 material_override = SubResource("StandardMaterial3D_6y1iw")
 mesh = SubResource("PlaneMesh_breun")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../Sprite3D1")
 
-[node name="Sprite3D3" type="Sprite3D" parent="MeshInstance3D5/Sprite3D1/Sprite3D2"]
+[node name="Sprite3D3" type="Sprite3D" parent="MeshInstance3D5/Sprite3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -5, 0)
 material_override = SubResource("StandardMaterial3D_phxct")
 pixel_size = 0.0007
@@ -189,13 +226,13 @@ axis = 1
 texture_filter = 0
 texture = ExtResource("6_breun")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, -5, 0)
 material_override = SubResource("StandardMaterial3D_6y1iw")
 mesh = SubResource("PlaneMesh_breun")
 skeleton = NodePath("../..")
 
-[node name="Sprite3D4" type="Sprite3D" parent="MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3"]
+[node name="Sprite3D4" type="Sprite3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -5, 0)
 material_override = SubResource("StandardMaterial3D_4vrtk")
 pixel_size = 0.0007
@@ -203,8 +240,41 @@ axis = 1
 texture_filter = 0
 texture = ExtResource("9_4vrtk")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3/Sprite3D4"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3/Sprite3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, -0.01, -0.169)
-material_override = SubResource("StandardMaterial3D_6y1iw")
-mesh = SubResource("PlaneMesh_breun")
+material_override = SubResource("StandardMaterial3D_nt2n1")
+mesh = SubResource("PlaneMesh_8uwe3")
 skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3/Sprite3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -6, 0)
+material_override = SubResource("StandardMaterial3D_hyni2")
+pixel_size = 0.005
+axis = 1
+texture_filter = 0
+texture = ExtResource("7_hyni2")
+
+[node name="Label3D" type="Label3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3/Sprite3D4/Sprite3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0.1, 0.668)
+modulate = Color(1, 1, 1, 0.631373)
+outline_modulate = Color(1, 1, 1, 0)
+text = "Press anywhere to continue..."
+font_size = 20
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3/Sprite3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -5, 0)
+visible = false
+layers = 512
+material_override = SubResource("StandardMaterial3D_hyyi8")
+gi_mode = 0
+mesh = SubResource("PlaneMesh_nt2n1")
+skeleton = NodePath("../Sprite3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("14_hyyi8")
+volume_db = -1.0
+unit_size = 2.0
+max_db = 1.0
+autoplay = true
+max_distance = 6.0

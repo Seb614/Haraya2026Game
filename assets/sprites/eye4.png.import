@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://11oyggjs5nsx"
-path.s3tc="res://.godot/imported/parchment.png-358fd7c42f154fc4d81bf699ec667759.s3tc.ctex"
-path.etc2="res://.godot/imported/parchment.png-358fd7c42f154fc4d81bf699ec667759.etc2.ctex"
+uid="uid://b7ixochrj0e3v"
+path.s3tc="res://.godot/imported/eye4.png-492ddafb9ce7c1ae2ca6c74c18d839cd.s3tc.ctex"
+path.etc2="res://.godot/imported/eye4.png-492ddafb9ce7c1ae2ca6c74c18d839cd.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/backgrounds/parchment.png"
-dest_files=["res://.godot/imported/parchment.png-358fd7c42f154fc4d81bf699ec667759.s3tc.ctex", "res://.godot/imported/parchment.png-358fd7c42f154fc4d81bf699ec667759.etc2.ctex"]
+source_file="res://assets/sprites/eye4.png"
+dest_files=["res://.godot/imported/eye4.png-492ddafb9ce7c1ae2ca6c74c18d839cd.s3tc.ctex", "res://.godot/imported/eye4.png-492ddafb9ce7c1ae2ca6c74c18d839cd.etc2.ctex"]
 
 [params]
 
