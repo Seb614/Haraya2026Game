@@ -8,7 +8,7 @@ extends Node3D
 
 
 var time_elapsed = 0.0
-var event_interval = 8 # Trigger event every 5 seconds
+var event_interval = 20 # Trigger event every 5 seconds
 
 var material = StandardMaterial3D.new()
 var agni = load("res://assets/sprites/agni.png")
@@ -36,8 +36,9 @@ func _process(delta):
 
 func fade_text():
 	var tween = create_tween()
-	tween.tween_property(%Label3D, "modulate:a", 1, 2)
-
+	tween.tween_property(%Sprite3D, "modulate:a", 1, 2)
+	tween.tween_property(%Label3D, "modulate:a", 1, 5)
+	
 func _input(event):
 	if time_elapsed >= event_interval:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

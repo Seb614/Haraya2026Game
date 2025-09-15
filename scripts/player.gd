@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _process(float) -> void:
+func _process(_float) -> void:
 	if self.position.y >= 100:
 		Fade.transition()
 		await Fade.on_transition_finished
