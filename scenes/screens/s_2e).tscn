@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://jvp25085tjfu"]
+
+[ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="1_seoba"]
+[ext_resource type="PackedScene" uid="uid://0h3sqaqe3jhx" path="res://firefly.tscn" id="2_tqx5r"]
+[ext_resource type="PackedScene" uid="uid://dna8562m5ha4b" path="res://assets/book.tscn" id="3_ebm3c"]
+
+[node name="S2F)" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_seoba")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Firefly" parent="." instance=ExtResource("2_tqx5r")]
+offset_top = -125.0
+offset_bottom = -125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+firefly_count = 80
+radius = 300.0
+firefly_color = Color(0.93, 0.87, 0.3, 0)
+max_glow = 1.5
+min_glow = 0.1
+move_speed = 0.5
+flicker_speed = 2.5
+light_size = 6
+
+[node name="anchor" parent="Firefly" index="0"]
+position = Vector2(0, 53)
+
+[node name="Sprite2D2" parent="." instance=ExtResource("3_ebm3c")]
+position = Vector2(0, -80)
+
+[editable path="Firefly"]

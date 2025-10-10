@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://0h3sqaqe3jhx"]
+
+[ext_resource type="Script" uid="uid://duo0auypelk35" path="res://scripts/firefly.gd" id="1_ryrtv"]
+
+[node name="Firefly" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_ryrtv")
+firefly_count = 40
+radius = 500.0
+firefly_color = null
+max_glow = null
+min_glow = null
+move_speed = null
+flicker_speed = null
+
+[node name="anchor" type="Marker2D" parent="."]

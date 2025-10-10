@@ -75,11 +75,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _process(_float) -> void:
-	if self.position.y >= 100:
-		Fade.transition()
-		await Fade.on_transition_finished
-		Fade.get_tree().change_scene_to_file("res://scenes/screens/scene2.tscn")
+#func _process(_float) -> void:
+	#if self.position.y >= 100:
+		#Fade.transition()
+		#await Fade.on_transition_finished
+		#Fade.get_tree().change_scene_to_file("res://scenes/screens/scene2.tscn")
 
 func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play("idle_right")

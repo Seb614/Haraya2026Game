@@ -1,0 +1,21 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://daj1a16igrjlg"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_4ffas"]
+input_name = "texture"
+
+[sub_resource type="VisualShaderNodeCompare" id="VisualShaderNodeCompare_n6lms"]
+function = 2
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_4ffas")
+nodes/fragment/2/position = Vector2(-260, 200)
+nodes/fragment/3/node = SubResource("VisualShaderNodeCompare_n6lms")
+nodes/fragment/3/position = Vector2(180, 120)
