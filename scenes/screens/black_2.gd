@@ -7,4 +7,4 @@ func _ready() -> void:
 	
 	Fade.transition()
 	await Fade.on_transition_finished
-	Fade.get_tree().change_scene_to_file("res://scenes/screens/spawn.tscn")
+	Fade.get_tree().change_scene_to_file("res://scenes/screens/s_2c).tscn")

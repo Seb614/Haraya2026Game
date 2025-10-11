@@ -10,16 +10,16 @@ func _ready() -> void:
 
 @onready var blink_rect = $Blink
 
-var blink_times = [0.5, 1.0, 2.5, 3.0]  # Start and end times of each blink
+var blink_times = [2, 4.0, 6.5, 8.0]  # Start and end times of each blink
 
 
 var time = 0.0
-var duration = 5.0
+var duration = 10.0
 var max_blur = 40.0
 
 var time_elapsed = 0.0
-var tilt_duration = 3.0
-var tilt_speed = 2.1
+var tilt_duration = 10.0
+var tilt_speed = 2.5
 var tilt_angle = 0.1  
 
 
@@ -45,8 +45,7 @@ func _process(delta):
 	var tween = create_tween()
 	tween.tween_property(blink_rect, "modulate:a", 0.0, 0.5)
 	
-	if time >= 6:
+	if time >= 12:
 		Fade.transition()
 		await Fade.on_transition_finished
 		Fade.get_tree().change_scene_to_file("res://scenes/screens/black2.tscn")
-	

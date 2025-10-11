@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpdbe1oq61ott"]
+
+[ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_powm6"]
+[ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_ub7jl"]
+[ext_resource type="Texture2D" uid="uid://dgiggnekvkib0" path="res://assets/sprites/book_harayamap_full.png" id="3_wkwuq"]
+[ext_resource type="Script" uid="uid://bp8apf18fjbpa" path="res://scenes/screens/s3/book_harayamap_shake.gd" id="4_12ye0"]
+[ext_resource type="Texture2D" uid="uid://b0bvs3yje1s8m" path="res://assets/sprites/book_harayamap_kamaliing.png" id="5_h4f5f"]
+[ext_resource type="Texture2D" uid="uid://dbrmvassyj0ou" path="res://assets/sprites/book_harayamap_ragatan.png" id="6_gq5uf"]
+[ext_resource type="Texture2D" uid="uid://cofgmf7ygrimi" path="res://assets/sprites/book_harayamap_sinagtala.png" id="7_4ay46"]
+[ext_resource type="Texture2D" uid="uid://or5pqq5yx2tn" path="res://assets/sprites/book_harayamap_agni.png" id="8_uj3x1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkwuq"]
+radius = 97.0
+height = 407.523
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkwuq"]
+size = Vector2(598.063, 149)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12ye0"]
+radius = 132.0
+height = 746.256
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4f5f"]
+radius = 183.025
+
+[node name="S2F)" type="Node2D"]
+script = ExtResource("1_powm6")
+next = "s_3b)"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_ub7jl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BookHarayamapFull" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+scale = Vector2(0.872685, 0.872685)
+texture = ExtResource("3_wkwuq")
+script = ExtResource("4_12ye0")
+
+[node name="Agni" type="Area2D" parent="."]
+
+[node name="BookHarayamapAgni" type="Sprite2D" parent="Agni"]
+position = Vector2(-4.99994, -19)
+scale = Vector2(0.922917, 0.944444)
+texture = ExtResource("8_uj3x1")
+script = ExtResource("4_12ye0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agni"]
+position = Vector2(415, -6.99999)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wkwuq")
+
+[node name="Sinagtala" type="Area2D" parent="."]
+
+[node name="BookHarayamapSinagtala" type="Sprite2D" parent="Sinagtala"]
+position = Vector2(3, 9)
+texture = ExtResource("7_4ay46")
+script = ExtResource("4_12ye0")
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Sinagtala"]
+position = Vector2(61, -195)
+shape = SubResource("RectangleShape2D_wkwuq")
+
+[node name="Kamaliing" type="Area2D" parent="."]
+
+[node name="BookHarayamapKamaliing" type="Sprite2D" parent="Kamaliing"]
+position = Vector2(-2.09808e-05, -6.5)
+scale = Vector2(0.917708, 0.915741)
+texture = ExtResource("5_h4f5f")
+script = ExtResource("4_12ye0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kamaliing"]
+position = Vector2(108, 165)
+rotation = 2.0944
+shape = SubResource("CapsuleShape2D_12ye0")
+
+[node name="Ragatan" type="Area2D" parent="."]
+
+[node name="BookHarayamapRagatan" type="Sprite2D" parent="Ragatan"]
+position = Vector2(30, -6.50002)
+scale = Vector2(0.916667, 0.917593)
+texture = ExtResource("6_gq5uf")
+script = ExtResource("4_12ye0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ragatan"]
+position = Vector2(-449, 87)
+shape = SubResource("CircleShape2D_h4f5f")
+
+[connection signal="mouse_entered" from="Agni" to="Agni/BookHarayamapAgni" method="_on_agni_mouse_entered"]
+[connection signal="mouse_exited" from="Agni" to="Agni/BookHarayamapAgni" method="_on_agni_mouse_exited"]
+[connection signal="mouse_entered" from="Sinagtala" to="Sinagtala/BookHarayamapSinagtala" method="_on_sinagtala_mouse_entered"]
+[connection signal="mouse_exited" from="Sinagtala" to="Sinagtala/BookHarayamapSinagtala" method="_on_sinagtala_mouse_exited"]
+[connection signal="mouse_entered" from="Kamaliing" to="Kamaliing/BookHarayamapKamaliing" method="_on_kamaliing_mouse_entered"]
+[connection signal="mouse_exited" from="Kamaliing" to="Kamaliing/BookHarayamapKamaliing" method="_on_kamaliing_mouse_exited"]
+[connection signal="mouse_entered" from="Ragatan" to="Ragatan/BookHarayamapRagatan" method="_on_ragatan_mouse_entered"]
+[connection signal="mouse_exited" from="Ragatan" to="Ragatan/BookHarayamapRagatan" method="_on_ragatan_mouse_exited"]

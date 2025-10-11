@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://14uvhey81vco"]
+
+[ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_m3xyh"]
+[ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_js3x5"]
+[ext_resource type="Texture2D" uid="uid://d2sqa7i0kohxf" path="res://assets/sprites/book_ragatan_full.png" id="3_uq8qj"]
+[ext_resource type="Texture2D" uid="uid://cqguctst6xm6e" path="res://assets/sprites/book_ragatan.png" id="4_yi2lm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
+size = Vector2(713, 664)
+
+[node name="S2F)" type="Node2D"]
+script = ExtResource("1_m3xyh")
+next = "s_3c)"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_js3x5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BookRagatanFull" type="Sprite2D" parent="."]
+position = Vector2(-7, 7)
+scale = Vector2(0.868729, 0.910185)
+texture = ExtResource("3_uq8qj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="BookRagatan" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(-3.2812, -7.12503)
+scale = Vector2(2.43928, 2.65842)
+texture = ExtResource("4_yi2lm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(1.5, 27)
+shape = SubResource("RectangleShape2D_rjgqt")
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_exited"]

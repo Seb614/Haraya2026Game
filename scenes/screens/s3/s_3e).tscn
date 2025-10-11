@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c32gi6bsrfe1y"]
+
+[ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_tgpcr"]
+[ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_rha4n"]
+[ext_resource type="Texture2D" uid="uid://08hev6mcwn3" path="res://assets/sprites/book_agni_full.png" id="3_m50jx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
+size = Vector2(713, 242)
+
+[node name="S2F)" type="Node2D"]
+script = ExtResource("1_tgpcr")
+next = "s_3a)"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_rha4n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-399, -140)
+shape = SubResource("RectangleShape2D_rjgqt")
+
+[node name="BookAgniFull" type="Sprite2D" parent="."]
+position = Vector2(-9, 2.5)
+scale = Vector2(0.873958, 0.891667)
+texture = ExtResource("3_m50jx")
