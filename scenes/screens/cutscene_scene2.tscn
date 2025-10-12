@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://bw78iaqhpnt40" path="res://scenes/screens/blur.gdshader" id="1_fvcqs"]
 [ext_resource type="Script" uid="uid://tdureythbdic" path="res://scenes/screens/cutscene_scene_2.gd" id="1_rp8t3"]
 [ext_resource type="Resource" uid="uid://dwtfwtjg4458h" path="res://assets/dialogue/cutscene.dialogue" id="3_v463s"]
-[ext_resource type="Script" uid="uid://btridyh6t20vv" path="res://scenes/screens/cutscene_labels.gd" id="4_gxkax"]
+[ext_resource type="Script" path="res://scenes/screens/cutscene_labels.gd" id="4_gxkax"]
 [ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="6_ymftl"]
 [ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="7_yg1tw"]
 [ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="8_bf0bi"]

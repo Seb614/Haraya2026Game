@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://14uvhey81vco"]
+[gd_scene load_steps=7 format=3 uid="uid://14uvhey81vco"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_m3xyh"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_js3x5"]
 [ext_resource type="Texture2D" uid="uid://d2sqa7i0kohxf" path="res://assets/sprites/book_ragatan_full.png" id="3_uq8qj"]
 [ext_resource type="Texture2D" uid="uid://cqguctst6xm6e" path="res://assets/sprites/book_ragatan.png" id="4_yi2lm"]
+[ext_resource type="Script" uid="uid://d3wms32vvb66c" path="res://scenes/objects/glyph.gd" id="5_m3xyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
 size = Vector2(713, 664)
@@ -33,9 +34,20 @@ scale = Vector2(2.43928, 2.65842)
 texture = ExtResource("4_yi2lm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(1.5, 27)
 shape = SubResource("RectangleShape2D_rjgqt")
+
+[node name="ragatan" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 40.0
+offset_top = -80.0
+offset_right = 496.0
+offset_bottom = 112.0
+bbcode_enabled = true
+text = "[color=gold][font size=80] [outline_size=20 outline_color=brown][shake rate=10 level=100 ] [/shake] 
+"
+script = ExtResource("5_m3xyh")
+inpText = " ᜍ ᜄ ᜆ ᜈ᜔"
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_exited"]

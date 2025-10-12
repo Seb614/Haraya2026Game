@@ -21,8 +21,10 @@ texture = ExtResource("2_y2ore")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+top_level = true
 position = Vector2(-399, -140)
 shape = SubResource("RectangleShape2D_rjgqt")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="BookKamaliingFull" type="Sprite2D" parent="."]
 position = Vector2(-1.5, 6.5)
