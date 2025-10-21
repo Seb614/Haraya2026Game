@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://ufnfe7upo7yq"]
+
+[ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_7onhi"]
+[ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_c4wqg"]
+[ext_resource type="Texture2D" uid="uid://c7sbnde18otse" path="res://assets/sprites/blank.png" id="3_j0vhf"]
+[ext_resource type="Texture2D" uid="uid://c181iketeknfg" path="res://assets/sprites/agni.png" id="5_c4wqg"]
+[ext_resource type="Script" uid="uid://dsp6wdgdvs8bt" path="res://scenes/screens/s4/ring.gd" id="5_hjdcm"]
+[ext_resource type="Texture2D" uid="uid://rl7qlnaq1yyq" path="res://assets/sprites/ragatan.png" id="5_mc1t7"]
+[ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="6_hjdcm"]
+[ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="8_b13dx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u1oc4"]
+size = Vector2(400, 400)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rijt7"]
+size = Vector2(400, 400)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1nlx1"]
+size = Vector2(400, 400)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3vl53"]
+size = Vector2(400, 400)
+orientation = 2
+
+[node name="S4a)" type="Node2D"]
+script = ExtResource("1_7onhi")
+next = "s_3b)"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_c4wqg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BookHarayamapFull" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+texture = ExtResource("3_j0vhf")
+script = ExtResource("5_hjdcm")
+next = "s_4a)"
+
+[node name="Ragatan" type="MeshInstance2D" parent="BookHarayamapFull"]
+position = Vector2(485, 250)
+scale = Vector2(0.6375, -0.6375)
+mesh = SubResource("PlaneMesh_u1oc4")
+texture = ExtResource("5_mc1t7")
+
+[node name="Kamaliing" type="MeshInstance2D" parent="BookHarayamapFull"]
+position = Vector2(485, -214)
+scale = Vector2(0.637, -0.637)
+mesh = SubResource("PlaneMesh_rijt7")
+texture = ExtResource("6_hjdcm")
+
+[node name="Agni" type="MeshInstance2D" parent="BookHarayamapFull"]
+position = Vector2(-411, 170)
+scale = Vector2(1, -1)
+mesh = SubResource("PlaneMesh_1nlx1")
+texture = ExtResource("5_c4wqg")
+
+[node name="Sinagtala" type="MeshInstance2D" parent="BookHarayamapFull"]
+position = Vector2(-395, -230)
+scale = Vector2(0.7385, -0.7385)
+mesh = SubResource("PlaneMesh_3vl53")
+texture = ExtResource("8_b13dx")
