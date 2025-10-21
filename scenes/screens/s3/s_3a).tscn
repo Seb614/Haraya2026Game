@@ -23,7 +23,7 @@ height = 746.256
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4f5f"]
 radius = 183.025
 
-[node name="S2F)" type="Node2D"]
+[node name="S2F)3" type="Node2D"]
 script = ExtResource("1_powm6")
 next = "s_3b)"
 
