@@ -12,6 +12,7 @@ size = Vector2(713, 664)
 [node name="S2F)2" type="Node2D"]
 script = ExtResource("1_m3xyh")
 next = "s_3c)"
+next_scene = "3"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

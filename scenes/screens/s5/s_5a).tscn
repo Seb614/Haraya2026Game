@@ -1,23 +1,21 @@
-[gd_scene load_steps=26 format=3 uid="uid://c785aypemipbm"]
+[gd_scene load_steps=25 format=3 uid="uid://cs6xceml0nqr3"]
 
-[ext_resource type="Texture2D" uid="uid://cx5j5uac7ob1g" path="res://assets/sprites/book.png" id="1_3n8p1"]
-[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_b6y34"]
-[ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="1_ypha2"]
-[ext_resource type="Script" uid="uid://cvfjwq0dkmcho" path="res://scenes/screens/s_2c)_dialogue.gd" id="2_bs3m4"]
-[ext_resource type="Script" uid="uid://c0vmjo10um4pt" path="res://scripts/book_float.gd" id="2_rb2qb"]
-[ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="2_xe6oi"]
-[ext_resource type="Resource" uid="uid://dmnjnu5dqpfu6" path="res://assets/dialogue/s_2c)2.dialogue" id="3_00ebt"]
-[ext_resource type="Resource" uid="uid://bq3nw0n55jpty" path="res://assets/dialogue/s_2c).dialogue" id="3_t2oto"]
-[ext_resource type="Resource" uid="uid://bdnxm31qo4n7k" path="res://assets/dialogue/s_2c)3.dialogue" id="4_wc8yd"]
-[ext_resource type="PackedScene" uid="uid://0h3sqaqe3jhx" path="res://firefly.tscn" id="5_bl0c4"]
-[ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="5_kpi1m"]
-[ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="5_ndyqm"]
-[ext_resource type="Texture2D" uid="uid://bkdvrjvjhga6h" path="res://assets/textures/voronoi_svg_export (4).png" id="6_xe6oi"]
-[ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="7_b6y34"]
-[ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="10_jyxli"]
-[ext_resource type="Texture2D" uid="uid://bjfwkihahqe4r" path="res://assets/sprites/Pedestal.png" id="16_d8dg2"]
-[ext_resource type="Texture2D" uid="uid://b1s5a4nkdaism" path="res://assets/backgrounds/cave_bg.png" id="17_3i3ls"]
-[ext_resource type="Texture2D" uid="uid://d1rwcyvy1oqws" path="res://assets/backgrounds/cave_fg.png" id="18_n3p7o"]
+[ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="5_3r2os"]
+[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="5_lvig1"]
+[ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="6_jx3aj"]
+[ext_resource type="Texture2D" uid="uid://bjfwkihahqe4r" path="res://assets/sprites/Pedestal.png" id="7_72inh"]
+[ext_resource type="Texture2D" uid="uid://cx5j5uac7ob1g" path="res://assets/sprites/book.png" id="8_2axlb"]
+[ext_resource type="Script" uid="uid://c0vmjo10um4pt" path="res://scripts/book_float.gd" id="9_tu4s8"]
+[ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="10_vrxsr"]
+[ext_resource type="PackedScene" uid="uid://0h3sqaqe3jhx" path="res://firefly.tscn" id="11_t1oq8"]
+[ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="12_gty31"]
+[ext_resource type="Script" uid="uid://b8gov50v8py2a" path="res://scenes/screens/s5/mural.gd" id="13_37im0"]
+[ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="13_g3ijo"]
+[ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="14_nu4q8"]
+[ext_resource type="Texture2D" uid="uid://bkdvrjvjhga6h" path="res://assets/textures/voronoi_svg_export (4).png" id="15_rxc8v"]
+[ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="16_o2xas"]
+[ext_resource type="Texture2D" uid="uid://b1s5a4nkdaism" path="res://assets/backgrounds/cave_bg.png" id="17_s6ay0"]
+[ext_resource type="Texture2D" uid="uid://d1rwcyvy1oqws" path="res://assets/backgrounds/cave_fg.png" id="18_2g0gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
 size = Vector2(1907, 72)
@@ -25,7 +23,7 @@ size = Vector2(1907, 72)
 [sub_resource type="QuadMesh" id="QuadMesh_jvday"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvday"]
-texture = ExtResource("10_jyxli")
+texture = ExtResource("10_vrxsr")
 0:0/size_in_atlas = Vector2i(31, 32)
 0:0/0 = 0
 
@@ -37,8 +35,8 @@ sources/0 = SubResource("TileSetAtlasSource_jvday")
 size = Vector2(26, 394.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ndyqm"]
-shader = ExtResource("5_ndyqm")
-shader_parameter/dissolveNoise = ExtResource("7_b6y34")
+shader = ExtResource("13_g3ijo")
+shader_parameter/dissolveNoise = ExtResource("14_nu4q8")
 shader_parameter/glow_color = Color(1, 0.8, 0.2, 0.478431)
 shader_parameter/glow_speed = 0.05
 shader_parameter/sliver_density = 2.215
@@ -52,36 +50,32 @@ shader_parameter/tile_size = Vector2(1024, 256)
 size = Vector2(2, 1)
 orientation = 2
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("2_bs3m4")
-dialogue_resource = ExtResource("3_t2oto")
-dialogue_resource2 = ExtResource("3_00ebt")
-dialogue_resource3 = ExtResource("4_wc8yd")
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3npw"]
+radius = 7.88698
 
-[node name="Player" parent="." instance=ExtResource("1_b6y34")]
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("5_lvig1")]
 position = Vector2(-200, -16)
 limitR = 10000.0
 
 [node name="Dialogue" type="Node" parent="Player"]
 
-[node name="Area2D" parent="." instance=ExtResource("5_kpi1m")]
-position = Vector2(815, -24)
-
 [node name="Pedestal" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(819, 0)
+position = Vector2(-291, 0)
 scale = Vector2(0.0599246, 0.0599245)
-texture = ExtResource("16_d8dg2")
+texture = ExtResource("7_72inh")
 
 [node name="Book" type="Sprite2D" parent="."]
 top_level = true
 visibility_layer = 7
 z_index = 2
 texture_filter = 1
-position = Vector2(818, -24)
+position = Vector2(-291, -24)
 scale = Vector2(0.0296875, 0.0296875)
-texture = ExtResource("1_3n8p1")
-script = ExtResource("2_rb2qb")
+texture = ExtResource("8_2axlb")
+script = ExtResource("9_tu4s8")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -106,7 +100,7 @@ tile_set = SubResource("TileSet_bb4q2")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
-position = Vector2(815, -96)
+position = Vector2(525, -96)
 shape = SubResource("RectangleShape2D_8e5uj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
@@ -115,9 +109,11 @@ shape = SubResource("RectangleShape2D_8e5uj")
 position = Vector2(-288, -107)
 shape = SubResource("RectangleShape2D_8e5uj")
 
-[node name="Firefly" parent="." instance=ExtResource("5_bl0c4")]
+[node name="Firefly" parent="." instance=ExtResource("11_t1oq8")]
 z_index = 2
+offset_left = -1110.0
 offset_top = -100.0
+offset_right = -1110.0
 offset_bottom = -100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -141,20 +137,20 @@ modulate = Color(1, 1, 1, 0.564706)
 top_level = true
 position = Vector2(9, -106)
 scale = Vector2(2, 2)
-texture = ExtResource("2_xe6oi")
+texture = ExtResource("12_gty31")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D/Sprite2D2"]
 modulate = Color(1, 1, 1, 0.564706)
 top_level = true
 position = Vector2(1033, -106)
 scale = Vector2(2, 2)
-texture = ExtResource("2_xe6oi")
+texture = ExtResource("12_gty31")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Parallax2D"]
 material = SubResource("ShaderMaterial_ndyqm")
 position = Vector2(228, -80)
 scale = Vector2(1, 0.75)
-texture = ExtResource("6_xe6oi")
+texture = ExtResource("15_rxc8v")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 1)
@@ -170,7 +166,7 @@ z_index = 1
 position = Vector2(0, -80)
 scale = Vector2(400, -200)
 mesh = SubResource("PlaneMesh_jyxli")
-texture = ExtResource("1_ypha2")
+texture = ExtResource("16_o2xas")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="Parallax2D2"]
 visible = false
@@ -181,288 +177,303 @@ z_index = 1
 position = Vector2(792, -80)
 scale = Vector2(400, -200)
 mesh = SubResource("PlaneMesh_jyxli")
-texture = ExtResource("1_ypha2")
+texture = ExtResource("16_o2xas")
 
 [node name="CaveBg2" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(83, -75)
 scale = Vector2(2.04444, 2.04444)
-texture = ExtResource("17_3i3ls")
+texture = ExtResource("17_s6ay0")
+
+[node name="Area2D" type="Area2D" parent="Parallax2D2/CaveBg2"]
+scale = Vector2(1, 1)
+script = ExtResource("13_37im0")
+
+[node name="Mural" type="Sprite2D" parent="Parallax2D2/CaveBg2/Area2D"]
+self_modulate = Color(1, 1, 1, 0.239216)
+z_index = 2
+position = Vector2(75.916, 34.029)
+scale = Vector2(0.0306444, 0.0306444)
+texture = ExtResource("5_3r2os")
+
+[node name="Area2D" parent="Parallax2D2/CaveBg2/Area2D/Mural" instance=ExtResource("6_jx3aj")]
+scale = Vector2(12, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax2D2/CaveBg2/Area2D"]
+position = Vector2(76.3045, 34.2392)
+shape = SubResource("CircleShape2D_p3npw")
 
 [node name="CaveBg" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(-240, -75)
 scale = Vector2(2.04444, 2.04444)
-texture = ExtResource("17_3i3ls")
+texture = ExtResource("17_s6ay0")
 
 [node name="CaveBg3" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(406, -75)
 scale = Vector2(2.04444, 2.04444)
-texture = ExtResource("17_3i3ls")
+texture = ExtResource("17_s6ay0")
 
 [node name="CaveBg4" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(730, -75)
 scale = Vector2(2.04444, 2.04444)
-texture = ExtResource("17_3i3ls")
+texture = ExtResource("17_s6ay0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="DialogueTrigger1" type="Node2D" parent="."]
-position = Vector2(0, -32)
-
-[node name="DialogueTrigger2" type="Node2D" parent="."]
-position = Vector2(663, -22)
 
 [node name="Floor" type="Node2D" parent="."]
 position = Vector2(-348, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="Floor2" type="Node2D" parent="."]
 position = Vector2(-108, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor2"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor2"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="Floor3" type="Node2D" parent="."]
 position = Vector2(132, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor3"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor3"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="Floor4" type="Node2D" parent="."]
 position = Vector2(372, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor4"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor4"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="Floor5" type="Node2D" parent="."]
 position = Vector2(612, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor5"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor5"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="Floor6" type="Node2D" parent="."]
 position = Vector2(852, 27)
 
 [node name="CaveFg" type="Sprite2D" parent="Floor6"]
 z_index = 5
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg2" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(30, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg3" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(60, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg4" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(91, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg5" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(120, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg6" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(210, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg7" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(180, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
 
 [node name="CaveFg8" type="Sprite2D" parent="Floor6"]
 z_index = 5
 position = Vector2(150, 0)
-texture = ExtResource("18_n3p7o")
+texture = ExtResource("18_2g0gm")
+
+[connection signal="body_entered" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_exited"]
 
 [editable path="Firefly"]
