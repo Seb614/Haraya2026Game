@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cs6xceml0nqr3"]
+[gd_scene load_steps=25 format=3 uid="uid://dxacyemd8ufui"]
 
 [ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="5_3r2os"]
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="5_lvig1"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="10_vrxsr"]
 [ext_resource type="PackedScene" uid="uid://0h3sqaqe3jhx" path="res://firefly.tscn" id="11_t1oq8"]
 [ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="12_gty31"]
-[ext_resource type="Script" uid="uid://b8gov50v8py2a" path="res://scenes/screens/s5/mural.gd" id="13_37im0"]
+[ext_resource type="Script" path="res://scenes/screens/s5/mural.gd" id="13_37im0"]
 [ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="13_g3ijo"]
 [ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="14_nu4q8"]
 [ext_resource type="Texture2D" uid="uid://bkdvrjvjhga6h" path="res://assets/textures/voronoi_svg_export (4).png" id="15_rxc8v"]
@@ -53,7 +53,7 @@ orientation = 2
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3npw"]
 radius = 7.88698
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("5_lvig1")]
 position = Vector2(-200, -16)
@@ -185,7 +185,6 @@ scale = Vector2(2.04444, 2.04444)
 texture = ExtResource("17_s6ay0")
 
 [node name="Area2D" type="Area2D" parent="Parallax2D2/CaveBg2"]
-scale = Vector2(1, 1)
 script = ExtResource("13_37im0")
 
 [node name="Mural" type="Sprite2D" parent="Parallax2D2/CaveBg2/Area2D"]
@@ -476,4 +475,5 @@ texture = ExtResource("18_2g0gm")
 [connection signal="body_entered" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_exited"]
 
+[editable path="Player"]
 [editable path="Firefly"]

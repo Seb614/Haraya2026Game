@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ba64c3l7m44cx"]
+[gd_scene load_steps=12 format=3 uid="uid://yffxaqa1d1px"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_coy0u"]
 [ext_resource type="Texture2D" uid="uid://bjfwkihahqe4r" path="res://assets/sprites/Pedestal.png" id="2_ur21s"]
@@ -24,7 +24,7 @@ sources/0 = SubResource("TileSetAtlasSource_jvday")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5uj"]
 size = Vector2(26, 394.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Mural" type="Sprite2D" parent="."]
 z_index = 6
@@ -33,19 +33,34 @@ scale = Vector2(0.452555, 0.452555)
 texture = ExtResource("14_inqyu")
 
 [node name="Player" parent="." instance=ExtResource("1_coy0u")]
-visible = false
-position = Vector2(-200, 8)
+position = Vector2(-150, 8)
 limitR = 10000.0
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+visible = false
+position = Vector2(24, -24)
+
+[node name="Camera2D" parent="Player" index="2"]
+enabled = false
 
 [node name="Dialogue" type="Node" parent="Player"]
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+visible = false
+offset = Vector2(0, -70)
+zoom = Vector2(5.5, 5.5)
+limit_left = -300
+limit_right = 250
+
 [node name="Pedestal" type="Sprite2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(-291, 0)
 scale = Vector2(0.0599246, 0.0599245)
 texture = ExtResource("2_ur21s")
 
 [node name="Book" type="Sprite2D" parent="."]
+visible = false
 top_level = true
 visibility_layer = 7
 z_index = 2
@@ -91,3 +106,5 @@ shape = SubResource("RectangleShape2D_8e5uj")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[editable path="Player"]
