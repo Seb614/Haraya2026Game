@@ -42,7 +42,6 @@ limitR = 10000.0
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
 visible = false
-position = Vector2(0, -16)
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = true

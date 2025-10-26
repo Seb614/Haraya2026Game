@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b2gtyr8d10wtv"
+path="res://.godot/imported/nuno.dialogue-865ffb877a87fbe5fb24b2f71b0f415f.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/nuno.dialogue"
+dest_files=["res://.godot/imported/nuno.dialogue-865ffb877a87fbe5fb24b2f71b0f415f.tres"]
+
+[params]
+
+defaults=true
