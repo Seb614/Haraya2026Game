@@ -19,6 +19,7 @@ uniform vec2 direction_r = vec2( 1.0, 0.0 );
 uniform vec2 direction_g = vec2( 0.4, 1.0 );
 // B方向
 uniform vec2 direction_b = vec2( -0.7, -0.3 );
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 float random( float seed )
 {

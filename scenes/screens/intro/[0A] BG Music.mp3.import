@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs5jxrxmojk1b"
+path="res://.godot/imported/[0A] BG Music.mp3-a3a8ddaf334cd09c0a9dd4e24bd74e26.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/intro/[0A] BG Music.mp3"
+dest_files=["res://.godot/imported/[0A] BG Music.mp3-a3a8ddaf334cd09c0a9dd4e24bd74e26.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

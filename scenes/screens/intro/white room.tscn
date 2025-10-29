@@ -1,9 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=38 format=3 uid="uid://cydtg3sc5v3rq"]
 
 [ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
 [ext_resource type="Script" uid="uid://uikv5uuugibm" path="res://scenes/screens/intro/label.gd" id="3_nt2n1"]
-[ext_resource type="AudioStream" uid="uid://cg6wegqtxuaw3" path="res://assets/Sounds/ring.mp3" id="4_8uwe3"]
+[ext_resource type="AudioStream" uid="uid://bs5jxrxmojk1b" path="res://scenes/screens/intro/[0A] BG Music.mp3" id="4_dkw28"]
 [ext_resource type="Texture2D" uid="uid://cvjyusy0jmgjc" path="res://assets/sprites/rect3.png" id="5_8prti"]
 [ext_resource type="Texture2D" uid="uid://c181iketeknfg" path="res://assets/sprites/agni.png" id="6_3bnq6"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="6_breun"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bclpemrv5ugt8" path="res://assets/sprites/eye3.png" id="11_nt2n1"]
 [ext_resource type="Texture2D" uid="uid://b7ixochrj0e3v" path="res://assets/sprites/eye4.png" id="12_8uwe3"]
 [ext_resource type="AudioStream" uid="uid://c7ghpv2hjot3j" path="res://assets/Sounds/bakunawa.mp3" id="14_hyyi8"]
+[ext_resource type="Shader" uid="uid://bd3s1uknejqw7" path="res://scenes/screens/intro/glitch_transition.gdshader" id="16_dkw28"]
 
 [sub_resource type="Curve3D" id="Curve3D_bpdcf"]
 _data = {
@@ -125,6 +126,15 @@ size = Vector2(5, 5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0720"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpkjf"]
+shader = ExtResource("16_dkw28")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_block_size = 30.5
+shader_parameter/fade = 0.43
+shader_parameter/direction_r = Vector2(1, 0)
+shader_parameter/direction_g = Vector2(0.4, 1)
+shader_parameter/direction_b = Vector2(-0.7, -0.3)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyyi8"]
 transparency = 1
 disable_ambient_light = true
@@ -170,8 +180,9 @@ text = "[center] [font_size={24}]Noong unang panahon, ang tanging makapangyariha
 script = ExtResource("3_nt2n1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Path3D/PathFollow3D/Camera3D/RichTextLabel"]
-stream = ExtResource("4_8uwe3")
-volume_db = -2.0
+stream = ExtResource("4_dkw28")
+volume_db = -5.0
+autoplay = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
@@ -273,6 +284,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_b0720")
 [node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D5/Sprite3D2/Sprite3D3/Sprite3D4"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -6, 0)
+material_overlay = SubResource("ShaderMaterial_rpkjf")
 modulate = Color(1, 1, 1, 0)
 pixel_size = 0.005
 axis = 1
@@ -301,7 +313,7 @@ skeleton = NodePath("../Sprite3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("14_hyyi8")
-volume_db = -1.0
+volume_db = -5.0
 unit_size = 5.0
 max_db = 1.0
 autoplay = true
