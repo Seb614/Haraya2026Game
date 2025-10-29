@@ -1,40 +1,44 @@
 ~ start
-Nuno: Parating na. Matalim na titig. Ang nakasanayang mundo'y mababaliktad na.
 
-...: Ano po? Mababaliktad? At sino ka po ba at bakit mo ‘to sinasabi sa’kin?
+Nuno: (TL): Parating na. Matalim na titig. Ang nakasanayang mundo'y mababaliktad na. \n\n(EN): It’s coming. Sharp eyes. The world as we know it will never be the same.
 
-Nuno: Ang mahiwagang bakunawa ay nagigising na. Ang dating mga nagpapahimbing sa kanya ay humihina na. 
+...: (TL): Ano po? Mababaliktad? At sino ka po ba at bakit mo ‘to sinasabi sa’kin? \n\n(EN): Excuse me? What are you saying? Who even are you, and why are you telling me this?
 
-...: Bakunawa? Anong humihina? Isa-isa nga muna, sino ka ba?
+Nuno: (TL): Ang mahiwagang bakunawa ay nagigising na. Ang dating mga nagpapahimbing sa kanya ay humihina na. \n\n(EN): The majestic bakunawa is slowly awakening. What used to keep it soothed is weakening, the seals are not as strong as they were. 
 
-Nuno: Ako’y ang pinakamatagal na tagapagbantay ng Haraya, isang nuno lamang. At tulad ng sinasabi ko kanina, ang pagkagising ng bakunawa ay magwawakas ng mundong ito. 
+...: (TL):  Bakunawa? Anong humihina? Isa-isa nga muna, sino ka ba? \n\n(EN): Bakunawa? Seals weakening? One at a time, please, who even are you?
 
-...: Wakas ng mundo?! Kailan ba magigising ang bakunawang ‘to?!
-do _glitchOn()
+Nuno: (TL): Ako’y ang pinakamatagal na tagapagbantay ng Haraya, isang nuno lamang. At tulad ng sinasabi ko kanina, ang pagkagising ng bakunawa ay magwawakas ng mundong ito. \n\n(EN): I’m the oldest overseer of Haraya, a humble nuno. And as I was saying, the awakening of the bakunawa will end the world as it swallows the very cosmos we inhabit.
 
-Nuno: Ikaw lamang ang makakapigil nito. 
+...: (TL):  Wakas ng mundo?! Kailan ba magigising ang bakunawang ‘to?! \n\n(EN): The end of the world?! When will this bakunawa wake up?!
+do _glitchOn(0.01, 10, -15)
 
-...: Bakit ako?!
-Nuno: Sa hilaga ng Haraya matatagpuan ang Sinagtala, kung saan ang mga diwata at ibang mga nilalang ay namamahala sa hangin at kumikinang sa liwanag.
+Nuno: (TL): Ikaw lamang ang makakapigil nito.  \n\n(EN): Only you can stop this awakening. 
 
-Nuno: Sa timog ay ang hariang kamaliing, kung saan ang mga Duwende, Kapre, Tikbalang, and dalubhasang panday ay namamahala sa lupa at lumilikha ng mga sandatang walang katulad.
+...: (TL):  Bakit ako?! \n\n(EN): Why me?!
+do _glitchOn(0.03, 15, -10)
+Nuno: (TL): Sa hilaga ng Haraya matatagpuan ang Sinagtala, kung saan ang mga diwata at ibang mga nilalang ay namamahala sa hangin at kumikinang sa liwanag. \n\n(EN): To the north of Haraya lies Sinagtala, where diwatas and otherworldly beings rule the air and shine through the light.
+
+Nuno: (TL): Sa timog ay ang hariang kamaliing, kung saan ang mga Duwende, Kapre, Tikbalang, and dalubhasang panday ay namamahala sa lupa at lumilikha ng mga sandatang walang katulad. \n\n(EN): Down south is Kamaliing, where the Duwende, Kapre, Tikbalang, and expert blacksmiths rule the earth and make weapons like no other.
 
 
-Nuno: Sa silangan, bumubulsok ng usok at abo ang Agni, ang kaharian ng apoy, kung saan sinisindak ka ng mga aswang at manananggal sa iba’t ibang halimaw na anyo.
+Nuno: (TL): Sa silangan, bumubulsok ng usok at abo ang Agni, ang kaharian ng apoy, kung saan sinisindak ka ng mga aswang at manananggal sa iba’t ibang halimaw na anyo. \n\n(EN): In the east, smoke and ash erupt from Agni, the kingdom of fire, where the aswangs and manananggals terrify you with monstrous forms.
+do _glitchOn(0.05, 15, -7)
+Nuno: (TL): Sa wakas, sa kanluran ay ang Ragatan, kung saan makikita mo ang mga nuno katulad ko at mga sirenang tiyak na nakakabighani. \n\n(EN): Lastly, at the west is Ragatan, where you’ll find nunos like me and sirena who’ll surely have you captivated.
 
-Nuno: Sa wakas, sa kanluran ay ang Ragatan, kung saan makikita mo ang mga nuno katulad ko at mga sirenang tiyak na nakakabighani.
+Nuno: (TL): Lahat ng mga kahariang at nilalang na ito, ay magwawakas kung hindi dahil sayo. \n\n(EN): All of these kingdoms, all of these creatures and beings, will come to an end without your help.
+
+do _glitchOn(0.07, 20, -4)
+...: (TL):  Ano? Ano kinalaman ko dito? Ni hindi nga ako galing sa mundong ito?  \n\n(EN): What? What does this have to do with me? 
+do _glitchOn(0.1, 30.5, -0)
+Nuno: (TL): Kailangan mong [shake rate=10 level=100 ][ERROR]...[/shake] sapagkat ikaw lamang ang natitirang pag-asa.  Sundan mo ang indayog ng mundo. Hayaang harmoniya ang maging pangunahing aguhon ng iyong paglalakbay. \n\n(EN): You need to [shake rate=10 level=100 ][ERROR]...[/shake] as you are the remaining hope for the preservation of humanity. Follow the rhythm of the world. Let harmony be your guiding compass in your journey.
+
+...: (TL):  Saglit lang! Sagutin mo muna mga tanong ko! \n\n(EN): Hold on! Answer me first!
+
+Nuno: (TL): Muling babangon ang [shake rate=10 level=100 ][ERROR]...[/shake] Sisikat ang liwanag, ngunit ang dilim ay sumisiklot sa ilalim— nag-aabang sa pagitan ng mga bitak ng liwanag. Sa pagitan ng mga bitak na iyon, ang simula'y namamalagi… \n\n(EN): The [shake rate=10 level=100 ][ERROR]...[/shake] shall rise once more... Light will dawn, but darkness coils below-- waiting between the cracks of light. Between those cracks lies where it all began...
 do _glitchOut()
-
-Nuno: Lahat ng mga kahariang at nilalang na ito, ay magwawakas kung hindi dahil sayo.
-
-...: Ano? Ano kinalaman ko dito? Ni hindi nga ako galing sa mundong ito? 
-
-Nuno: Kailangan mong [shake rate=10 level=100 ][ERROR]...[/shake] sapagkat ikaw lamang ang natitirang pag-asa.  Sundan mo ang indayog ng mundo. Hayaang harmoniya ang maging pangunahing aguhon ng iyong paglalakbay.
-
-...: Saglit lang! Sagutin mo muna mga tanong ko! 
-
-Nuno: Muling babangon ang [shake rate=10 level=100 ][ERROR]...[/shake] Sisikat ang liwanag, ngunit ang dilim ay sumisiklot sa ilalim— nag-aabang sa pagitan ng mga bitak ng liwanag. Sa pagitan ng mga bitak na iyon, ang simula'y namamalagi…
-
-Nuno: Handa ka na ba?
+Nuno: (TL): Handa ka na ba? \n\n(EN): Are you ready?
+- Ipagpatuloy ang paglakbay
 do _glitchFade()
+
 => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cj8f4vcri3nqh"]
+[gd_scene load_steps=24 format=3 uid="uid://cj8f4vcri3nqh"]
 
 [ext_resource type="Script" uid="uid://bno5w68i457ub" path="res://scenes/screens/s8/s_8).gd" id="1_f1txf"]
 [ext_resource type="Resource" uid="uid://b2gtyr8d10wtv" path="res://assets/dialogue/nuno.dialogue" id="2_g4sje"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="6_g4sje"]
 [ext_resource type="Texture2D" uid="uid://dgl2yyj58k22v" path="res://assets/sprites/NunoRight.png" id="7_dueu0"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="7_hukri"]
+[ext_resource type="AudioStream" uid="uid://cwf0yvod7ee5q" path="res://scenes/screens/s8/29a.ch-noise-generator.wav" id="9_1wmvg"]
+[ext_resource type="AudioStream" uid="uid://cgjx6qidhena8" path="res://scenes/screens/s8/[8B] Static Glitch Effect.mp3" id="10_gomfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
 size = Vector2(1907, 72)
@@ -30,10 +32,10 @@ size = Vector2(55.5, 394.5)
 shader = ExtResource("5_g4sje")
 shader_parameter/shake_power = 0.01
 shader_parameter/shake_block_size = 10.0
-shader_parameter/fade = 0.01
-shader_parameter/direction_r = Vector2(1, 0)
-shader_parameter/direction_g = Vector2(0.4, 1)
-shader_parameter/direction_b = Vector2(-0.7, -0.3)
+shader_parameter/fade = 0.005
+shader_parameter/direction_r = Vector2(0.86, -0.5)
+shader_parameter/direction_g = Vector2(0, 1)
+shader_parameter/direction_b = Vector2(-0.86, -0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wmvg"]
 atlas = ExtResource("7_dueu0")
@@ -94,6 +96,7 @@ position = Vector2(-176, -16)
 script = null
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
+z_index = 7
 autoplay = "idle_right"
 frame_progress = 0.149001
 
@@ -158,10 +161,10 @@ shape = SubResource("RectangleShape2D_8e5uj")
 
 [node name="Glitch" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
-z_index = 7
+z_index = 100
 material = SubResource("ShaderMaterial_qewub")
-offset_left = -448.0
-offset_top = -216.0
+offset_left = -432.0
+offset_top = -232.0
 offset_right = 408.0
 offset_bottom = 152.0
 
@@ -181,29 +184,41 @@ limit_right = 250
 position = Vector2(2, -16)
 
 [node name="AnimatedSprite2D" parent="Nuno" index="0"]
-z_index = 7
+z_index = 10
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_8yagv")
 frame_progress = 0.751637
 
 [node name="end" type="RichTextLabel" parent="."]
 modulate = Color(1, 1, 1, 0)
-z_index = 10
+z_index = 101
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -78.0
-offset_right = -56.0
+offset_left = -144.0
+offset_top = -96.0
+offset_right = -40.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[wave]WAKAS
+text = "[wave]01.08.26
+
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="static" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(144, 48)
+scale = Vector2(2, 2)
+stream = ExtResource("9_1wmvg")
+volume_db = -30.0
+
+[node name="static2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(144, 48)
+scale = Vector2(2, 2)
+stream = ExtResource("10_gomfa")
 
 [editable path="Player"]
 [editable path="Nuno"]

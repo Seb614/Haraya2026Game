@@ -55,12 +55,6 @@ radius = 7.88698
 
 [node name="Node2D3" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("5_lvig1")]
-position = Vector2(-200, -16)
-limitR = 10000.0
-
-[node name="Dialogue" type="Node" parent="Player"]
-
 [node name="Pedestal" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(-291, 0)
@@ -472,8 +466,14 @@ z_index = 5
 position = Vector2(150, 0)
 texture = ExtResource("18_2g0gm")
 
+[node name="Player" parent="." instance=ExtResource("5_lvig1")]
+position = Vector2(-200, -16)
+limitR = 10000.0
+
+[node name="Dialogue" type="Node" parent="Player"]
+
 [connection signal="body_entered" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_exited"]
 
-[editable path="Player"]
 [editable path="Firefly"]
+[editable path="Player"]
