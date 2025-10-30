@@ -185,7 +185,6 @@ scale = Vector2(2.04444, 2.04444)
 texture = ExtResource("17_s6ay0")
 
 [node name="Area2D" type="Area2D" parent="Parallax2D2/CaveBg2"]
-scale = Vector2(1, 1)
 script = ExtResource("13_37im0")
 
 [node name="Mural" type="Sprite2D" parent="Parallax2D2/CaveBg2/Area2D"]
