@@ -10,7 +10,7 @@ var collected = [false, false, false, false, false, false]
 var complete = false
 
 func _ready() -> void:
-	get_node("Player/Label").visible = true
+	get_node("Player/Label").visible = false
 	print(get_node("Player/Label").visible)
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 

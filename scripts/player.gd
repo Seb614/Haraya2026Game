@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("jump_right")
 		else:
 			$AnimatedSprite2D.play("walk_right")
+
 		
 		if not %walk.playing:
 			%walk.play()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://dj1268vpu1qel"]
 
-[ext_resource type="PackedScene" uid="uid://d1w16baj2ikta" path="res://scenes/objects/player.tscn" id="1_wtl5b"]
+[ext_resource type="PackedScene" uid="uid://mhrabv8fuuk6" path="res://scenes/objects/player.tscn" id="1_wtl5b"]
 [ext_resource type="Script" uid="uid://b3nmqmu7epyty" path="res://scenes/screens/s6/s_6b).gd" id="1_y3lbl"]
 [ext_resource type="Resource" uid="uid://c20urdx20wg6t" path="res://assets/dialogue/s_6b).dialogue" id="2_dr4mp"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="5_kf810"]
@@ -190,6 +190,9 @@ dialogue_resource = ExtResource("2_dr4mp")
 [node name="Player" parent="." instance=ExtResource("1_wtl5b")]
 position = Vector2(-201, 8)
 limitR = 800.0
+
+[node name="Pulse" parent="Player" index="5"]
+visible = false
 
 [node name="Dialogue" type="Node" parent="Player"]
 
