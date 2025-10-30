@@ -1,10 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://mhrabv8fuuk6"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://cejhjrelvajla"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://d2wo56vnmrjjf" path="res://scripts/player.gd" id="1_2147m"]
 [ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_anims.tres" id="2_2147m"]
 [ext_resource type="Texture2D" uid="uid://bgg0hnihphk8" path="res://assets/sprites/piece1.png" id="3_0ay4w"]
+<<<<<<< Updated upstream
 [ext_resource type="AudioStream" uid="uid://coar04a1ttsqn" path="res://assets/Sounds/footsteps-dirt-gravel-6823.mp3" id="3_54rde"]
 [ext_resource type="AudioStream" uid="uid://dy1c272jrifgs" path="res://assets/Sounds/jump/jump.WAV" id="4_q8hb4"]
+=======
+[ext_resource type="AudioStream" path="res://assets/Sounds/footsteps-dirt-gravel-6823.mp3" id="3_54rde"]
+[ext_resource type="AudioStream" path="res://assets/Sounds/jump/jump.WAV" id="4_q8hb4"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="4_tuhu7"]
 [ext_resource type="Texture2D" uid="uid://bpse57diotpmd" path="res://assets/sprites/piece3.png" id="5_4c2uj"]
 [ext_resource type="Texture2D" uid="uid://dj5rwhw8lsl3t" path="res://assets/sprites/piece4.png" id="6_dunks"]
