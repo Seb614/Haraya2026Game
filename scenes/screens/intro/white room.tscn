@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=39 format=3 uid="uid://cydtg3sc5v3rq"]
 
 [ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
 [ext_resource type="Script" uid="uid://uikv5uuugibm" path="res://scenes/screens/intro/label.gd" id="3_nt2n1"]
 [ext_resource type="AudioStream" uid="uid://bs5jxrxmojk1b" path="res://scenes/screens/intro/[0A] BG Music.mp3" id="4_dkw28"]
 [ext_resource type="Texture2D" uid="uid://cvjyusy0jmgjc" path="res://assets/sprites/rect3.png" id="5_8prti"]
+[ext_resource type="AudioStream" uid="uid://ca07146waa5oo" path="res://scenes/screens/intro/[0J] Eyes Closing.mp3" id="5_b0720"]
 [ext_resource type="Texture2D" uid="uid://c181iketeknfg" path="res://assets/sprites/agni.png" id="6_3bnq6"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="6_breun"]
 [ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="7_6y1iw"]
@@ -181,8 +182,13 @@ script = ExtResource("3_nt2n1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Path3D/PathFollow3D/Camera3D/RichTextLabel"]
 stream = ExtResource("4_dkw28")
-volume_db = -5.0
+volume_db = -7.0
 autoplay = true
+
+[node name="title" type="AudioStreamPlayer" parent="Path3D/PathFollow3D/Camera3D/RichTextLabel"]
+unique_name_in_owner = true
+stream = ExtResource("5_b0720")
+volume_db = -5.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)

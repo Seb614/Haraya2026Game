@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7d2v6a441dai"
+path="res://.godot/imported/1C Final Prompt.mp3-5e514d1dffdc9a50c00b2754c19a7aa4.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/intro/1C Final Prompt.mp3"
+dest_files=["res://.godot/imported/1C Final Prompt.mp3-5e514d1dffdc9a50c00b2754c19a7aa4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -42,6 +42,7 @@ func fade_text():
 func _input(event):
 	if time_elapsed >= event_interval:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			%title.play()
 			Fade.transition()
 			await Fade.on_transition_finished
 			Fade.get_tree().change_scene_to_file("res://scenes/screens/intro/controls.tscn")
