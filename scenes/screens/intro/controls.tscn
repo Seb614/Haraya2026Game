@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgahmov2qymqc"]
+[gd_scene load_steps=13 format=3 uid="uid://cgahmov2qymqc"]
 
 [ext_resource type="Script" uid="uid://v768gfegapgo" path="res://scenes/screens/intro/controls.gd" id="1_dm43g"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="3_w2504"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b071qob48pp41" path="res://assets/sprites/jump.png" id="7_6q3xq"]
 [ext_resource type="Texture2D" uid="uid://bwur0hv0gquk3" path="res://assets/sprites/sprint.png" id="8_64qkq"]
 [ext_resource type="Script" uid="uid://bywymd2memeqs" path="res://scenes/screens/intro/timer_continue.gd" id="9_xh8qq"]
+[ext_resource type="AudioStream" uid="uid://dm155osg7khs0" path="res://scenes/screens/intro/flip/flip.WAV" id="10_64qkq"]
+[ext_resource type="AudioStream" uid="uid://7d2v6a441dai" path="res://scenes/screens/intro/1C Final Prompt.mp3" id="11_1h5ll"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -183,5 +185,16 @@ scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "EN: Press A to get left behind in imagination
 EN: Press D to find the right keys to destiny"
+
+[node name="flip" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_64qkq")
+volume_db = 10.0
+autoplay = true
+
+[node name="bell" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_1h5ll")
+volume_db = -15.0
 
 [connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]

@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var text_label = %Label
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String ="start"
 

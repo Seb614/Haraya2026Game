@@ -6,7 +6,7 @@ var event_interval_2 = 4
 var event_interval_3 = 6
 var event_interval_4 = 8
 var event_interval_5 = 10
-
+@onready var sound = $flip
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ControlIcons/Wasd.modulate.a = 0.0
@@ -41,28 +41,35 @@ func fade_text(text_name):
 func _process(delta: float):
 	time_elapsed += delta
 	
-	if time_elapsed >= event_interval_1:
-		fade_icon("Wasd")
-		fade_text("wasd_label")
-		fade_text("wasd_label2")
-		fade_text("wasd_label3")
-	if time_elapsed >= event_interval_2:
-		fade_icon("Interact")
-		fade_text("e_label")
-		fade_text("e_label2")
-	if time_elapsed >= event_interval_3:
-		fade_icon("Sprint")
-		fade_text("shift_label")
-		fade_text("shift_label2")
-	if time_elapsed >= event_interval_4:
-		fade_icon("Jump")
-		fade_text("space_label")
-		fade_text("space_label2")
-	if time_elapsed >= event_interval_5:
-		fade_text("continue")
+	sound.play()
+	await get_tree().create_timer(1).timeout
+	fade_icon("Wasd")
+	fade_text("wasd_label")
+	fade_text("wasd_label2")
+	fade_text("wasd_label3")
+	%flip.play()
+	await get_tree().create_timer(1).timeout
+	fade_icon("Interact")
+	fade_text("e_label")
+	fade_text("e_label2")
+	%flip.play()
+	await get_tree().create_timer(1).timeout
+	fade_icon("Sprint")
+	fade_text("shift_label")
+	fade_text("shift_label2")
+	%flip.play()
+	await get_tree().create_timer(1).timeout
+	fade_icon("Jump")
+	fade_text("space_label")
+	fade_text("space_label2")
+		
+	await get_tree().create_timer(1).timeout
+	fade_text("continue")
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("click")
 		if time_elapsed >= event_interval_5:
+			%bell.play()
+			await get_tree().create_timer(1).timeout
 			NavManager.fade_to_scene("res://scenes/screens/black.tscn")

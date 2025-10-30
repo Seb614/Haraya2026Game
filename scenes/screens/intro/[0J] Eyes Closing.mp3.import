@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca07146waa5oo"
+path="res://.godot/imported/[0J] Eyes Closing.mp3-15bbff26bf3737d85e185fe8f399ad1f.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/intro/[0J] Eyes Closing.mp3"
+dest_files=["res://.godot/imported/[0J] Eyes Closing.mp3-15bbff26bf3737d85e185fe8f399ad1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

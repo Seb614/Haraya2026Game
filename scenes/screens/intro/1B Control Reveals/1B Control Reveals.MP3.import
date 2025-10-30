@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h2otqnrq4cis"
+path="res://.godot/imported/1B Control Reveals.MP3-0511b6683e1574c8d01f9df300c9f265.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/intro/1B Control Reveals/1B Control Reveals.MP3"
+dest_files=["res://.godot/imported/1B Control Reveals.MP3-0511b6683e1574c8d01f9df300c9f265.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
