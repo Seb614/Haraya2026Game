@@ -1,77 +1,132 @@
-[gd_scene load_steps=11 format=3 uid="uid://bek3c3wv2ebos"]
+[gd_scene load_steps=14 format=3 uid="uid://cejhjrelvajla"]
 
-[ext_resource type="Script" uid="uid://dwlpjdygb0vnv" path="res://scripts/npc.gd" id="1_i4yyw"]
-[ext_resource type="Texture2D" uid="uid://crykn83a37bn5" path="res://assets/sprites/spritesheet.png" id="1_qn87c"]
-[ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="3_qgsx0"]
+[ext_resource type="Script" uid="uid://d2wo56vnmrjjf" path="res://scripts/player.gd" id="1_2147m"]
+[ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_anims.tres" id="2_2147m"]
+[ext_resource type="Texture2D" uid="uid://bgg0hnihphk8" path="res://assets/sprites/piece1.png" id="3_0ay4w"]
+[ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="4_tuhu7"]
+[ext_resource type="Texture2D" uid="uid://bpse57diotpmd" path="res://assets/sprites/piece3.png" id="5_4c2uj"]
+[ext_resource type="Texture2D" uid="uid://dj5rwhw8lsl3t" path="res://assets/sprites/piece4.png" id="6_dunks"]
+[ext_resource type="Texture2D" uid="uid://iigpw4r54oyp" path="res://assets/sprites/piece5.png" id="7_68atb"]
+[ext_resource type="Texture2D" uid="uid://be1s4yc2533uc" path="res://assets/sprites/piece6.png" id="8_2lybl"]
+[ext_resource type="Texture2D" uid="uid://cbm1aotcduf8m" path="res://assets/sprites/pulse.png" id="9_tuhu7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4yyw"]
-atlas = ExtResource("1_qn87c")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8lix"]
+size = Vector2(16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgsx0"]
-atlas = ExtResource("1_qn87c")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="Animation" id="Animation_4c2uj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pulse:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.017, 0.017)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iaahk"]
-atlas = ExtResource("1_qn87c")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="Animation" id="Animation_tuhu7"]
+resource_name = "pulse"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pulse:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.017, 0.017), Vector2(1.08025, 1.08025)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lyva"]
-atlas = ExtResource("1_qn87c")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dunks"]
+_data = {
+&"RESET": SubResource("Animation_4c2uj"),
+&"pulse": SubResource("Animation_tuhu7")
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gdgn1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4yyw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgsx0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iaahk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6lyva")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 131
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4yyw"]
-size = Vector2(18, 29)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qgsx0"]
-radius = 20.0
+@@ -35,4 +79,74 @@ drag_horizontal_enabled = true
+drag_vertical_offset = -0.5
+editor_draw_limits = true
 
-[node name="Area2D" type="Area2D"]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_i4yyw")
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.0
+offset_top = -45.0
+offset_right = -2.0
+offset_bottom = -33.8333
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 8
+text = "0/6"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -22)
-rotation = 3.14159
-scale = Vector2(1, -1)
-sprite_frames = SubResource("SpriteFrames_gdgn1")
-autoplay = "default"
-frame_progress = 0.736851
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(8, -40)
 
-[node name="Interactable" parent="AnimatedSprite2D" instance=ExtResource("3_qgsx0")]
-rotation = 3.14159
-scale = Vector2(1, -1)
+[node name="Piece1" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+position = Vector2(-2, 2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_0ay4w")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Piece2" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+position = Vector2(2, -3)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_tuhu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(2, -14.5)
-shape = SubResource("RectangleShape2D_i4yyw")
+[node name="Piece3" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+position = Vector2(2, 2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4c2uj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
-shape = SubResource("CircleShape2D_qgsx0")
+[node name="Piece4" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+position = Vector2(-2, -3)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_dunks")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Piece5" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+position = Vector2(4, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_68atb")
+
+[node name="Piece6" type="Sprite2D" parent="Node2D"]
+visible = false
+z_index = 19
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_2lybl")
+
+[node name="Pulse" type="Sprite2D" parent="."]
+modulate = Color(0, 0.243137, 0.329412, 0.266667)
+z_index = 20
+position = Vector2(2.00002, -12)
+scale = Vector2(0.017, 0.017)
+texture = ExtResource("9_tuhu7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dunks")
+}
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

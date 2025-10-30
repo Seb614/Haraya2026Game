@@ -53,7 +53,6 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		print(SPEED)
 		velocity.x = direction * SPEED
 		
 		if not is_on_floor():

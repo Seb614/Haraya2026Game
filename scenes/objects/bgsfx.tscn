@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://demwum1wjr38y"]
+[gd_scene load_steps=2 format=3 uid="uid://demwum1wjr38y"]
 
-[ext_resource type="AudioStream" uid="uid://bpma7qscs8h4g" path="res://scenes/screens/s2/dizzy(1).WAV" id="1_t5hql"]
 [ext_resource type="Script" uid="uid://nu3vl0sua4hc" path="res://scenes/objects/bgfade.gd" id="2_k74er"]
 
 [node name="bgsfx" type="AudioStreamPlayer"]
 unique_name_in_owner = true
-stream = ExtResource("1_t5hql")
 volume_db = -5.0
 script = ExtResource("2_k74er")

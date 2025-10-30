@@ -7,4 +7,6 @@ extends Node2D
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("click")
+		
 		NavManager.fade_to_scene("res://scenes/screens/s" + next_scene + "/" + next + ".tscn")
+		

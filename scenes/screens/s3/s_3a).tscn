@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpdbe1oq61ott"]
+[gd_scene load_steps=15 format=3 uid="uid://bpdbe1oq61ott"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_powm6"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_ub7jl"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dbrmvassyj0ou" path="res://assets/sprites/book_harayamap_ragatan.png" id="6_gq5uf"]
 [ext_resource type="Texture2D" uid="uid://cofgmf7ygrimi" path="res://assets/sprites/book_harayamap_sinagtala.png" id="7_4ay46"]
 [ext_resource type="Texture2D" uid="uid://or5pqq5yx2tn" path="res://assets/sprites/book_harayamap_agni.png" id="8_uj3x1"]
+[ext_resource type="PackedScene" uid="uid://demwum1wjr38y" path="res://scenes/objects/bgsfx.tscn" id="9_h4f5f"]
+[ext_resource type="AudioStream" uid="uid://dklv4rdsgd1xw" path="res://scenes/screens/s2/[3A] BG Music.wav" id="10_gq5uf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkwuq"]
 radius = 97.0
@@ -89,6 +91,10 @@ script = ExtResource("4_12ye0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ragatan"]
 position = Vector2(-449, 87)
 shape = SubResource("CircleShape2D_h4f5f")
+
+[node name="bgsfx" parent="." instance=ExtResource("9_h4f5f")]
+autoplay = true
+audio = ExtResource("10_gq5uf")
 
 [connection signal="mouse_entered" from="Agni" to="Agni/BookHarayamapAgni" method="_on_agni_mouse_entered"]
 [connection signal="mouse_exited" from="Agni" to="Agni/BookHarayamapAgni" method="_on_agni_mouse_exited"]
