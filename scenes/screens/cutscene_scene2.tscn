@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ppeqy2ww77j6"]
+[gd_scene load_steps=9 format=3 uid="uid://ppeqy2ww77j6"]
 
 [ext_resource type="Shader" uid="uid://bw78iaqhpnt40" path="res://scenes/screens/blur.gdshader" id="1_fvcqs"]
 [ext_resource type="Script" uid="uid://tdureythbdic" path="res://scenes/screens/cutscene_scene_2.gd" id="1_rp8t3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/screens/cutscene_labels.gd" id="4_gxkax"]
 [ext_resource type="Texture2D" uid="uid://b1s5a4nkdaism" path="res://assets/backgrounds/cave_bg.png" id="5_ymftl"]
 [ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="6_ymftl"]
+[ext_resource type="AudioStream" uid="uid://bpma7qscs8h4g" path="res://scenes/screens/s2/dizzy(1).WAV" id="7_wp1c3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvcqs"]
 shader = ExtResource("1_fvcqs")
@@ -66,3 +67,8 @@ offset_top = -194.0
 offset_right = 252.0
 offset_bottom = 55.0
 color = Color(0, 0, 0, 1)
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_wp1c3")
+volume_db = -5.0

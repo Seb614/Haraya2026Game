@@ -21,6 +21,10 @@ func _process(float) -> void:
 		
 	if Input.is_action_just_pressed("interact"):
 		if abs(get_node("Player").position.x - get_node("Book").position.x) <= 90:
+			var tween = create_tween()
+			tween.tween_property(%bg, "volume_db", -50, 1)
+			await get_tree().create_timer(1).timeout
+
 			Fade.transition()
 			await Fade.on_transition_finished
 			Fade.get_tree().change_scene_to_file("res://scenes/screens/s_2e).tscn")

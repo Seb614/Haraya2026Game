@@ -3,22 +3,22 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	%bg.play()
 	
 
 @onready var blur_material = $Control/ColorRect.material
 
 @onready var blink_rect = $Blink
 
-var blink_times = [2, 4.0, 6.5, 8.0]  # Start and end times of each blink
+var blink_times = [2, 4.0, 6.5, 8.0, 10.0, 11.0]  # Start and end times of each blink
 
 
 var time = 0.0
-var duration = 10.0
+var duration = 13.0
 var max_blur = 40.0
 
 var time_elapsed = 0.0
-var tilt_duration = 10.0
+var tilt_duration = 12.0
 var tilt_speed = 2.5
 var tilt_angle = 0.1  
 
@@ -46,6 +46,8 @@ func _process(delta):
 	tween.tween_property(blink_rect, "modulate:a", 0.0, 0.5)
 	
 	if time >= 12:
+		tween.tween_property(%bg, "volume_db", -50, 3)
+	if time >= 15:
 		Fade.transition()
 		await Fade.on_transition_finished
 		Fade.get_tree().change_scene_to_file("res://scenes/screens/black2.tscn")

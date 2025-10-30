@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dklv4rdsgd1xw"
+path="res://.godot/imported/[3A] BG Music.wav-d0cab4d2883f80e05cd63c8224ec2561.sample"
+
+[deps]
+
+source_file="res://scenes/screens/s2/[3A] BG Music.wav"
+dest_files=["res://.godot/imported/[3A] BG Music.wav-d0cab4d2883f80e05cd63c8224ec2561.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

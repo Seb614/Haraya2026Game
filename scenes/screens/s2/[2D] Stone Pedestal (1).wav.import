@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chrug0f34t7d4"
+path="res://.godot/imported/[2D] Stone Pedestal (1).wav-9f451ccf6ce6befb2ad03b09e56519ba.sample"
+
+[deps]
+
+source_file="res://scenes/screens/s2/[2D] Stone Pedestal (1).wav"
+dest_files=["res://.godot/imported/[2D] Stone Pedestal (1).wav-9f451ccf6ce6befb2ad03b09e56519ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

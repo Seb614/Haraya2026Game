@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://c785aypemipbm"]
+[gd_scene load_steps=27 format=3 uid="uid://c785aypemipbm"]
 
 [ext_resource type="Texture2D" uid="uid://cx5j5uac7ob1g" path="res://assets/sprites/book.png" id="1_3n8p1"]
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_b6y34"]
 [ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="1_ypha2"]
-[ext_resource type="Script" path="res://scenes/screens/s_2c)_dialogue.gd" id="2_bs3m4"]
+[ext_resource type="Script" uid="uid://cvfjwq0dkmcho" path="res://scenes/screens/s_2c)_dialogue.gd" id="2_bs3m4"]
 [ext_resource type="Script" uid="uid://c0vmjo10um4pt" path="res://scripts/book_float.gd" id="2_rb2qb"]
 [ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="2_xe6oi"]
 [ext_resource type="Resource" uid="uid://dmnjnu5dqpfu6" path="res://assets/dialogue/s_2c)2.dialogue" id="3_00ebt"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bjfwkihahqe4r" path="res://assets/sprites/Pedestal.png" id="16_d8dg2"]
 [ext_resource type="Texture2D" uid="uid://b1s5a4nkdaism" path="res://assets/backgrounds/cave_bg.png" id="17_3i3ls"]
 [ext_resource type="Texture2D" uid="uid://d1rwcyvy1oqws" path="res://assets/backgrounds/cave_fg.png" id="18_n3p7o"]
+[ext_resource type="AudioStream" uid="uid://cb0nesorh2nec" path="res://scenes/screens/s2/[2E] Stone Pedestal (2).mp3" id="19_pmpqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
 size = Vector2(1907, 72)
@@ -464,5 +465,11 @@ texture = ExtResource("18_n3p7o")
 z_index = 5
 position = Vector2(150, 0)
 texture = ExtResource("18_n3p7o")
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("19_pmpqk")
+volume_db = -5.0
+autoplay = true
 
 [editable path="Firefly"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cejhjrelvajla"]
+[gd_scene load_steps=6 format=3 uid="uid://cejhjrelvajla"]
 
 [ext_resource type="Script" uid="uid://d2wo56vnmrjjf" path="res://scripts/player.gd" id="1_2147m"]
 [ext_resource type="SpriteFrames" uid="uid://254n46ybdat3" path="res://assets/sprites/player_anims.tres" id="2_2147m"]
+[ext_resource type="AudioStream" uid="uid://coar04a1ttsqn" path="res://assets/Sounds/footsteps-dirt-gravel-6823.mp3" id="3_54rde"]
+[ext_resource type="AudioStream" uid="uid://dy1c272jrifgs" path="res://assets/Sounds/jump/jump.WAV" id="4_q8hb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8lix"]
 size = Vector2(16, 32)
@@ -34,5 +36,15 @@ limit_bottom = 1
 drag_horizontal_enabled = true
 drag_vertical_offset = -0.5
 editor_draw_limits = true
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_54rde")
+volume_db = -5.0
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_q8hb4")
+volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba6cven3pdpqt"
+path="res://.godot/imported/[2G] Book Interaction (2).mp3-f49a06af8700722970739563e2ef519a.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/s2/[2G] Book Interaction (2).mp3"
+dest_files=["res://.godot/imported/[2G] Book Interaction (2).mp3-f49a06af8700722970739563e2ef519a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

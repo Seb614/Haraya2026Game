@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvs1jodya6ser"
+path="res://.godot/imported/[3B] BG Noises.wav-b0a13090c2af92e550f6ba46485c7c77.sample"
+
+[deps]
+
+source_file="res://scenes/screens/s2/[3B] BG Noises.wav"
+dest_files=["res://.godot/imported/[3B] BG Noises.wav-b0a13090c2af92e550f6ba46485c7c77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -40,7 +40,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump_right")
-		
+		if not %jump.playing:
+			%jump.play()
 	if Input.is_action_pressed("sprint") and is_on_floor():
 		SPEED = 150.0
 		#$Control/Sprint.visible = true
@@ -60,7 +61,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("walk_right")
 		
-		
+		if not %walk.playing:
+			%walk.play()
 		
 		if velocity.x < 0:
 			animated_sprite.flip_h = true  # Face left
@@ -70,8 +72,10 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		%walk.stream_paused = true
 		if (velocity.y == 0):
 			$AnimatedSprite2D.play("idle_right")
+			
 
 	move_and_slide()
 

@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var animation_player = $AnimationPlayer
 
 signal on_transition_finished
-
+signal on_transition_start
 func _ready():
 	color_rect.visible = false
 	animation_player.animation_finished.connect(_on_animation_finished)
@@ -12,6 +12,7 @@ func _ready():
 func transition():
 	color_rect.visible = true
 	animation_player.play("ftb")
+	on_transition_start.emit()
 
 
 func ftn():
