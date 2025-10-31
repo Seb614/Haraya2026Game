@@ -4,9 +4,10 @@ var scorecam
 var playercam
 
 @export var dialogue_resource: DialogueResource
-
+@export var dialogue_resource2: DialogueResource
+@export var hachitex: Texture2D
 var ctr = 0
-var collected = [false, false, false, false, false, false]
+var collected = [false, false, false, false, false, false, false]
 var complete = false
 
 func _ready() -> void:
@@ -23,9 +24,12 @@ func _process(delta: float) -> void:
 		get_node("Player/AnimationPlayer").play("pulse")
 		await get_node("Player/AnimationPlayer").animation_finished
 		get_node("Player/Pulse").hide()
+	if %Player.position.y >50:
+		NavManager.fade_to_scene("res://scenes/screens/s6/s_6b).tscn")
 
 func _on_area_1_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[0]:
+		%collect.play()
 		collected[0] = !collected[0]
 		ctr += 1
 		get_node("pieces/Piece1").hide()
@@ -37,6 +41,7 @@ func _on_area_1_body_entered(body: Node2D) -> void:
 
 func _on_area_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[1]:
+		%collect.play()
 		collected[1] = !collected[1]
 		ctr += 1
 		get_node("pieces/Piece2").hide()
@@ -48,6 +53,7 @@ func _on_area_2_body_entered(body: Node2D) -> void:
 
 func _on_area_3_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[2]:
+		%collect.play()
 		collected[2] = !collected[2]
 		ctr += 1
 		get_node("pieces/Piece3").hide()
@@ -59,6 +65,7 @@ func _on_area_3_body_entered(body: Node2D) -> void:
 
 func _on_area_4_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[3]:
+		%collect.play()
 		collected[3] = !collected[3]
 		ctr += 1
 		get_node("pieces/Piece4").hide()
@@ -70,6 +77,7 @@ func _on_area_4_body_entered(body: Node2D) -> void:
 
 func _on_area_5_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[4]:
+		%collect.play()
 		collected[4] = !collected[4]
 		ctr += 1
 		get_node("pieces/Piece5").hide()
@@ -81,6 +89,7 @@ func _on_area_5_body_entered(body: Node2D) -> void:
 
 func _on_area_6_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[5]:
+		%collect.play()
 		collected[5] = !collected[5]
 		ctr += 1
 		get_node("pieces/Piece6").hide()
@@ -88,3 +97,18 @@ func _on_area_6_body_entered(body: Node2D) -> void:
 		get_node("Player/Node2D/Piece6").visible = true
 		print(ctr)
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "piece2")
+
+func _on_areaHachi_body_entered(body: Node2D) -> void:
+	if body.name == "Player" and !collected[6]:
+		collected[6] = !collected[6]
+		DialogueManager.show_dialogue_balloon(dialogue_resource2, "start")
+		%hachi.texture = hachitex
+func hachi(hachi : int):
+	if hachi == 1:
+		%hachi2.play()
+	if hachi == 2:
+		%hachi3.play()
+	if hachi == 3:
+		%hachi4.play()
+		var tween = create_tween()
+		tween.tween_property(%hachi, "modulate", Color(0,0,0,0.0), 5)

@@ -1,0 +1,7 @@
+~ start
+do hachi(1)
+...: Hachiware???
+do hachi(2)
+...: wrong cave...
+do hachi(3)
+=> END

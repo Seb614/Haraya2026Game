@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	time += delta
 	
 	if time >= 2 and !pulse:
+		%Pulse.modulate.a = 1.0
 		pulse = !pulse
 		get_node("AnimationPlayer").play("piece2")
 	if time >= 3 and !breaks:

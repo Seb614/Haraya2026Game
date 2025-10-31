@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b14e0rnuasstb"]
+[gd_scene load_steps=25 format=3 uid="uid://b14e0rnuasstb"]
 
 [ext_resource type="Script" uid="uid://leadvbmmd0t6" path="res://scenes/screens/s6/s_6a).gd" id="1_025ju"]
 [ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="5_edbvq"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b6fjfx3tqnjh2" path="res://assets/sprites/artifacts.png" id="10_qcfud"]
 [ext_resource type="Texture2D" uid="uid://bgg0hnihphk8" path="res://assets/sprites/piece1.png" id="11_wqx57"]
 [ext_resource type="Texture2D" uid="uid://cbm1aotcduf8m" path="res://assets/sprites/pulse.png" id="12_025ju"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="13_jnhtw"]
+[ext_resource type="AudioStream" uid="uid://dx8id0ic0figp" path="res://scenes/screens/s6/[3E] Kingdom Hum.mp3" id="14_tdrd0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2r2q"]
 shader = ExtResource("8_580tj")
@@ -241,7 +243,7 @@ scale = Vector2(1.6416, 3.74609)
 texture = ExtResource("10_5uwda")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.0322155, 0.289669, 0.383171, 1)
+modulate = Color(0, 0.6, 0.702, 1)
 z_index = -1
 position = Vector2(3.5, 9.99996)
 scale = Vector2(1643, 946)
@@ -283,7 +285,13 @@ libraries = {
 }
 
 [node name="Pulse" type="Sprite2D" parent="."]
-modulate = Color(0, 0.243137, 0.329412, 0.266667)
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 10)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("12_025ju")
+
+[node name="bgsfx" parent="Pulse" instance=ExtResource("13_jnhtw")]
+autoplay = true
+audio = ExtResource("14_tdrd0")
+seekto = 10.0

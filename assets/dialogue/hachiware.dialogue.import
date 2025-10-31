@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://y13au4nplhco"
+path="res://.godot/imported/hachiware.dialogue-5c992b2ef55b090505185d100ab7d01b.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/hachiware.dialogue"
+dest_files=["res://.godot/imported/hachiware.dialogue-5c992b2ef55b090505185d100ab7d01b.tres"]
+
+[params]
+
+defaults=true

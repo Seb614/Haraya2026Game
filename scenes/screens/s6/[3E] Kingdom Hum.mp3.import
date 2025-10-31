@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx8id0ic0figp"
+path="res://.godot/imported/[3E] Kingdom Hum.mp3-b136af9ea09f9b593272c8a14c9ebfe9.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/s6/[3E] Kingdom Hum.mp3"
+dest_files=["res://.godot/imported/[3E] Kingdom Hum.mp3-b136af9ea09f9b593272c8a14c9ebfe9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

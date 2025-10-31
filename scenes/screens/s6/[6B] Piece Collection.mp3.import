@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp2vls21nxgu"
+path="res://.godot/imported/[6B] Piece Collection.mp3-32a45bf68efd1562818f1c0d8353be6d.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/s6/[6B] Piece Collection.mp3"
+dest_files=["res://.godot/imported/[6B] Piece Collection.mp3-32a45bf68efd1562818f1c0d8353be6d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
