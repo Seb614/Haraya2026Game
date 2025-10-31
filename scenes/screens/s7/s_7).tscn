@@ -48,9 +48,6 @@ z_index = 7
 autoplay = "idle_right"
 frame_progress = 0.149001
 
-[node name="CollisionShape2D" parent="Player" index="1"]
-visible = true
-
 [node name="Camera2D" parent="Player" index="2"]
 visible = false
 enabled = false

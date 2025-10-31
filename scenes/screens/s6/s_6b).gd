@@ -112,3 +112,8 @@ func hachi(hachi : int):
 		%hachi4.play()
 		var tween = create_tween()
 		tween.tween_property(%hachi, "modulate", Color(0,0,0,0.0), 5)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		NavManager.fade_to_scene("res://scenes/screens/s8/s_8).tscn")

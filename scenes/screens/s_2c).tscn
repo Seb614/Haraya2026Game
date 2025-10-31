@@ -61,7 +61,7 @@ dialogue_resource3 = ExtResource("4_wc8yd")
 
 [node name="Player" parent="." instance=ExtResource("1_b6y34")]
 position = Vector2(-200, -16)
-limitR = 10000.0
+limitR = 900.0
 
 [node name="Dialogue" type="Node" parent="Player"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dj1268vpu1qel"]
+[gd_scene load_steps=53 format=3 uid="uid://dj1268vpu1qel"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_wtl5b"]
 [ext_resource type="Script" uid="uid://b3nmqmu7epyty" path="res://scenes/screens/s6/s_6b).gd" id="1_y3lbl"]
@@ -222,6 +222,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_eu0ve"]
 radius = 258.177
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j716g"]
+radius = 20.025
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_y3lbl")
 dialogue_resource = ExtResource("2_dr4mp")
@@ -233,6 +236,9 @@ unique_name_in_owner = true
 position = Vector2(-201, 8)
 limitL = -2000.0
 limitR = 800.0
+
+[node name="Camera2D" parent="Player" index="2"]
+visible = false
 
 [node name="Dialogue" type="Node" parent="Player"]
 
@@ -1155,6 +1161,14 @@ visible = false
 position = Vector2(144.556, 124.333)
 shape = SubResource("CircleShape2D_eu0ve")
 
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+position = Vector2(776, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -10)
+shape = SubResource("CircleShape2D_j716g")
+
 [connection signal="body_entered" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Parallax2D2/CaveBg2/Area2D" to="Parallax2D2/CaveBg2/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="pieces/Area2" to="." method="_on_area_2_body_entered"]
@@ -1164,5 +1178,6 @@ shape = SubResource("CircleShape2D_eu0ve")
 [connection signal="body_entered" from="pieces/Area5" to="." method="_on_area_5_body_entered"]
 [connection signal="body_entered" from="pieces/Area3" to="." method="_on_area_3_body_entered"]
 [connection signal="body_entered" from="hachi/AreaHachi" to="." method="_on_areaHachi_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Player"]

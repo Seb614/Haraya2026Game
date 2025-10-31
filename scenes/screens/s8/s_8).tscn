@@ -1,11 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://cj8f4vcri3nqh"]
+[gd_scene load_steps=33 format=3 uid="uid://cj8f4vcri3nqh"]
 
 [ext_resource type="Script" uid="uid://bno5w68i457ub" path="res://scenes/screens/s8/s_8).gd" id="1_f1txf"]
 [ext_resource type="Resource" uid="uid://b2gtyr8d10wtv" path="res://assets/dialogue/nuno.dialogue" id="2_g4sje"]
 [ext_resource type="Shader" uid="uid://by5snryuhw4sh" path="res://scenes/screens/s8/glitch_transition.gdshader" id="5_g4sje"]
 [ext_resource type="Texture2D" uid="uid://chhajwikj5hpk" path="res://assets/sprites/secret_room.png" id="6_07al6"]
-[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="6_g4sje"]
-[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/npc.tscn" id="7_1wmvg"]
+[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="7_1wmvg"]
 [ext_resource type="Texture2D" uid="uid://dgl2yyj58k22v" path="res://assets/sprites/NunoRight.png" id="7_dueu0"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="7_hukri"]
 [ext_resource type="AudioStream" uid="uid://cwf0yvod7ee5q" path="res://scenes/screens/s8/29a.ch-noise-generator.wav" id="9_1wmvg"]
@@ -38,6 +37,21 @@ shader_parameter/direction_r = Vector2(0.86, -0.5)
 shader_parameter/direction_g = Vector2(0, 1)
 shader_parameter/direction_b = Vector2(-0.86, -0.5)
 
+[sub_resource type="Animation" id="Animation_6fm5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NUNO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_gomfa"]
 resource_name = "new_animation"
 length = 4.0
@@ -52,21 +66,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-109, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6fm5j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NUNO:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6fm5j"]
@@ -176,7 +175,7 @@ animations = [{
 script = ExtResource("1_f1txf")
 dialogue_resource = ExtResource("2_g4sje")
 
-[node name="Player" parent="." instance=ExtResource("6_g4sje")]
+[node name="Player" parent="." instance=ExtResource("7_1wmvg")]
 z_index = 12
 position = Vector2(-176, -16)
 script = null
@@ -185,9 +184,6 @@ script = null
 z_index = 7
 autoplay = "idle_right"
 frame_progress = 0.149001
-
-[node name="CollisionShape2D" parent="Player" index="1"]
-visible = true
 
 [node name="Camera2D" parent="Player" index="2"]
 visible = false
@@ -267,6 +263,7 @@ limit_left = -300
 limit_right = 250
 
 [node name="Nuno" parent="." instance=ExtResource("7_1wmvg")]
+visible = false
 z_index = 20
 position = Vector2(2, -16)
 
@@ -315,7 +312,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_jshk5")
 animation = &"idle"
-frame_progress = 0.449243
+frame_progress = 0.911281
 
 [editable path="Player"]
 [editable path="Nuno"]
