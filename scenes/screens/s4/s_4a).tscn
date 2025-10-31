@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ufnfe7upo7yq"]
+[gd_scene load_steps=15 format=3 uid="uid://ufnfe7upo7yq"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_7onhi"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_c4wqg"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://rl7qlnaq1yyq" path="res://assets/sprites/ragatan.png" id="5_mc1t7"]
 [ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="6_hjdcm"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="8_b13dx"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="9_b13dx"]
+[ext_resource type="AudioStream" uid="uid://cygjy2g6xybk2" path="res://scenes/screens/s4/[2A] Background Music.mp3" id="10_u1oc4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u1oc4"]
 size = Vector2(400, 400)
@@ -66,3 +68,7 @@ position = Vector2(-395, -230)
 scale = Vector2(0.7385, -0.7385)
 mesh = SubResource("PlaneMesh_3vl53")
 texture = ExtResource("8_b13dx")
+
+[node name="bgsfx" parent="." instance=ExtResource("9_b13dx")]
+autoplay = true
+audio = ExtResource("10_u1oc4")

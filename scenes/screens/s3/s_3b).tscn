@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://14uvhey81vco"]
+[gd_scene load_steps=9 format=3 uid="uid://14uvhey81vco"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_m3xyh"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_js3x5"]
 [ext_resource type="Texture2D" uid="uid://d2sqa7i0kohxf" path="res://assets/sprites/book_ragatan_full.png" id="3_uq8qj"]
 [ext_resource type="Texture2D" uid="uid://cqguctst6xm6e" path="res://assets/sprites/book_ragatan.png" id="4_yi2lm"]
 [ext_resource type="Script" uid="uid://d3wms32vvb66c" path="res://scenes/objects/glyph.gd" id="5_m3xyh"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="6_js3x5"]
+[ext_resource type="AudioStream" uid="uid://blhqmuw31rr0e" path="res://scenes/screens/s3/[0F] Ragatan Ring.mp3" id="7_uq8qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
 size = Vector2(713, 664)
@@ -49,6 +51,10 @@ text = "[color=gold][font size=80] [outline_size=20 outline_color=brown][shake r
 "
 script = ExtResource("5_m3xyh")
 inpText = " ᜍ ᜄ ᜆ ᜈ᜔"
+
+[node name="bgsfx" parent="." instance=ExtResource("6_js3x5")]
+autoplay = true
+audio = ExtResource("7_uq8qj")
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D/BookRagatan" method="_on_area_2d_mouse_exited"]

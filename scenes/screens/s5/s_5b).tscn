@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://yffxaqa1d1px"]
+[gd_scene load_steps=15 format=3 uid="uid://yffxaqa1d1px"]
 
 [ext_resource type="Script" uid="uid://bfrrk6p8bwylv" path="res://scenes/screens/s5/s_5b).gd" id="1_42tj6"]
-[ext_resource type="PackedScene" uid="uid://mhrabv8fuuk6" path="res://scenes/objects/player.tscn" id="1_coy0u"]
+[ext_resource type="PackedScene" uid="uid://bqj0u6e4fma12" path="res://scenes/objects/player.tscn" id="1_coy0u"]
 [ext_resource type="Texture2D" uid="uid://bjfwkihahqe4r" path="res://assets/sprites/Pedestal.png" id="2_ur21s"]
 [ext_resource type="Texture2D" uid="uid://cx5j5uac7ob1g" path="res://assets/sprites/book.png" id="3_kbh0s"]
 [ext_resource type="Script" uid="uid://c0vmjo10um4pt" path="res://scripts/book_float.gd" id="4_30n03"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="5_n3rlm"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="8_7qflj"]
+[ext_resource type="AudioStream" uid="uid://ccxmxyyiv75v2" path="res://scenes/screens/s5/[6D] Murals.mp3" id="9_o3c8q"]
 [ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="14_inqyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
@@ -93,3 +95,8 @@ shape = SubResource("RectangleShape2D_8e5uj")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="bgsfx" parent="." instance=ExtResource("8_7qflj")]
+volume_db = -15.0
+audio = ExtResource("9_o3c8q")
+seekto = 10.0

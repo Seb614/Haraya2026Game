@@ -1,18 +1,6 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=2 format=3 uid="uid://demwum1wjr38y"]
+[gd_scene load_steps=2 format=3 uid="uid://ceqw4r7j6hdoo"]
 
 [ext_resource type="Script" uid="uid://nu3vl0sua4hc" path="res://scenes/objects/bgfade.gd" id="2_k74er"]
-=======
-[gd_scene load_steps=2 format=3 uid="uid://btjoalte2m0dm"]
-
-[ext_resource type="Script" path="res://scenes/objects/bgfade.gd" id="2_k74er"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=2 format=3 uid="uid://btjoalte2m0dm"]
-
-[ext_resource type="Script" path="res://scenes/objects/bgfade.gd" id="2_k74er"]
->>>>>>> Stashed changes
 
 [node name="bgsfx" type="AudioStreamPlayer"]
 unique_name_in_owner = true

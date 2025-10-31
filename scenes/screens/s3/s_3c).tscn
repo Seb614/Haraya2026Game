@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://q5vqyo4a8hvh"]
+[gd_scene load_steps=8 format=3 uid="uid://q5vqyo4a8hvh"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_kwmqt"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_5667l"]
 [ext_resource type="Texture2D" uid="uid://bo6anxyl344xx" path="res://assets/sprites/book_sinagtala_full.png" id="3_5667l"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="5_5667l"]
 [ext_resource type="Texture2D" uid="uid://c5drn1nqo0n5e" path="res://assets/sprites/book_sinagtala.png" id="6_3vpec"]
+[ext_resource type="AudioStream" uid="uid://c7cxawahf51hy" path="res://scenes/screens/s3/[0C] Sinagtala Ring.wav" id="6_h51in"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
 size = Vector2(713, 242)
@@ -36,6 +38,10 @@ visible = false
 position = Vector2(6.5, 17.5)
 scale = Vector2(0.904688, 0.997222)
 texture = ExtResource("6_3vpec")
+
+[node name="bgsfx" parent="." instance=ExtResource("5_5667l")]
+autoplay = true
+audio = ExtResource("6_h51in")
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D/BookSinagtala" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D/BookSinagtala" method="_on_area_2d_mouse_exited"]

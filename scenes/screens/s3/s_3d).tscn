@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2weiag0uy74c"]
+[gd_scene load_steps=7 format=3 uid="uid://c2weiag0uy74c"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_5gk0h"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_y2ore"]
 [ext_resource type="Texture2D" uid="uid://r4l28bbacqrm" path="res://assets/sprites/book_kamaliing_full.png" id="3_8moqc"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="4_y2ore"]
+[ext_resource type="AudioStream" uid="uid://bi1sixgaegp4o" path="res://scenes/screens/s3/[0E] Kamaliing Ring.wav" id="5_eg3xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgqt"]
 size = Vector2(713, 242)
@@ -31,3 +33,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 position = Vector2(-1.5, 6.5)
 scale = Vector2(0.866146, 0.906482)
 texture = ExtResource("3_8moqc")
+
+[node name="bgsfx" parent="." instance=ExtResource("4_y2ore")]
+autoplay = true
+audio = ExtResource("5_eg3xb")

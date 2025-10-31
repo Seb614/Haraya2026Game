@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dl2b8bs10uo80"
+path="res://.godot/imported/[0D] Agni Ring.wav-33b93bdd817ca1f3c357f7981307f12c.sample"
+
+[deps]
+
+source_file="res://scenes/screens/s3/[0D] Agni Ring.wav"
+dest_files=["res://.godot/imported/[0D] Agni Ring.wav-33b93bdd817ca1f3c357f7981307f12c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
