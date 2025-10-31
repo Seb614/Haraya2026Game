@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ufnfe7upo7yq"]
+[gd_scene load_steps=18 format=3 uid="uid://ufnfe7upo7yq"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_7onhi"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_c4wqg"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="6_hjdcm"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="8_b13dx"]
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="9_b13dx"]
-[ext_resource type="AudioStream" uid="uid://cygjy2g6xybk2" path="res://scenes/screens/s4/[2A] Background Music.mp3" id="10_u1oc4"]
+[ext_resource type="Shader" uid="uid://c45dogx3ewh1m" path="res://scenes/screens/s4/s_4a).gdshader" id="9_rijt7"]
+[ext_resource type="Texture2D" uid="uid://dv6s2uf0npcwq" path="res://assets/sprites/agni_book.png" id="10_1nlx1"]
+[ext_resource type="AudioStream" uid="uid://chrn3jn8br02s" path="res://assets/Sounds/the grail.MP3" id="10_u1oc4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u1oc4"]
 size = Vector2(400, 400)
@@ -26,6 +28,11 @@ orientation = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_3vl53"]
 size = Vector2(400, 400)
 orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vl53"]
+shader = ExtResource("9_rijt7")
+shader_parameter/burn_progress = 0.449
+shader_parameter/edge_thickness = 0.1
 
 [node name="S4a)" type="Node2D"]
 script = ExtResource("1_7onhi")
@@ -58,7 +65,7 @@ mesh = SubResource("PlaneMesh_rijt7")
 texture = ExtResource("6_hjdcm")
 
 [node name="Agni" type="MeshInstance2D" parent="BookHarayamapFull"]
-position = Vector2(-411, 170)
+position = Vector2(-555, 138)
 scale = Vector2(1, -1)
 mesh = SubResource("PlaneMesh_1nlx1")
 texture = ExtResource("5_c4wqg")
@@ -69,6 +76,19 @@ scale = Vector2(0.7385, -0.7385)
 mesh = SubResource("PlaneMesh_3vl53")
 texture = ExtResource("8_b13dx")
 
+[node name="Sprite2D" type="Sprite2D" parent="BookHarayamapFull"]
+material = SubResource("ShaderMaterial_3vl53")
+position = Vector2(1.836, 294.836)
+scale = Vector2(1.31823, 1.31823)
+texture = ExtResource("10_1nlx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="BookHarayamapFull/Sprite2D"]
+material = SubResource("ShaderMaterial_3vl53")
+position = Vector2(-115, 178)
+scale = Vector2(0.144, 0.144)
+texture = ExtResource("5_c4wqg")
+
 [node name="bgsfx" parent="." instance=ExtResource("9_b13dx")]
+volume_db = -15.0
 autoplay = true
 audio = ExtResource("10_u1oc4")

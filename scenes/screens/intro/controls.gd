@@ -42,34 +42,35 @@ func _process(delta: float):
 	time_elapsed += delta
 	
 	sound.play()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	fade_icon("Wasd")
 	fade_text("wasd_label")
 	fade_text("wasd_label2")
 	fade_text("wasd_label3")
 	%flip.play()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	fade_icon("Interact")
 	fade_text("e_label")
 	fade_text("e_label2")
 	%flip.play()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	fade_icon("Sprint")
 	fade_text("shift_label")
 	fade_text("shift_label2")
 	%flip.play()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	fade_icon("Jump")
 	fade_text("space_label")
 	fade_text("space_label2")
 		
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	fade_text("continue")
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("click")
 		if time_elapsed >= event_interval_5:
-			%bell.play()
-			await get_tree().create_timer(1).timeout
-			NavManager.fade_to_scene("res://scenes/screens/black.tscn")
+			while true:
+				%bell.play()
+				await get_tree().create_timer(1.0).timeout
+				NavManager.fade_to_scene("res://scenes/screens/black.tscn")

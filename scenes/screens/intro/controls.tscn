@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b071qob48pp41" path="res://assets/sprites/jump.png" id="7_6q3xq"]
 [ext_resource type="Texture2D" uid="uid://bwur0hv0gquk3" path="res://assets/sprites/sprint.png" id="8_64qkq"]
 [ext_resource type="Script" uid="uid://bywymd2memeqs" path="res://scenes/screens/intro/timer_continue.gd" id="9_xh8qq"]
-[ext_resource type="AudioStream" uid="uid://dm155osg7khs0" path="res://scenes/screens/intro/flip/flip.WAV" id="10_64qkq"]
+[ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="10_64qkq"]
 [ext_resource type="AudioStream" uid="uid://7d2v6a441dai" path="res://scenes/screens/intro/1C Final Prompt.mp3" id="11_1h5ll"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
@@ -188,13 +188,10 @@ EN: Press D to find the right keys to destiny"
 
 [node name="flip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("10_64qkq")
 volume_db = 10.0
 autoplay = true
 
-[node name="bell" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("11_1h5ll")
-volume_db = -15.0
+[node name="bell" parent="." instance=ExtResource("10_64qkq")]
+audio = ExtResource("11_1h5ll")
 
 [connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]
