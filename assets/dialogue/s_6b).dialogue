@@ -26,3 +26,15 @@
 : TL: Sa wakas, nakuha ko na ang lahat! Siguro naman walang kulang?\nEN: Finally, I got all six! Surely I don’t need a seventh?
 => END
 
+~ prompt
+: TL: Sa pagyanig ng lupa, nabunyag ang lihim ng kuweba—isang daang matagal nang nakakubli sa dilim. Handa ka na ba? \nEN: As the ground trembles, the cave’s secret is revealed—a path long hidden in darkness.
+Are you ready?
+- magpatuloy => call
+
+=> END
+
+~ call
+do _stair()
+: (TL): Malamig ang daloy ng hangin, dala ang presensya ng isang matandang espiritu… Panahon na upang harapin siya. \nEN: A cold breeze flows through, carrying the presence of an ancient spirit… It is finally time to face him.
+
+=> END

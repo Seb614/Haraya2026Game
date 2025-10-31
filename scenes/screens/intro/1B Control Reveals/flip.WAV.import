@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7acjq48w78ff"
+path="res://.godot/imported/flip.WAV-284ce722ba9d3fa0026e9bce880c6445.sample"
+
+[deps]
+
+source_file="res://scenes/screens/intro/1B Control Reveals/flip.WAV"
+dest_files=["res://.godot/imported/flip.WAV-284ce722ba9d3fa0026e9bce880c6445.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

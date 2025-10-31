@@ -31,7 +31,7 @@ orientation = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vl53"]
 shader = ExtResource("9_rijt7")
-shader_parameter/burn_progress = 0.449
+shader_parameter/burn_progress = 1.0
 shader_parameter/edge_thickness = 0.1
 
 [node name="S4a)" type="Node2D"]
@@ -81,12 +81,6 @@ material = SubResource("ShaderMaterial_3vl53")
 position = Vector2(1.836, 294.836)
 scale = Vector2(1.31823, 1.31823)
 texture = ExtResource("10_1nlx1")
-
-[node name="Sprite2D" type="Sprite2D" parent="BookHarayamapFull/Sprite2D"]
-material = SubResource("ShaderMaterial_3vl53")
-position = Vector2(-115, 178)
-scale = Vector2(0.144, 0.144)
-texture = ExtResource("5_c4wqg")
 
 [node name="bgsfx" parent="." instance=ExtResource("9_b13dx")]
 volume_db = -15.0

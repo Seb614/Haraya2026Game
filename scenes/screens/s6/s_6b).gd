@@ -16,6 +16,8 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _stair():
+	%stair.play("light")
 func _process(delta: float) -> void:
 	get_node("Player/Label").text = str(ctr) + "/6"
 	if ctr == 6 and !complete:
@@ -24,8 +26,13 @@ func _process(delta: float) -> void:
 		get_node("Player/AnimationPlayer").play("pulse")
 		await get_node("Player/AnimationPlayer").animation_finished
 		get_node("Player/Pulse").hide()
-	if %Player.position.y >50:
-		NavManager.fade_to_scene("res://scenes/screens/s6/s_6b).tscn")
+		
+		DialogueManager.show_dialogue_balloon(dialogue_resource, "prompt")
+		
+		while complete:
+			await get_tree().create_timer(0.5).timeout
+			if %Player.position.y >50:
+				NavManager.fade_to_scene("res://scenes/screens/s6/s_6b).tscn")
 
 func _on_area_1_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[0]:
@@ -97,7 +104,6 @@ func _on_area_6_body_entered(body: Node2D) -> void:
 		get_node("Player/Node2D/Piece6").visible = true
 		print(ctr)
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "piece2")
-
 func _on_areaHachi_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[6]:
 		collected[6] = !collected[6]

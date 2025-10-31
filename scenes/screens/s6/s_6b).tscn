@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dj1268vpu1qel"]
+[gd_scene load_steps=56 format=3 uid="uid://dj1268vpu1qel"]
 
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_wtl5b"]
 [ext_resource type="Script" uid="uid://b3nmqmu7epyty" path="res://scenes/screens/s6/s_6b).gd" id="1_y3lbl"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="11_sgm8a"]
 [ext_resource type="Texture2D" uid="uid://c15cvl28bjaj5" path="res://assets/backgrounds/bluecave.png" id="12_klti6"]
 [ext_resource type="Texture2D" uid="uid://bgg0hnihphk8" path="res://assets/sprites/piece1.png" id="13_akhlh"]
-[ext_resource type="Script" uid="uid://b8gov50v8py2a" path="res://scenes/screens/s5/mural.gd" id="13_eu0ve"]
+[ext_resource type="Script" path="res://scenes/screens/s5/mural.gd" id="13_eu0ve"]
 [ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="14_j716g"]
 [ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="14_thp0f"]
 [ext_resource type="Texture2D" uid="uid://bpse57diotpmd" path="res://assets/sprites/piece3.png" id="15_kf810"]
@@ -56,6 +56,43 @@ orientation = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3npw"]
 radius = 7.88698
+
+[sub_resource type="Animation" id="Animation_pn0b6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j716g"]
+resource_name = "light"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(4.43828, 2.54912, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(5, 5, 5, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pmjh"]
+_data = {
+&"RESET": SubResource("Animation_pn0b6"),
+&"light": SubResource("Animation_j716g")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0epje"]
 size = Vector2(39, 11)
@@ -127,10 +164,10 @@ tracks/0/path = NodePath("Platforms/StaticBody2D10:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
+"times": PackedFloat32Array(-0.0333333, 2, 3.96667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-168, 1), Vector2(-168, -67), Vector2(-168, 1)]
+"values": [Vector2(-168, 50), Vector2(-168, -67), Vector2(-168, 50)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dr4mp"]
@@ -403,10 +440,17 @@ scale = Vector2(2.04444, 2.04444)
 texture = ExtResource("12_klti6")
 
 [node name="Stairs" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 z_index = 2
 position = Vector2(661.046, -75.094)
 scale = Vector2(0.386835, 0.416047)
 texture = ExtResource("19_thp0f")
+
+[node name="stair" type="AnimationPlayer" parent="Stairs"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_8pmjh")
+}
 
 [node name="Node" type="Node" parent="."]
 

@@ -1,0 +1,186 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqtwp2rk2ef5s"]
+
+[ext_resource type="Texture2D" uid="uid://11oyggjs5nsx" path="res://assets/backgrounds/parchment.png" id="1_5fad2"]
+[ext_resource type="Script" uid="uid://dsp6wdgdvs8bt" path="res://scenes/screens/s4/ring.gd" id="1_ei5fu"]
+[ext_resource type="Shader" uid="uid://c45dogx3ewh1m" path="res://scenes/screens/s4/s_4a).gdshader" id="2_ei5fu"]
+[ext_resource type="Texture2D" uid="uid://crkm1t81ccy5h" path="res://assets/sprites/kamaliing_book.png" id="3_q3hma"]
+[ext_resource type="Script" uid="uid://daqypaya5l656" path="res://scenes/screens/ring.gd" id="4_2d16o"]
+[ext_resource type="Texture2D" uid="uid://lnbcbvwc7mic" path="res://assets/sprites/sinagtala_book.png" id="5_qsp2n"]
+[ext_resource type="Texture2D" uid="uid://cs1hipjrk4kq8" path="res://assets/sprites/ragatan_book.png" id="6_4ftct"]
+[ext_resource type="Texture2D" uid="uid://dv6s2uf0npcwq" path="res://assets/sprites/agni_book.png" id="7_ga8yl"]
+[ext_resource type="Texture2D" uid="uid://khcfn3ty8asr" path="res://assets/sprites/ic_touch.png" id="8_tq6e1"]
+[ext_resource type="Texture2D" uid="uid://d07cfwrnjtlai" path="res://assets/backgrounds/kpop-demon-hunters-derpy-tiger-draft-not-finished-7170618-hd_kandipad.png" id="9_2xe8e"]
+[ext_resource type="AudioStream" uid="uid://c0yehxjdy8jci" path="res://assets/Sounds/low.wav" id="10_mnyt1"]
+[ext_resource type="AudioStream" uid="uid://cul7vcyt4g8ti" path="res://assets/Sounds/high.wav" id="11_otj60"]
+[ext_resource type="AudioStream" uid="uid://ba721dqjlv7rx" path="res://assets/Sounds/mid.wav" id="12_nxsxc"]
+[ext_resource type="Texture2D" uid="uid://dxsctbvv2kc32" path="res://assets/sprites/Tile.png" id="13_2jww8"]
+[ext_resource type="AudioStream" uid="uid://cvidehsq37nq8" path="res://assets/Sounds/lose.wav" id="14_v3ccn"]
+[ext_resource type="AudioStream" uid="uid://l4ue4yacoi5x" path="res://assets/Sounds/win.wav" id="15_thww0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hn1t"]
+shader = ExtResource("2_ei5fu")
+shader_parameter/burn_progress = 0.0
+shader_parameter/edge_thickness = 0.06
+
+[node name="SimonSays" type="Node2D"]
+script = ExtResource("1_ei5fu")
+next = "s_5a)"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_5fad2")
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Kamaliing" type="TextureButton" parent="Node2D2"]
+material = SubResource("ShaderMaterial_7hn1t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 33.0
+offset_right = 100.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_q3hma")
+script = ExtResource("4_2d16o")
+
+[node name="Sinagtala" type="TextureButton" parent="Node2D2"]
+material = SubResource("ShaderMaterial_7hn1t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -216.0
+offset_right = 100.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_qsp2n")
+
+[node name="Ragatan" type="TextureButton" parent="Node2D2"]
+material = SubResource("ShaderMaterial_7hn1t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -99.0
+offset_right = -66.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_4ftct")
+
+[node name="Agni" type="TextureButton" parent="Node2D2"]
+material = SubResource("ShaderMaterial_7hn1t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -99.0
+offset_right = 299.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_ga8yl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2"]
+visible = false
+offset_left = -109.0
+offset_top = -48.0
+offset_right = 637.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = " [color=brown][font_size={24}]ᜁᜌᜓᜅ᜔ ᜃᜉᜎᜍᜈ᜔"
+fit_content = true
+scroll_active = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="W" type="TextureButton" parent="Node2D"]
+offset_left = -160.0
+offset_top = -48.0
+offset_right = -64.0
+offset_bottom = 48.0
+pivot_offset = Vector2(48, 48)
+texture_normal = ExtResource("8_tq6e1")
+texture_pressed = ExtResource("8_tq6e1")
+texture_disabled = ExtResource("9_2xe8e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Low" type="AudioStreamPlayer2D" parent="Node2D/W"]
+position = Vector2(144, 48)
+scale = Vector2(2, 2)
+stream = ExtResource("10_mnyt1")
+
+[node name="E" type="TextureButton" parent="Node2D"]
+offset_left = 64.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 56.0
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(48, 48)
+toggle_mode = true
+texture_normal = ExtResource("8_tq6e1")
+texture_pressed = ExtResource("8_tq6e1")
+metadata/_edit_use_anchors_ = true
+
+[node name="High" type="AudioStreamPlayer2D" parent="Node2D/E"]
+stream = ExtResource("11_otj60")
+
+[node name="N" type="TextureButton" parent="Node2D"]
+offset_left = -48.0
+offset_top = -144.0
+offset_right = 48.0
+offset_bottom = -48.0
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(48, 48)
+toggle_mode = true
+texture_normal = ExtResource("8_tq6e1")
+texture_pressed = ExtResource("8_tq6e1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Mid" type="AudioStreamPlayer2D" parent="Node2D/N"]
+stream = ExtResource("12_nxsxc")
+
+[node name="S" type="TextureButton" parent="Node2D"]
+visible = false
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("8_tq6e1")
+texture_pressed = ExtResource("13_2jww8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Btns" type="Node" parent="."]
+
+[node name="lose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_v3ccn")
+
+[node name="win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_thww0")

@@ -28,7 +28,7 @@ sources/0 = SubResource("TileSetAtlasSource_jvday")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5uj"]
 size = Vector2(26, 394.5)
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D4" type="Node2D"]
 script = ExtResource("1_42tj6")
 dialogue_resource = ExtResource("2_o3c8q")
 
