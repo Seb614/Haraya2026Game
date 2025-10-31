@@ -1,15 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://cj8f4vcri3nqh"]
+[gd_scene load_steps=34 format=3 uid="uid://cj8f4vcri3nqh"]
 
 [ext_resource type="Script" uid="uid://bno5w68i457ub" path="res://scenes/screens/s8/s_8).gd" id="1_f1txf"]
 [ext_resource type="Resource" uid="uid://b2gtyr8d10wtv" path="res://assets/dialogue/nuno.dialogue" id="2_g4sje"]
-[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="3_jja4r"]
 [ext_resource type="Shader" uid="uid://by5snryuhw4sh" path="res://scenes/screens/s8/glitch_transition.gdshader" id="5_g4sje"]
 [ext_resource type="Texture2D" uid="uid://chhajwikj5hpk" path="res://assets/sprites/secret_room.png" id="6_07al6"]
-[ext_resource type="PackedScene" uid="uid://bek3c3wv2ebos" path="res://scenes/objects/npc.tscn" id="6_g4sje"]
+[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="6_g4sje"]
+[ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/npc.tscn" id="7_1wmvg"]
 [ext_resource type="Texture2D" uid="uid://dgl2yyj58k22v" path="res://assets/sprites/NunoRight.png" id="7_dueu0"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="7_hukri"]
 [ext_resource type="AudioStream" uid="uid://cwf0yvod7ee5q" path="res://scenes/screens/s8/29a.ch-noise-generator.wav" id="9_1wmvg"]
 [ext_resource type="AudioStream" uid="uid://cgjx6qidhena8" path="res://scenes/screens/s8/[8B] Static Glitch Effect.mp3" id="10_gomfa"]
+[ext_resource type="Texture2D" uid="uid://bgtj7mgaawid1" path="res://assets/sprites/NunoWalk.png" id="11_gomfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
 size = Vector2(1907, 72)
@@ -37,41 +38,96 @@ shader_parameter/direction_r = Vector2(0.86, -0.5)
 shader_parameter/direction_g = Vector2(0, 1)
 shader_parameter/direction_b = Vector2(-0.86, -0.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wmvg"]
-atlas = ExtResource("7_dueu0")
-region = Rect2(0, 0, 32, 64)
+[sub_resource type="Animation" id="Animation_gomfa"]
+resource_name = "new_animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NUNO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-109, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6fm5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NUNO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fm5j"]
+_data = {
+&"RESET": SubResource("Animation_6fm5j"),
+&"new_animation": SubResource("Animation_gomfa")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gomfa"]
 atlas = ExtResource("7_dueu0")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6fm5j"]
-atlas = ExtResource("7_dueu0")
-region = Rect2(64, 0, 32, 64)
+region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wke2h"]
 atlas = ExtResource("7_dueu0")
-region = Rect2(96, 0, 32, 64)
+region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kg4vy"]
 atlas = ExtResource("7_dueu0")
-region = Rect2(128, 0, 32, 64)
+region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yi6ot"]
 atlas = ExtResource("7_dueu0")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yagv"]
+atlas = ExtResource("7_dueu0")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek202"]
+atlas = ExtResource("7_dueu0")
 region = Rect2(160, 0, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8yagv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fm5j"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jshk5"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avode"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l2f0"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x475"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mbqs"]
+atlas = ExtResource("11_gomfa")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jshk5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1wmvg")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_gomfa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6fm5j")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wke2h")
@@ -81,9 +137,38 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yi6ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yagv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek202")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fm5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jshk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avode")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l2f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x475")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mbqs")
+}],
+"loop": true,
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -91,7 +176,8 @@ animations = [{
 script = ExtResource("1_f1txf")
 dialogue_resource = ExtResource("2_g4sje")
 
-[node name="Player" parent="." instance=ExtResource("3_jja4r")]
+[node name="Player" parent="." instance=ExtResource("6_g4sje")]
+z_index = 12
 position = Vector2(-176, -16)
 script = null
 
@@ -180,14 +266,9 @@ zoom = Vector2(4.5, 4.5)
 limit_left = -300
 limit_right = 250
 
-[node name="Nuno" parent="." instance=ExtResource("6_g4sje")]
+[node name="Nuno" parent="." instance=ExtResource("7_1wmvg")]
+z_index = 20
 position = Vector2(2, -16)
-
-[node name="AnimatedSprite2D" parent="Nuno" index="0"]
-z_index = 10
-position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_8yagv")
-frame_progress = 0.751637
 
 [node name="end" type="RichTextLabel" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -219,6 +300,22 @@ volume_db = -30.0
 position = Vector2(144, 48)
 scale = Vector2(2, 2)
 stream = ExtResource("10_gomfa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6fm5j")
+}
+
+[node name="NUNO" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NUNO"]
+z_index = 10
+position = Vector2(111, -47)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_jshk5")
+animation = &"idle"
+frame_progress = 0.449243
 
 [editable path="Player"]
 [editable path="Nuno"]

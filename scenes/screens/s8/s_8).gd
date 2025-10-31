@@ -10,6 +10,11 @@ extends Node2D
 @onready var sfx = $static2
 @onready var fadeGlitch = preload("res://scenes/screens/s8/glitch_transition.gdshader")
 func _ready():
+	get_node("NUNO/AnimatedSprite2D").play("walking")
+	get_node("AnimationPlayer").play("new_animation")
+	await get_node("AnimationPlayer").animation_finished
+	get_node("NUNO/AnimatedSprite2D").play("idle")
+	await get_tree().create_timer(1.0).timeout
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 	sound.play()
 

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="11_sgm8a"]
 [ext_resource type="Texture2D" uid="uid://c15cvl28bjaj5" path="res://assets/backgrounds/bluecave.png" id="12_klti6"]
 [ext_resource type="Texture2D" uid="uid://bgg0hnihphk8" path="res://assets/sprites/piece1.png" id="13_akhlh"]
-[ext_resource type="Script" path="res://scenes/screens/s5/mural.gd" id="13_eu0ve"]
+[ext_resource type="Script" uid="uid://b8gov50v8py2a" path="res://scenes/screens/s5/mural.gd" id="13_eu0ve"]
 [ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="14_j716g"]
 [ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="14_thp0f"]
 [ext_resource type="Texture2D" uid="uid://bpse57diotpmd" path="res://assets/sprites/piece3.png" id="15_kf810"]
