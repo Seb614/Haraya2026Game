@@ -9,7 +9,10 @@ extends Node2D
 @onready var sound = $static
 @onready var sfx = $static2
 @onready var fadeGlitch = preload("res://scenes/screens/s8/glitch_transition.gdshader")
+@onready var SECRET_CODE := "jerardlabrador"
+@onready var input_buffer := ""
 func _ready():
+	
 	%footsteps.play()
 	get_node("NUNO/AnimatedSprite2D").play("walking")
 	get_node("AnimationPlayer").play("new_animation")
@@ -44,4 +47,20 @@ func _glitchFade():
 	#tween.tween_property(player, "modulate", Color(1.0, 1.0, 1.0, 0), 0.67).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(end, "modulate", Color(1.0, 1.0, 1.0, 1.0), 2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
-	
+
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		var char = char(event.unicode).to_lower()
+
+		# Accept only A–Z
+		if char.is_valid_identifier(): 
+			input_buffer += char
+			print(input_buffer)
+			# Keep buffer from growing too large
+			if input_buffer.length() > SECRET_CODE.length():
+				input_buffer = input_buffer.right(SECRET_CODE.length())
+				
+			# Check if it matches
+			if input_buffer == SECRET_CODE:
+				%Usagi.visible = true
+				input_buffer = "" # reset to avoid repeat spam

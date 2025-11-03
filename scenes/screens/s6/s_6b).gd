@@ -29,10 +29,10 @@ func _process(delta: float) -> void:
 		
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "prompt")
 		
-		while complete:
-			await get_tree().create_timer(0.5).timeout
-			if %Player.position.y >50:
-				NavManager.fade_to_scene("res://scenes/screens/s6/s_6b).tscn")
+
+	await get_tree().process_frame
+	if %Player.position.y >50:
+		NavManager.fade_to_scene("res://scenes/screens/s6/s_6b).tscn")
 
 func _on_area_1_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and !collected[0]:

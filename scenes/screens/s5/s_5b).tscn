@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://yffxaqa1d1px"]
+[gd_scene load_steps=17 format=3 uid="uid://yffxaqa1d1px"]
 
 [ext_resource type="Script" uid="uid://bfrrk6p8bwylv" path="res://scenes/screens/s5/s_5b).gd" id="1_42tj6"]
 [ext_resource type="PackedScene" uid="uid://cejhjrelvajla" path="res://scenes/objects/player.tscn" id="1_coy0u"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="5_n3rlm"]
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="8_7qflj"]
 [ext_resource type="AudioStream" uid="uid://ccxmxyyiv75v2" path="res://scenes/screens/s5/[6D] Murals.mp3" id="9_o3c8q"]
+[ext_resource type="AudioStream" uid="uid://cygjy2g6xybk2" path="res://scenes/screens/s4/[2A] Background Music.mp3" id="11_fw6hc"]
 [ext_resource type="Texture2D" uid="uid://bn301lsdd43e7" path="res://assets/backgrounds/mural.png" id="14_inqyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
@@ -118,5 +119,10 @@ position = Vector2(48, 0)
 
 [node name="Trigger4" type="Node2D" parent="."]
 position = Vector2(120, 0)
+
+[node name="bgsfx2" parent="." instance=ExtResource("8_7qflj")]
+volume_db = -7.0
+autoplay = true
+audio = ExtResource("11_fw6hc")
 
 [editable path="Player"]

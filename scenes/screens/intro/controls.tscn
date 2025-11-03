@@ -134,13 +134,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Shift - Sprint"
 
 [node name="continue" type="Label" parent="ControlText"]
-offset_left = -52.0
-offset_top = 40.0
-offset_right = 158.0
-offset_bottom = 62.3333
+offset_left = -56.0
+offset_top = 32.0
+offset_right = 169.0
+offset_bottom = 79.6667
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Click anywhere to continue"
+text = "Pumindot upang magpatuloy
+Click anywhere to continue"
+horizontal_alignment = 1
 script = ExtResource("9_xh8qq")
 
 [node name="Timer" type="Timer" parent="ControlText/continue"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://ufnfe7upo7yq"]
+[gd_scene load_steps=18 format=3 uid="uid://hffscj5bw0ax"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_7onhi"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_c4wqg"]
 [ext_resource type="Texture2D" uid="uid://c7sbnde18otse" path="res://assets/sprites/blank.png" id="3_j0vhf"]
+[ext_resource type="Script" uid="uid://dsp6wdgdvs8bt" path="res://scenes/screens/s4/s4.gd" id="4_rijt7"]
 [ext_resource type="Texture2D" uid="uid://c181iketeknfg" path="res://assets/sprites/agni.png" id="5_c4wqg"]
-[ext_resource type="Script" uid="uid://dsp6wdgdvs8bt" path="res://scenes/screens/s4/ring.gd" id="5_hjdcm"]
 [ext_resource type="Texture2D" uid="uid://rl7qlnaq1yyq" path="res://assets/sprites/ragatan.png" id="5_mc1t7"]
 [ext_resource type="Texture2D" uid="uid://cwdlrfv6kq63u" path="res://assets/sprites/kamaliing.png" id="6_hjdcm"]
 [ext_resource type="Texture2D" uid="uid://bte0u56ene0x0" path="res://assets/sprites/sinagtala.png" id="8_b13dx"]
@@ -33,6 +33,8 @@ orientation = 2
 shader = ExtResource("9_rijt7")
 shader_parameter/burn_progress = 1.0
 shader_parameter/edge_thickness = 0.1
+shader_parameter/glow = 0.0
+shader_parameter/red_glow = 0.0
 
 [node name="S4a)" type="Node2D"]
 script = ExtResource("1_7onhi")
@@ -49,7 +51,7 @@ texture = ExtResource("2_c4wqg")
 [node name="BookHarayamapFull" type="Sprite2D" parent="."]
 position = Vector2(3, -2)
 texture = ExtResource("3_j0vhf")
-script = ExtResource("5_hjdcm")
+script = ExtResource("4_rijt7")
 next = "s_4a)"
 
 [node name="Ragatan" type="MeshInstance2D" parent="BookHarayamapFull"]
