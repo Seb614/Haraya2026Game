@@ -5,7 +5,7 @@ extends AudioStreamPlayer
 func _ready() -> void:
 	self.stream = audio
 	if self.autoplay:
-		self.play(seekto)
+		self.play(seekto)	
 	await Fade.on_transition_start
 	
 	var tween = create_tween()
