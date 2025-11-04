@@ -5,7 +5,7 @@ extends Node
 var spawn_door_tag
 signal on_trigger_player_spawn
 
-func go_to_level(level_tag, destination_tag):
+func go_to_level(_level_tag, destination_tag):
 	
 	var scene_to_load
 	

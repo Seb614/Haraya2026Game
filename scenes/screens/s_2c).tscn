@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://bdnxm31qo4n7k" path="res://assets/dialogue/s_2c)3.dialogue" id="4_wc8yd"]
 [ext_resource type="PackedScene" uid="uid://0h3sqaqe3jhx" path="res://firefly.tscn" id="5_bl0c4"]
 [ext_resource type="PackedScene" uid="uid://30u4ibyh6txp" path="res://scenes/objects/interactable.tscn" id="5_kpi1m"]
-[ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="5_ndyqm"]
+[ext_resource type="Shader" uid="uid://dvxnoxrscebws" path="res://caustic.gdshader" id="5_ndyqm"]
 [ext_resource type="Texture2D" uid="uid://bkdvrjvjhga6h" path="res://assets/textures/voronoi_svg_export (4).png" id="6_xe6oi"]
 [ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="7_b6y34"]
 [ext_resource type="Texture2D" uid="uid://cogbwy1l1t01m" path="res://scenes/objects/tile.jpg" id="10_jyxli"]

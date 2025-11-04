@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://y13au4nplhco" path="res://assets/dialogue/hachiware.dialogue" id="3_qwyd3"]
 [ext_resource type="Texture2D" uid="uid://dwqqhsd6oaupc" path="res://assets/sprites/aura.png" id="4_sgm8a"]
 [ext_resource type="Texture2D" uid="uid://dqkadm33c0150" path="res://assets/textures/water.png" id="7_dr4mp"]
-[ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="8_evrlu"]
+[ext_resource type="Shader" uid="uid://dvxnoxrscebws" path="res://caustic.gdshader" id="8_evrlu"]
 [ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="9_kij7e"]
 [ext_resource type="Texture2D" uid="uid://c5sskh0lltli2" path="res://assets/textures/cave.png" id="11_sgm8a"]
 [ext_resource type="Texture2D" uid="uid://c15cvl28bjaj5" path="res://assets/backgrounds/bluecave.png" id="12_klti6"]

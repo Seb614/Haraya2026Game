@@ -135,4 +135,3 @@ unique_name_in_owner = true
 stream = ExtResource("4_ce0w4")
 volume_db = -5.0
 pitch_scale = 0.2
-stream_paused = true

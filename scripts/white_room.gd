@@ -1,9 +1,7 @@
 extends Node3D
 
 @onready var s1 = $MeshInstance3D5/Sprite3D1
-@onready var s2 = $MeshInstance3D5/Sprite3D1/Sprite3D2
-@onready var s3 = $MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3
-@onready var s4 = $MeshInstance3D5/Sprite3D1/Sprite3D2/Sprite3D3/Sprite3D4
+
 
 
 

@@ -11,8 +11,8 @@ size = Vector2(713, 242)
 
 [node name="S2F)2" type="Node2D"]
 script = ExtResource("1_tgpcr")
-next = "S4"
-next_scene = "4"
+next = "s_5a)"
+next_scene = "5"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

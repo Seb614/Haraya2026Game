@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+itch io/index.png.import
+itch io/index.pck
+itch io/index.icon.png.import
+itch io/index.icon.png
+itch io/index.html
+itch io/index.apple-touch-icon.png.import
+itch io/index.apple-touch-icon.png
+itch io/index.png.import
+itch io/index.pck
+itch io/index.icon.png.import
+itch io/index.icon.png
+itch io/index.html
+itch io/index.apple-touch-icon.png.import
+itch io/index.apple-touch-icon.png
