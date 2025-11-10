@@ -63,6 +63,6 @@ func _ready():
 	clear()
 	append_text("[pulse freq=0.5 color=ffffff00 ease=-2][font_size={24}]%s\n\n[font_size={20}][i]%s" % [txt[7][0],txt[7][1]])
 
-func dispText(txt: Array):
+func dispText(string: Array):
 	clear()
-	append_text("[color=yellow][font_size={24}]%s\n\n[font_size={20}][i]%s" % [txt[0],txt[1]])
+	append_text("[color=yellow][font_size={24}]%s\n\n[font_size={20}][i]%s" % [string[0],string[1]])

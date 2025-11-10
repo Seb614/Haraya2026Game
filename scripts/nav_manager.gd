@@ -1,14 +1,17 @@
 extends Node
 
 
-
+var hi = preload("res://scenes/screens/intro/white room.tscn")
 var spawn_door_tag
 signal on_trigger_player_spawn
 
 func go_to_level(_level_tag, destination_tag):
-	
 	var scene_to_load
-	
+	match(_level_tag):
+		"hi":
+			scene_to_load = hi
+		null:
+			scene_to_load = null
 	
 	if scene_to_load != null:
 		Fade.transition()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgahmov2qymqc"]
+[gd_scene load_steps=15 format=3 uid="uid://cgahmov2qymqc"]
 
 [ext_resource type="Script" uid="uid://v768gfegapgo" path="res://scenes/screens/intro/controls.gd" id="1_dm43g"]
 [ext_resource type="PackedScene" uid="uid://bphoyane6rivp" path="res://scenes/objects/Controls.tscn" id="3_w2504"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="10_64qkq"]
 [ext_resource type="AudioStream" uid="uid://7d2v6a441dai" path="res://scenes/screens/intro/1C Final Prompt.mp3" id="11_1h5ll"]
 [ext_resource type="AudioStream" uid="uid://7acjq48w78ff" path="res://scenes/screens/intro/1B Control Reveals/flip.WAV" id="11_y0klb"]
+[ext_resource type="AudioStream" uid="uid://b0hd0wymocxba" path="res://scenes/screens/intro/bg ambiance 2.mp3" id="13_y0klb"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4hby"]
 _data = {
@@ -194,5 +195,10 @@ audio = ExtResource("11_y0klb")
 
 [node name="bell" parent="." instance=ExtResource("10_64qkq")]
 audio = ExtResource("11_1h5ll")
+
+[node name="bgsfx" parent="." instance=ExtResource("10_64qkq")]
+volume_db = -10.0
+autoplay = true
+audio = ExtResource("13_y0klb")
 
 [connection signal="timeout" from="ControlText/continue/Timer" to="ControlText/continue" method="_on_timer_timeout"]

@@ -18,4 +18,5 @@ func failed():
 func sfx():
 	%sfx.play()
 	await get_tree().create_timer(0.5).timeout
+	@warning_ignore("standalone_expression")
 	%sfx.stop

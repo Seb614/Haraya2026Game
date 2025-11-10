@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hffscj5bw0ax"]
+[gd_scene load_steps=20 format=3 uid="uid://hffscj5bw0ax"]
 
 [ext_resource type="Script" uid="uid://bc2nujs4tdogt" path="res://scenes/screens/s3/s_3.gd" id="1_7onhi"]
 [ext_resource type="Texture2D" uid="uid://bk3cpm4qgs308" path="res://assets/sprites/bg.png" id="2_c4wqg"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="9_b13dx"]
 [ext_resource type="Shader" uid="uid://c45dogx3ewh1m" path="res://scenes/screens/s4/s_4a).gdshader" id="9_rijt7"]
 [ext_resource type="Texture2D" uid="uid://dv6s2uf0npcwq" path="res://assets/sprites/agni_book.png" id="10_1nlx1"]
-[ext_resource type="AudioStream" uid="uid://chrn3jn8br02s" path="res://assets/Sounds/the grail.MP3" id="10_u1oc4"]
+[ext_resource type="AudioStream" path="res://assets/Sounds/the grail.MP3" id="10_u1oc4"]
+[ext_resource type="Shader" uid="uid://by5snryuhw4sh" path="res://scenes/screens/s8/glitch_transition.gdshader" id="13_1nlx1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u1oc4"]
 size = Vector2(400, 400)
@@ -35,6 +36,15 @@ shader_parameter/burn_progress = 1.0
 shader_parameter/edge_thickness = 0.1
 shader_parameter/glow = 0.0
 shader_parameter/red_glow = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkf7p"]
+shader = ExtResource("13_1nlx1")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_block_size = 30.5
+shader_parameter/fade = 0.01
+shader_parameter/direction_r = Vector2(1, 0)
+shader_parameter/direction_g = Vector2(0.4, 1)
+shader_parameter/direction_b = Vector2(-0.7, -0.3)
 
 [node name="S4a)" type="Node2D"]
 script = ExtResource("1_7onhi")
@@ -88,3 +98,10 @@ texture = ExtResource("10_1nlx1")
 volume_db = -15.0
 autoplay = true
 audio = ExtResource("10_u1oc4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fkf7p")
+offset_left = -1232.0
+offset_top = -656.0
+offset_right = 1160.0
+offset_bottom = 608.0

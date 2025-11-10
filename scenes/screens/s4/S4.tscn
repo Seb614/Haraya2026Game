@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqtwp2rk2ef5s"]
+[gd_scene load_steps=19 format=3 uid="uid://dqtwp2rk2ef5s"]
 
 [ext_resource type="Texture2D" uid="uid://11oyggjs5nsx" path="res://assets/backgrounds/parchment.png" id="1_5fad2"]
 [ext_resource type="Script" uid="uid://dsp6wdgdvs8bt" path="res://scenes/screens/s4/s4.gd" id="1_ei5fu"]
@@ -13,7 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://cvidehsq37nq8" path="res://assets/Sounds/lose.wav" id="14_v3ccn"]
 [ext_resource type="AudioStream" uid="uid://l4ue4yacoi5x" path="res://assets/Sounds/win.wav" id="15_thww0"]
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="17_2d16o"]
-[ext_resource type="AudioStream" uid="uid://chrn3jn8br02s" path="res://assets/Sounds/the grail.MP3" id="18_qsp2n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sjci6"]
 shader = ExtResource("2_ei5fu")
@@ -85,7 +84,6 @@ stream = ExtResource("15_thww0")
 [node name="bgsfx" parent="." instance=ExtResource("17_2d16o")]
 volume_db = -20.0
 autoplay = true
-audio = ExtResource("18_qsp2n")
 
 [node name="Kamaliing" parent="." instance=ExtResource("3_2d16o")]
 unique_name_in_owner = true

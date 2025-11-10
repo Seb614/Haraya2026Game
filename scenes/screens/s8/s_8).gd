@@ -43,18 +43,24 @@ func _glitchFade():
 	tween.tween_property($static, "volume_db", -50, 1.5)
 	sfx.play()
 	tween.tween_property(mat, "shader_parameter/fade", 1.0, 2.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	#tween.tween_property(nuno, "modulate", Color(1.0, 1.0, 1.0, 0), 0.67).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(%Usagi, "modulate", Color(1.0, 1.0, 1.0, 0), 0.67).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	#tween.tween_property(player, "modulate", Color(1.0, 1.0, 1.0, 0), 0.67).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(end, "modulate", Color(1.0, 1.0, 1.0, 1.0), 2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	await get_tree().create_timer(5.0).timeout
+	await tween.finished
+	tween.stop()
+	tween.tween_property(%static2, "volume_db", -50, 5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	await get_tree().create_timer(10.0).timeout
+	if true:
+		NavManager.fade_to_scene("res://scenes/screens/s8/credits.tscn")
 
 func _input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
-		var char = char(event.unicode).to_lower()
+		var charent = char(event.unicode).to_lower()
 
 		# Accept only A–Z
-		if char.is_valid_identifier(): 
-			input_buffer += char
+		if charent.is_valid_identifier(): 
+			input_buffer += charent
 			print(input_buffer)
 			# Keep buffer from growing too large
 			if input_buffer.length() > SECRET_CODE.length():

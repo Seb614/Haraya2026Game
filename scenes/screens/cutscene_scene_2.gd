@@ -34,15 +34,15 @@ func _process(delta):
 		$TempCave.rotation = sin(time_elapsed * tilt_speed) * tilt_angle
 	else:
 		$TempCave.rotation = 0.0
-	
+	var tween = create_tween()
 	for i in range(0, blink_times.size(), 2):
 		if time >= blink_times[i] and time < blink_times[i + 1]:
 			blink_rect.modulate.a = 1.0
-			var tween = create_tween()
+			
 			tween.tween_property(blink_rect, "modulate:a", 1.0, 0.8)
 			
 			return
-	var tween = create_tween()
+	
 	tween.tween_property(blink_rect, "modulate:a", 0.0, 0.5)
 	
 	if time >= 12:

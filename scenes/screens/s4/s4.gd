@@ -8,6 +8,7 @@ func _ready():
 	for button in seq:
 		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		button.burn()
+
 	await get_tree().create_timer(3).timeout
 	await simonsaysround(4)
 	await simonsaysround(5)

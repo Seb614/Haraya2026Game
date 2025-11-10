@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cj8f4vcri3nqh"]
+[gd_scene load_steps=36 format=3 uid="uid://cj8f4vcri3nqh"]
 
 [ext_resource type="Script" uid="uid://bno5w68i457ub" path="res://scenes/screens/s8/s_8).gd" id="1_f1txf"]
 [ext_resource type="Resource" uid="uid://b2gtyr8d10wtv" path="res://assets/dialogue/nuno.dialogue" id="2_g4sje"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://cgjx6qidhena8" path="res://scenes/screens/s8/[8B] Static Glitch Effect.mp3" id="10_gomfa"]
 [ext_resource type="Texture2D" uid="uid://bgtj7mgaawid1" path="res://assets/sprites/NunoWalk.png" id="11_gomfa"]
 [ext_resource type="AudioStream" uid="uid://coar04a1ttsqn" path="res://assets/Sounds/footsteps-dirt-gravel-6823.mp3" id="12_wke2h"]
-[ext_resource type="AudioStream" uid="uid://chrn3jn8br02s" path="res://assets/Sounds/the grail.MP3" id="13_kg4vy"]
 [ext_resource type="Texture2D" uid="uid://cn2mngg3q8v7c" path="res://assets/sprites/YahaUsagi.png" id="14_kg4vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxli"]
@@ -297,6 +296,7 @@ autoplay = true
 audio = ExtResource("9_1wmvg")
 
 [node name="static2" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(144, 48)
 scale = Vector2(2, 2)
 stream = ExtResource("10_gomfa")
@@ -324,7 +324,6 @@ audio = ExtResource("12_wke2h")
 [node name="bgsfx" parent="." instance=ExtResource("7_gomfa")]
 volume_db = -20.0
 autoplay = true
-audio = ExtResource("13_kg4vy")
 
 [node name="Usagi" type="Sprite2D" parent="."]
 unique_name_in_owner = true
