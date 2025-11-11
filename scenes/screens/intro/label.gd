@@ -39,27 +39,28 @@ func _ready():
 	dispText(txt[2])
 	await get_tree().create_timer(2).timeout
 	clear()
+	
 	await get_tree().create_timer(0.2).timeout
 	dispText(txt[3])
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	clear()
-	#self.get_child(0).play()
-	await get_tree().create_timer(0.5).timeout
+	
+	await get_tree().create_timer(1).timeout
 	dispText(txt[4])
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(3).timeout
 	clear()
-	#self.get_child(0).play()
-	await get_tree().create_timer(0.5).timeout
+	
+	await get_tree().create_timer(1).timeout
 	dispText(txt[5])
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(3).timeout
 	clear()
-	#self.get_child(0).play()
-	await get_tree().create_timer(0.5).timeout
+	
+	await get_tree().create_timer(1).timeout
 	dispText(txt[6])
 	await get_tree().create_timer(3).timeout
 	clear()
-	#self.get_child(0).play()
-	await get_tree().create_timer(3).timeout
+	
+	await get_tree().create_timer(2).timeout
 	clear()
 	append_text("[pulse freq=0.5 color=ffffff00 ease=-2][font_size={24}]%s\n\n[font_size={20}][i]%s" % [txt[7][0],txt[7][1]])
 

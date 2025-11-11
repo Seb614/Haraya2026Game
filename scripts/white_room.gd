@@ -6,7 +6,7 @@ extends Node3D
 
 
 var time_elapsed = 0.0
-var event_interval = 20 # Trigger event every 5 seconds
+var event_interval = 23.5 # Trigger event every 5 seconds
 
 var material = StandardMaterial3D.new()
 var agni = load("res://assets/sprites/agni.png")

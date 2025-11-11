@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cydtg3sc5v3rq"]
+[gd_scene load_steps=42 format=3 uid="uid://cydtg3sc5v3rq"]
 
 [ext_resource type="Script" uid="uid://d0cyhdno23b58" path="res://scripts/white_room.gd" id="1_8prti"]
 [ext_resource type="Script" uid="uid://b44bmtwaxkadr" path="res://scripts/path_follow_3d.gd" id="1_m2i04"]
@@ -25,6 +25,43 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Animation" id="Animation_b0720"]
+resource_name = "intro"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8, 25),
+"transitions": PackedFloat32Array(3.73213, 1, 1),
+"update": 0,
+"values": [Vector3(-0.04, 0, -0.5), Vector3(-0.04, 0, -5.01), Vector3(-0.04, 0, -11.5)]
+}
+
+[sub_resource type="Animation" id="Animation_rpkjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.04, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wspq0"]
+_data = {
+&"RESET": SubResource("Animation_rpkjf"),
+&"intro": SubResource("Animation_b0720")
+}
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8prti"]
 size = Vector2(100, 100)
@@ -190,11 +227,17 @@ unique_name_in_owner = true
 stream = ExtResource("5_b0720")
 volume_db = -5.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.2, 0)
 light_energy = 3.0
 light_size = 0.01
 light_specular = 0.0
+
+[node name="anim" type="AnimationPlayer" parent="Path3D/PathFollow3D"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_wspq0")
+}
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, -0.00659561, 1.03802, -0.00363255)
