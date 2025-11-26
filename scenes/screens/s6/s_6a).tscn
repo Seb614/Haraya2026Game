@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://b14e0rnuasstb"]
+[gd_scene load_steps=26 format=3 uid="uid://b14e0rnuasstb"]
 
 [ext_resource type="Script" uid="uid://leadvbmmd0t6" path="res://scenes/screens/s6/s_6a).gd" id="1_025ju"]
 [ext_resource type="Texture2D" uid="uid://vq8rgwnw2k6x" path="res://assets/sprites/piece2.png" id="5_edbvq"]
 [ext_resource type="Texture2D" uid="uid://bpse57diotpmd" path="res://assets/sprites/piece3.png" id="6_025ju"]
 [ext_resource type="Texture2D" uid="uid://dj5rwhw8lsl3t" path="res://assets/sprites/piece4.png" id="7_70hf3"]
-[ext_resource type="Shader" uid="uid://dvxnoxrscebws" path="res://caustic.gdshader" id="8_580tj"]
+[ext_resource type="Shader" uid="uid://c8c32ljg5sh2u" path="res://caustic.gdshader" id="8_580tj"]
 [ext_resource type="Texture2D" uid="uid://iigpw4r54oyp" path="res://assets/sprites/piece5.png" id="8_jnhtw"]
 [ext_resource type="Texture2D" uid="uid://be1s4yc2533uc" path="res://assets/sprites/piece6.png" id="9_tdrd0"]
 [ext_resource type="Texture2D" uid="uid://b87qsi2hqcvas" path="res://assets/textures/noise.png" id="9_xx0yg"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cbm1aotcduf8m" path="res://assets/sprites/pulse.png" id="12_025ju"]
 [ext_resource type="PackedScene" uid="uid://ceqw4r7j6hdoo" path="res://scenes/objects/bgsfx.tscn" id="13_jnhtw"]
 [ext_resource type="AudioStream" uid="uid://dx8id0ic0figp" path="res://scenes/screens/s6/[3E] Kingdom Hum.mp3" id="14_tdrd0"]
+[ext_resource type="AudioStream" uid="uid://cmvnk2sxoy4h" path="res://scenes/screens/s6/[6A] Background Music.mp3" id="15_tdrd0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2r2q"]
 shader = ExtResource("8_580tj")
@@ -294,4 +295,9 @@ texture = ExtResource("12_025ju")
 [node name="bgsfx" parent="Pulse" instance=ExtResource("13_jnhtw")]
 autoplay = true
 audio = ExtResource("14_tdrd0")
+seekto = 10.0
+
+[node name="bgsfx2" parent="Pulse" instance=ExtResource("13_jnhtw")]
+autoplay = true
+audio = ExtResource("15_tdrd0")
 seekto = 10.0

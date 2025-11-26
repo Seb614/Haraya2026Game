@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmvnk2sxoy4h"
+path="res://.godot/imported/[6A] Background Music.mp3-ff42dd0da10e7ce2b77a9986211dbc4e.mp3str"
+
+[deps]
+
+source_file="res://scenes/screens/s6/[6A] Background Music.mp3"
+dest_files=["res://.godot/imported/[6A] Background Music.mp3-ff42dd0da10e7ce2b77a9986211dbc4e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
